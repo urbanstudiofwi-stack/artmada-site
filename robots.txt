@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://artmadastreetfestival.com/sitemap.xml
