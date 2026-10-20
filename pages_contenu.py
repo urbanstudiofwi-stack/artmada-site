@@ -33,7 +33,7 @@ def aftermovie_ld(lang):
             "name": t(lang, "After movie ARTMADA #2 (2026)", "ARTMADA #2 after movie (2026)"),
             "description": t(lang, "Le film de la deuxième édition d'ARTMADA Street Festival à Fort-de-France (Martinique) : fresques, jam, block party. Réalisation : JoBlackProd.",
                              "The film of the second ARTMADA Street Festival in Fort-de-France, Martinique: murals, jam, block party. Directed by JoBlackProd."),
-            "thumbnailUrl": SITE_URL + "assets/img/f/a2-jam-b.jpg", "uploadDate": "2026-04-18",
+            "thumbnailUrl": SITE_URL + "assets/img/aftermovie-miniature.jpg", "uploadDate": "2026-04-18",
             "embedUrl": AFTERMOVIE_EMBED, "inLanguage": "fr",
             "creator": {"@type": "Organization", "name": "JoBlackProd"},
             "publisher": {"@id": ORGA["@id"]}}
@@ -86,7 +86,7 @@ def accueil(lang):
   </div>
   <div class="video" data-video="{AFTERMOVIE_EMBED}">
     <button type="button" class="video-lien video-facade" data-titre="{T(p, "After movie d'ARTMADA #2", "ARTMADA #2 after movie")}">
-      <img src="{p.a('img/f/a2-jam-b.jpg')}" alt="" width="1600" height="900"><span class="lecture" aria-hidden="true"></span>
+      <img src="{p.a('img/f/a2-curtis.jpg')}" alt="" width="1600" height="900"><span class="lecture" aria-hidden="true"></span>
       <span class="surtitre">{T(p, "Vidéo : JoBlackProd", "Video: JoBlackProd")}</span><b>{T(p, "Lancer l'after movie · ARTMADA #2", "Play the after movie · ARTMADA #2")}</b>
     </button>
   </div>
