@@ -1,0 +1,27 @@
+# Contrôle automatique du site (vitesse, accessibilité, SEO) avec l'outil de Google.
+# Tourne après chaque mise en ligne et chaque lundi. Échoue si une note passe sous le seuil.
+name: Contrôle Lighthouse
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 11 * * 1"   # lundi 7h heure de Martinique
+  workflow_dispatch:
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Attendre la mise en ligne de GitHub Pages
+        run: sleep 90
+      - uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://artmadastreetfestival.com/
+            https://artmadastreetfestival.com/festival.html
+            https://artmadastreetfestival.com/fresques/curtis-hylton-tom.html
+            https://artmadastreetfestival.com/artistes/xan.html
+            https://artmadastreetfestival.com/en/
+          configPath: ./.github/lighthouserc.json
+          temporaryPublicStorage: true
+          uploadArtifacts: true

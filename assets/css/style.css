@@ -281,3 +281,5 @@ body.menu-ouvert{overflow:hidden}
 @media (max-width:900px){.pied-in{grid-template-columns:repeat(2,minmax(0,1fr))}.pied-in>div:first-child{grid-column:1/-1}}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+picture{display:contents}
+.video-facade{position:absolute;inset:0;width:100%;height:100%;border:0;cursor:pointer;font:inherit;text-align:left}

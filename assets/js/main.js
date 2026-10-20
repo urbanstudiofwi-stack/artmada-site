@@ -51,3 +51,19 @@
     });
   });
 })();
+
+// After movie : la vidéo (Google Drive) ne se charge qu'au clic
+(function () {
+  document.querySelectorAll(".video[data-video] .video-facade").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var boite = b.parentNode;
+      var f = document.createElement("iframe");
+      f.src = boite.getAttribute("data-video");
+      f.title = b.getAttribute("data-titre");
+      f.allow = "autoplay; fullscreen";
+      f.allowFullscreen = true;
+      boite.innerHTML = "";
+      boite.appendChild(f);
+    });
+  });
+})();
