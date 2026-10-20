@@ -145,6 +145,7 @@ def pied(p):
       <li><a href="mailto:contact@artmadastreetfestival.com">contact@<wbr>artmadastreetfestival.com</a></li>
       <li><a href="https://www.instagram.com/artmadastreetfestival972/" rel="noopener">Instagram</a></li>
       <li><a href="https://www.facebook.com/artmadastreetfestival" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.youtube.com/channel/UCjXDQ---HEdjzB3rwDdRp8Q" rel="noopener">YouTube</a></li>
     </ul></div>
   </div>
   <div class="pied-bas">
@@ -162,7 +163,7 @@ ORGA = {
     "url": SITE_URL, "logo": SITE_URL + "assets/img/logo-noir.png",
     "email": "contact@artmadastreetfestival.com",
     "address": {"@type": "PostalAddress", "addressLocality": "Fort-de-France", "addressRegion": "Martinique", "addressCountry": "FR"},
-    "sameAs": ["https://www.instagram.com/artmadastreetfestival972/", "https://www.facebook.com/artmadastreetfestival"],
+    "sameAs": ["https://www.instagram.com/artmadastreetfestival972/", "https://www.facebook.com/artmadastreetfestival", "https://www.youtube.com/channel/UCjXDQ---HEdjzB3rwDdRp8Q"],
 }
 FESTIVAL_ID = SITE_URL + "#artmada-3"
 
