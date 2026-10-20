@@ -226,6 +226,7 @@ def document(p, titre, description, corps, actif=None, image=None, titre_complet
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(titre_complet)}</title>
 <meta name="description" content="{e(description)}">
+<meta name="google-site-verification" content="_sMru8SpsG50XIsu-UqVL83WAhu-A-Bk16MKLVzs-jw">
 {robots}{liens_langue}<meta property="og:title" content="{e(titre_complet)}">
 <meta property="og:description" content="{e(description)}">
 <meta property="og:image" content="{img}">
