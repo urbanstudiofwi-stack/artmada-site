@@ -1,0 +1,37 @@
+# Mise en ligne automatique : à chaque modification de la branche « source »,
+# GitHub reconstruit le site (python3 build.py) et le publie sur la branche « main » (GitHub Pages).
+name: Publier le site
+on:
+  push:
+    branches: [source]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: publier
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: source, path: src }
+      - uses: actions/checkout@v4
+        with: { ref: main, path: site }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pillow
+      - name: Construire le site
+        run: python3 src/build.py
+      - name: Remplacer le site par la nouvelle version
+        run: |
+          cd site
+          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github -exec rm -rf {} +
+          cp -a ../src/dist/. ./
+      - name: Envoyer sur main
+        run: |
+          cd site
+          git config user.name "NPL MADA PAINT"
+          git config user.email "contact@artmadastreetfestival.com"
+          git add -A
+          if git diff --cached --quiet; then echo "Rien à publier"; exit 0; fi
+          git commit -m "Mise en ligne auto : ${{ github.event.head_commit.message || 'publication manuelle' }}"
+          git push origin main

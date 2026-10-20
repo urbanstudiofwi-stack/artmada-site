@@ -1,0 +1,59 @@
+{
+  "intro": "Le programme de l'édition #3 sera publié ici dès qu'il sera prêt. Pour te donner une idée, voici comment s'est déroulée l'édition #2, du 1er au 11 février 2026.",
+  "intro_en": "The edition #3 programme will be published here as soon as it is ready. To give you an idea, here is how edition #2 unfolded, from 1 to 11 February 2026.",
+  "avant": [
+    {"jour": "20–22", "mois": "janv.", "mois_en": "Jan", "titre": "Avant le festival", "titre_en": "Before the festival",
+     "evenements": [
+      {"heure": "20 → 22 janv.", "heure_en": "20 → 22 Jan", "titre": "JAM avec les artistes martiniquais", "titre_en": "Graffiti jam with the Martinican artists", "lieu": "Parking de la SOAME, Pointe Simon", "description": "Les artistes martiniquais peignent ensemble un grand mur, ouvert au public.", "description_en": "The Martinican artists paint one big wall together, open to the public.", "type": "fresques"},
+      {"heure": "20 janv. · 18h–23h", "heure_en": "20 Jan · 6–11pm", "titre": "Soirée avec les artistes + projection « Au pied du mur »", "titre_en": "Evening with the artists + screening of « Au pied du mur »", "lieu": "Le Bayou, Fort-de-France", "description": "Projection du documentaire de Boucan Production sur le street art en Martinique.", "description_en": "Screening of Boucan Production's documentary about street art in Martinique.", "type": "soiree"}
+     ]}
+  ],
+  "jours": [
+    {"date": "2026-02-02", "jour": "2", "nom": "Lundi", "nom_en": "Monday", "titre": "Coup d'envoi", "titre_en": "Kick-off",
+     "evenements": [
+      {"heure": "Toute la journée", "heure_en": "All day", "titre": "Les fresques commencent", "titre_en": "The murals begin", "lieu": "Canal Alaric, Pointe Simon, rue Victor Sévère, Perrinon, Clarac…", "description": "Les artistes attaquent leurs murs. On peut venir les voir peindre jusqu'au 11 février.", "description_en": "The artists start on their walls. Come and watch them paint until 11 February.", "type": "fresques"},
+      {"heure": "18h–23h", "heure_en": "6–11pm", "titre": "Soirée d'ouverture", "titre_en": "Opening night", "lieu": "La Terrasse FWI, Fort-de-France", "description": "Lancement du festival : DJ set, show de break dance, partenaires et presse.", "description_en": "Festival launch: DJ set, breakdance show, partners and press.", "type": "soiree"}
+     ]},
+    {"date": "2026-02-03", "jour": "3", "nom": "Mardi", "nom_en": "Tuesday", "titre": "Fresques en cours", "titre_en": "Murals in progress",
+     "evenements": [
+      {"heure": "Toute la journée", "heure_en": "All day", "titre": "Fresques en direct", "titre_en": "Live painting", "lieu": "Fort-de-France", "description": "Les artistes peignent. Quatre bus RTM prennent les couleurs d'ARTMADA.", "description_en": "The artists paint. Four RTM buses get ARTMADA colours.", "type": "fresques"}
+     ]},
+    {"date": "2026-02-04", "jour": "4", "nom": "Mercredi", "nom_en": "Wednesday", "titre": "Customise tes chaussures", "titre_en": "Customise your sneakers",
+     "evenements": [
+      {"heure": "14h30–17h30", "heure_en": "2.30–5.30pm", "titre": "Atelier customisation de chaussures", "titre_en": "Sneaker customisation workshop", "lieu": "Le Bocal, Fort-de-France", "description": "Personnaliser ses chaussures avec les techniques du street art. Complet.", "description_en": "Customise your shoes with street art techniques. Sold out.", "type": "atelier"}
+     ]},
+    {"date": "2026-02-05", "jour": "5", "nom": "Jeudi", "nom_en": "Thursday", "titre": "Vernissage", "titre_en": "Exhibition opening",
+     "evenements": [
+      {"heure": "18h–22h", "heure_en": "6–10pm", "titre": "Vernissage de l'expo « ArtMada 2 » et talk graffiti", "titre_en": "« ArtMada 2 » exhibition opening and graffiti talk", "lieu": "Le Bocal, rue Garnier Pagès, Fort-de-France", "description": "L'exposition du collectif Mada Paint, et une discussion sur le graffiti en Martinique.", "description_en": "The Mada Paint collective's exhibition, and a talk about graffiti in Martinique.", "type": "expo"}
+     ]},
+    {"date": "2026-02-06", "jour": "6", "nom": "Vendredi", "nom_en": "Friday", "titre": "Open Mic", "titre_en": "Open Mic",
+     "evenements": [
+      {"heure": "18h–23h", "heure_en": "6–11pm", "titre": "Open Mic ARTMADA", "titre_en": "ARTMADA Open Mic", "lieu": "Le 33, rue Perrinon, Fort-de-France", "description": "Scène ouverte rap, slam, chant et poésie. DJ Jee aux platines, live painting, showcase de Soundjata, food truck.", "description_en": "Open stage for rap, slam, singing and poetry. DJ Jee on the decks, live painting, Soundjata showcase, food truck.", "type": "soiree"}
+     ]},
+    {"date": "2026-02-07", "jour": "7", "nom": "Samedi", "nom_en": "Saturday", "titre": "Journée des ateliers", "titre_en": "Workshop day",
+     "evenements": [
+      {"heure": "10h–12h", "heure_en": "10am–12pm", "titre": "Initiation street art avec Doudou Style", "titre_en": "Street art initiation with Doudou Style", "lieu": "Écomusée de Martinique, Rivière-Pilote", "description": "Atelier gratuit, sur inscription.", "description_en": "Free workshop, registration required.", "type": "atelier", "gratuit": true},
+      {"heure": "Matinée", "heure_en": "Morning", "titre": "Ateliers peinture « Lumière mensongère » et « Flow »", "titre_en": "Painting workshops « Lumière mensongère » and « Flow »", "lieu": "Centre culturel Antoine Tangamen", "description": "Peinture sous lumière monochromatique, puis peinture abstraite, avec Ludivine Rhino.", "description_en": "Painting under monochromatic light, then abstract painting, with Ludivine Rhino.", "type": "atelier"},
+      {"heure": "13h30–15h30", "heure_en": "1.30–3.30pm", "titre": "Ateliers break dance et street art", "titre_en": "Breakdance and street art workshops", "lieu": "TOM, rue Victor Sévère, Fort-de-France", "description": "Au choix : break dance ou street art. Gratuit, sur inscription.", "description_en": "Your choice: breakdance or street art. Free, registration required.", "type": "atelier", "gratuit": true}
+     ]},
+    {"date": "2026-02-08", "jour": "8", "nom": "Dimanche", "nom_en": "Sunday", "titre": "Fresques en cours", "titre_en": "Murals in progress",
+     "evenements": [
+      {"heure": "Toute la journée", "heure_en": "All day", "titre": "Fresques en direct", "titre_en": "Live painting", "lieu": "Fort-de-France", "description": "Les murs avancent. Le bon jour pour faire le tour à pied.", "description_en": "The walls take shape. A good day to walk the route.", "type": "fresques"}
+     ]},
+    {"date": "2026-02-09", "jour": "9", "nom": "Lundi", "nom_en": "Monday", "titre": "Tour des fresques", "titre_en": "Mural tour",
+     "evenements": [
+      {"heure": "15h · 16h · 17h", "heure_en": "3pm · 4pm · 5pm", "titre": "Tour des fresques en voiturette", "titre_en": "Mural tour by electric cart", "lieu": "Fort-de-France", "description": "Visite guidée en petit groupe, sur réservation. Tous les départs étaient complets.", "description_en": "Guided tour in small groups, booking required. Every departure sold out.", "type": "visite"}
+     ]},
+    {"date": "2026-02-10", "jour": "10", "nom": "Mardi", "nom_en": "Tuesday", "titre": "Dernières touches", "titre_en": "Final touches",
+     "evenements": [
+      {"heure": "Toute la journée", "heure_en": "All day", "titre": "Fresques en direct", "titre_en": "Live painting", "lieu": "Fort-de-France", "description": "Les artistes finissent leurs murs.", "description_en": "The artists finish their walls.", "type": "fresques"},
+      {"heure": "18h–00h", "heure_en": "6pm–12am", "titre": "Soirée de pré-clôture", "titre_en": "Pre-closing party", "lieu": "Le Bayou, Fort-de-France", "description": "Une soirée pour garder l'énergie avant la clôture.", "description_en": "One more night to keep the energy going before the finale.", "type": "soiree"}
+     ]},
+    {"date": "2026-02-11", "jour": "11", "nom": "Mercredi", "nom_en": "Wednesday", "titre": "Clôture : block party", "titre_en": "Finale: block party",
+     "evenements": [
+      {"heure": "Journée", "heure_en": "Daytime", "titre": "Tour des fresques en voiturette", "titre_en": "Mural tour by electric cart", "lieu": "Fort-de-France", "description": "Deuxième journée de visites guidées, sur réservation.", "description_en": "Second day of guided tours, booking required.", "type": "visite"},
+      {"heure": "14h–16h", "heure_en": "2–4pm", "titre": "Ateliers street art et break dance", "titre_en": "Street art and breakdance workshops", "lieu": "Parking du TOM, rue Victor Sévère", "description": "Les derniers ateliers ouverts à tous. Gratuit.", "description_en": "The last workshops, open to all. Free.", "type": "atelier", "gratuit": true},
+      {"heure": "16h–00h", "heure_en": "4pm–12am", "titre": "Block party de clôture", "titre_en": "Closing block party", "lieu": "Parking du TOM, rue Victor Sévère, Fort-de-France", "description": "Papa Tank, Soundjata, DJ Kopp, DJ Jee et invités. Show de break dance, jam graffiti, bar, food truck. 1 500 personnes en 2026.", "description_en": "Papa Tank, Soundjata, DJ Kopp, DJ Jee and guests. Breakdance show, graffiti jam, bar, food truck. 1,500 people in 2026.", "type": "soiree"}
+     ]}
+  ]
+}

@@ -1,0 +1,158 @@
+{
+ "e2": {
+  "num": 2,
+  "dates": "1 → 11 févr. 2026",
+  "dates_en": "1 → 11 Feb 2026",
+  "theme": "« Lyannaj Karayib » · les liens entre les îles de la Caraïbe",
+  "theme_en": "“Lyannaj Karayib” · the ties between the Caribbean islands",
+  "texte": "Onze jours de fresques dans les quartiers de Fort-de-France, avec des artistes de Martinique, de Guadeloupe, d'Haïti, de La Réunion, d'Angleterre et de France. Un bus aux couleurs du festival, une expo, un open mic, des ateliers gratuits et une block party de clôture.",
+  "texte_en": "Eleven days of murals across Fort-de-France's neighbourhoods, with artists from Martinique, Guadeloupe, Haiti, Réunion, England and France. A festival-branded bus, an exhibition, an open mic, free workshops and a closing block party.",
+  "chiffres": [
+   [
+    "26",
+    "fresques",
+    "murals"
+   ],
+   [
+    "1 750 m²",
+    "de murs peints",
+    "painted"
+   ],
+   [
+    "23",
+    "artistes, 6 pays",
+    "artists, 6 countries"
+   ],
+   [
+    "75",
+    "bénévoles",
+    "volunteers"
+   ],
+   [
+    "1 500",
+    "à la block party",
+    "at the block party"
+   ],
+   [
+    "1,2 M",
+    "vues en ligne",
+    "online views"
+   ]
+  ],
+  "temps_forts": [
+   [
+    "La JAM du 20 au 22 janvier : les artistes martiniquais peignent ensemble la façade de la SOAME, à Pointe Simon",
+    "The 20–22 January jam: Martinican artists paint the SOAME façade together at Pointe Simon"
+   ],
+   [
+    "Quatre bus RTM habillés aux couleurs d'ARTMADA par Xän",
+    "Four RTM buses wrapped in ARTMADA colours by Xän"
+   ],
+   [
+    "Vernissage de l'expo « ArtMada 2 » et talk graffiti au Bocal",
+    "« ArtMada 2 » exhibition opening and graffiti talk at Le Bocal"
+   ],
+   [
+    "Open Mic hip-hop au 33, rue Perrinon",
+    "Hip-hop open mic at Le 33, rue Perrinon"
+   ],
+   [
+    "Fresque participative de la cité Clarac avec les habitants et le lycée Victor Anicet",
+    "Participatory mural at Cité Clarac with residents and Victor Anicet high school"
+   ],
+   [
+    "Block party de clôture rue Victor Sévère, avec Papa Tank et Soundjata",
+    "Closing block party on rue Victor Sévère, with Papa Tank and Soundjata"
+   ]
+  ]
+ },
+ "e1": {
+  "num": 1,
+  "dates": "5 → 15 déc. 2024",
+  "dates_en": "5 → 15 Dec 2024",
+  "theme": "Identité caribéenne et afro-descendance",
+  "theme_en": "Caribbean identity and Afro-descendance",
+  "texte": "La première édition : dix jours de festival dans trois communes. 14 fresques : 11 à Fort-de-France, 1 à Saint-Pierre et 2 aux Trois-Îlets. Des artistes de Martinique, de Guadeloupe, du Togo et d'Afrique du Sud, une exposition aux Archives territoriales, un débat, un open mic et le premier tour des fresques en voiturette.",
+  "texte_en": "The first edition: ten days across three towns. 14 murals: 11 in Fort-de-France, 1 in Saint-Pierre and 2 in Les Trois-Îlets. Artists from Martinique, Guadeloupe, Togo and South Africa, an exhibition at the Territorial Archives, a debate, an open mic and the first mural tour by electric cart.",
+  "chiffres": [
+   [
+    "14",
+    "fresques",
+    "murals"
+   ],
+   [
+    "900 m²",
+    "de murs peints",
+    "painted"
+   ],
+   [
+    "3",
+    "communes",
+    "towns"
+   ],
+   [
+    "20",
+    "bénévoles",
+    "volunteers"
+   ]
+  ],
+  "temps_forts": [
+   [
+    "Soirée de lancement au Théâtre municipal Aimé Césaire",
+    "Launch night at the Aimé Césaire municipal theatre"
+   ],
+   [
+    "Débat « Faire de la Martinique un haut lieu du street art caribéen » au TOM",
+    "Debate “Making Martinique a hub of Caribbean street art” at the TOM"
+   ],
+   [
+    "Exposition ARTMADA #1 aux Archives territoriales",
+    "ARTMADA #1 exhibition at the Territorial Archives"
+   ],
+   [
+    "Fresque des escaliers Cascade avec des collégiens et des lycéens",
+    "Cascade stairs mural with secondary and high school students"
+   ],
+   [
+    "Jam à l'ancienne école Les Roses, à Floréal",
+    "Jam at the former Les Roses school, Floréal"
+   ],
+   [
+    "Premier tour des fresques en voiturette, avec Doudou Style",
+    "First mural tour by electric cart, with Doudou Style"
+   ]
+  ]
+ },
+ "videos": [
+  {
+   "titre": "Aftermovie ARTMADA #2",
+   "titre_en": "ARTMADA #2 aftermovie",
+   "source": "JoBlackProd · 2026",
+   "source_en": "JoBlackProd · 2026",
+   "url": "https://drive.google.com/file/d/156J3jTFjBwcTbKLKKREeGRhYG16AjRGk/view",
+   "image": "img/f/a2-jam-b.jpg"
+  },
+  {
+   "titre": "Au pied du mur",
+   "titre_en": "Au pied du mur",
+   "source": "Tout en doc · france.tv",
+   "source_en": "Tout en doc · france.tv",
+   "url": "https://www.france.tv/la1ere/martinique/tout-en-doc/8083851-au-pied-du-mur.html",
+   "image": "img/f/a2-clarac.jpg"
+  },
+  {
+   "titre": "Les réels du festival",
+   "titre_en": "Festival reels",
+   "source": "Instagram",
+   "source_en": "Instagram",
+   "url": "https://www.instagram.com/artmadastreetfestival972/",
+   "image": "img/f/a2-wuna.jpg"
+  }
+ ],
+ "doc": {
+  "texte": "Un documentaire de 52 minutes de Lucie Margueritte et Stève Siracuse, produit par Boucan Production. Pendant trois ans, la caméra suit le collectif Mada Paint (Rman, James, Oshea, Xän, Onine, Magiic, Doudou Style) jusqu'à une très grande fresque sur la promenade du Malecon, à Fort-de-France, et jusqu'à la naissance d'ARTMADA.",
+  "texte_en": "A 52-minute documentary by Lucie Margueritte and Stève Siracuse, produced by Boucan Production. Over three years, the camera follows the Mada Paint collective (Rman, James, Oshea, Xän, Onine, Magiic, Doudou Style) up to a huge mural on Fort-de-France's Malecon promenade, and to the birth of ARTMADA.",
+  "meta": "Diffusé sur Martinique la 1ère le 20 janvier 2026, puis sur France Télévisions le 16 septembre 2026.",
+  "meta_en": "Broadcast on Martinique la 1ère on 20 January 2026, then on France Télévisions on 16 September 2026."
+ }
+}

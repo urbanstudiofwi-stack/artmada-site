@@ -1,0 +1,487 @@
+[
+ {
+  "slug": "xan",
+  "nom": "Xän",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   1,
+   2
+  ],
+  "collectif": "Mada Paint",
+  "bio": "Artiste polyvalent du collectif Mada Paint, Xän est connu pour ses fresques de visages, de figures afro-caribéennes et de motifs symboliques. Il s'intéresse aux valeurs du patrimoine et décrit son art comme un langage universel, en constante mutation. Il signe aussi le graphisme d'ARTMADA.",
+  "bio_en": "A versatile artist from the Mada Paint crew, Xän is known for murals of faces, Afro-Caribbean figures and symbolic motifs. He is drawn to heritage and describes his art as a universal language in constant change. He also designs ARTMADA's graphic identity.",
+  "instagram": "xanoy",
+  "site": ""
+ },
+ {
+  "slug": "oshea",
+  "nom": "Oshea",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   1,
+   2
+  ],
+  "collectif": "Mada Paint",
+  "bio": "Membre du collectif Mada Paint, Oshea défend depuis plus de 20 ans un street art créole novateur. Mêlant influences caribéennes et occidentales, il fait le lien entre l'urbanité du graffiti et la tradition de son territoire.",
+  "bio_en": "A member of the Mada Paint crew, Oshea has championed an innovative Creole street art for over 20 years. Blending Caribbean and Western influences, he bridges the urban roots of graffiti and the traditions of his island.",
+  "instagram": "osheaofficiel",
+  "site": ""
+ },
+ {
+  "slug": "magiic",
+  "nom": "Magiic",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   1,
+   2
+  ],
+  "collectif": "Mada Paint",
+  "bio": "Membre clé du collectif Mada Paint, Magiic porte un regard d'artiste sur une époque où la question identitaire reste l'une des plus épineuses. Trait fin, fat cap, ombrages, nature, spiritualité et couleur : il passe du graffiti au tatouage avec les mêmes techniques.",
+  "bio_en": "A key member of the Mada Paint crew, Magiic looks at an era in which identity remains one of the thorniest questions. Fine lines, fat caps, shading, nature, spirituality and colour: he moves from graffiti to tattooing with the same toolkit.",
+  "instagram": "magiicarts",
+  "site": ""
+ },
+ {
+  "slug": "mounlan",
+  "nom": "Mounlan",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   1,
+   2
+  ],
+  "collectif": "",
+  "bio": "Artiste pluridisciplinaire (Mounlan èk lanmou irtisen), Mounlan a réalisé sa première fresque lors de la première édition d'ARTMADA. Le street art lui offre un « kat kwazé », un carrefour où sa voix se mêle au passage et à l'énergie qui garde la ville en vie ; il y rend hommage à ceux qui ne sont plus là.",
+  "bio_en": "A multidisciplinary artist (Mounlan èk lanmou irtisen), Mounlan painted his first mural during ARTMADA's first edition. Street art gives him a \"kat kwazé\", a crossroads where his voice meets the flow and energy that keep the city alive; there he pays tribute to those who are gone.",
+  "instagram": "mounlan_ek_lanmou",
+  "site": ""
+ },
+ {
+  "slug": "aurelie-argyre",
+  "nom": "Aurélie Argyre",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   1,
+   2
+  ],
+  "collectif": "",
+  "bio": "Artiste contemporaine martiniquaise, Aurélie Argyre peint des portraits de femmes fortes à travers lesquels elle raconte sa quête identitaire et les cultures qui l'habitent. Elle a notamment réalisé à Sainte-Marie une fresque de 60 m² consacrée à la sterne de Dougall et à la biodiversité locale. En 2024, elle a mené pour ARTMADA une fresque collective avec des scolaires.",
+  "bio_en": "A Martinican contemporary artist, Aurélie Argyre paints portraits of strong women through which she explores her own identity and the cultures that shape her. In Sainte-Marie she painted a 60 m² mural celebrating the roseate tern and local biodiversity. In 2024 she led a collective mural with school pupils for ARTMADA.",
+  "instagram": "kibou_no_hoshi",
+  "site": ""
+ },
+ {
+  "slug": "breeze-yoko",
+  "nom": "Breeze Yoko",
+  "origine": "Afrique du Sud (Le Cap)",
+  "origine_en": "South Africa (Cape Town)",
+  "region": "international",
+  "editions": [
+   1
+  ],
+  "collectif": "",
+  "bio": "Artiste visuel pluridisciplinaire basé au Cap, Breeze Yoko pratique le graffiti, l'art urbain et la vidéo, et a peint dans plus de 13 pays. Fondateur et directeur artistique de la résidence Ubuhle Bendalo, il crée des fresques fantaisistes mais puissantes qui cherchent de nouvelles façons de « lire la ville ».",
+  "bio_en": "A Cape Town-based multidisciplinary visual artist, Breeze Yoko works in graffiti, urban art and video and has painted in over 13 countries. Founder and artistic director of the Ubuhle Bendalo residency, he creates whimsical yet powerful murals that seek new ways to \"read the city\".",
+  "instagram": "",
+  "site": ""
+ },
+ {
+  "slug": "sitou",
+  "nom": "Sitou",
+  "origine": "Togo",
+  "origine_en": "Togo",
+  "region": "international",
+  "editions": [
+   1
+  ],
+  "collectif": "",
+  "bio": "Originaire du Togo, Sitou commence le graffiti en 2003 et devient l'un des précurseurs du street art en Afrique de l'Ouest. Artiste engagé, il met la culture afro-urbaine au service des grands enjeux sociaux. Le caméléon, son animal totem, symbolise l'adaptation dans la diversité.",
+  "bio_en": "Originally from Togo, Sitou started painting graffiti in 2003 and became one of West Africa's street art pioneers. A committed artist, he uses Afro-urban culture to address major social issues. The chameleon, his totem animal, stands for adapting within diversity.",
+  "instagram": "",
+  "site": ""
+ },
+ {
+  "slug": "steek",
+  "nom": "Steek",
+  "origine": "Guadeloupe",
+  "origine_en": "Guadeloupe",
+  "region": "caraibe",
+  "editions": [
+   1
+  ],
+  "collectif": "",
+  "bio": "Artiste guadeloupéen, Steek puise d'abord son inspiration dans la Guadeloupe. En peignant la femme dans toutes ses représentations, il aborde à son échelle les inégalités qui perdurent dans nos sociétés.",
+  "bio_en": "A Guadeloupean artist, Steek draws his main inspiration from Guadeloupe. By painting women in all their forms, he addresses, at his own scale, the inequalities that persist in our societies.",
+  "instagram": "",
+  "site": ""
+ },
+ {
+  "slug": "kaldea",
+  "nom": "Kaldéa",
+  "origine": "Martinique (basée à Paris)",
+  "origine_en": "Martinique (based in Paris)",
+  "region": "martinique",
+  "editions": [
+   1
+  ],
+  "collectif": "",
+  "bio": "Artiste d'origine martiniquaise basée à Paris, Kaldéa développe un travail chromatique original, lumineux et profond. Son univers est imprégné d'influences asiatiques, ethniques, fantastiques et Art déco.",
+  "bio_en": "A Paris-based artist of Martinican origin, Kaldéa develops an original, luminous and deep chromatic body of work. Her universe is steeped in Asian, ethnic, fantasy and Art Deco influences.",
+  "instagram": "",
+  "site": ""
+ },
+ {
+  "slug": "carole-b",
+  "nom": "Carole B.",
+  "origine": "Guadeloupe (basée à Paris)",
+  "origine_en": "Guadeloupe (based in Paris)",
+  "region": "caraibe",
+  "editions": [
+   1
+  ],
+  "collectif": "",
+  "bio": "Pochoiriste et street artiste guadeloupéenne basée à Paris, Carole B. crée des œuvres empreintes de glamour et d'humour. Elle mêle féminité et féminisme, références historiques et pop art. Pendant le festival, elle a aussi animé un atelier d'initiation au pochoir autour de Joséphine Baker.",
+  "bio_en": "A Paris-based stencil and street artist from Guadeloupe, Carole B. makes works full of glamour and humour. She mixes femininity and feminism, historical references and pop art. During the festival she also led a stencil workshop featuring Josephine Baker.",
+  "instagram": "",
+  "site": ""
+ },
+ {
+  "slug": "shadem",
+  "nom": "Shadem",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   1
+  ],
+  "collectif": "Collectif Antithèse",
+  "bio": "Artiste du collectif Antithèse, Shadem a un style inspiré du mouvement old school, fait de lettrages et de paysages. Elle conçoit chaque œuvre comme une esquisse, un dessin en construction qui se déploie sur le mur et invite à une promenade imaginaire.",
+  "bio_en": "A member of the Antithèse collective, Shadem works in an old-school style of lettering and landscapes. She treats each piece as a sketch, a drawing in progress that unfolds across the wall and invites an imaginary stroll.",
+  "instagram": "",
+  "site": ""
+ },
+ {
+  "slug": "klelo",
+  "nom": "Klēlo",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   1
+  ],
+  "collectif": "",
+  "bio": "Artiste interdisciplinaire, Klēlo explore les formes de circulation et d'interconnexion entre les informations et les énergies. Les lieux, réels ou imaginaires, qu'elle façonne peuvent nous vivifier… ou nous pétrifier.",
+  "bio_en": "An interdisciplinary artist, Klēlo explores how information and energy circulate and interconnect. The places, real or imaginary, that she shapes can either enliven us… or petrify us.",
+  "instagram": "",
+  "site": ""
+ },
+ {
+  "slug": "socabohm",
+  "nom": "Socabohm",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   1
+  ],
+  "collectif": "",
+  "bio": "Sélectionné par le jury d'ARTMADA #1, Socabohm s'intéresse au questionnement et à la valorisation de notre patrimoine visuel : les images que nous avons créées et celles qui ont été créées de nous. Pendant le festival, il a aussi emmené une classe de collège en « sketch tour » dans Fort-de-France.",
+  "bio_en": "Selected by the ARTMADA #1 jury, Socabohm questions and celebrates our visual heritage: the images we have created and those that were created of us. During the festival he also took a middle-school class on a sketch tour of Fort-de-France.",
+  "instagram": "",
+  "site": ""
+ },
+ {
+  "slug": "queen-of-crabs",
+  "nom": "Queen of Crabs",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   1
+  ],
+  "collectif": "",
+  "bio": "Talent amateur de la première édition, Queen of Crabs est passionnée de street art et de fonds marins. ARTMADA lui a offert un premier espace d'expression à la Maison de la Canne.",
+  "bio_en": "The amateur talent of the first edition, Queen of Crabs is passionate about street art and the underwater world. ARTMADA gave her a first space to express herself at the Maison de la Canne.",
+  "instagram": "",
+  "site": ""
+ },
+ {
+  "slug": "doudou-style",
+  "nom": "Doudou Style",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   2
+  ],
+  "collectif": "Mada Paint",
+  "bio": "Graffeuse du collectif Mada Paint, Doudou Style est reconnue pour son univers coloré mêlant graffiti, trompe-l'œil et peinture murale. Fondatrice d'Urban Studio, première galerie d'art urbain de Martinique, elle expose localement et à l'international. Lors d'ARTMADA #1, elle a animé des ateliers et guidé les visites des fresques.",
+  "bio_en": "A graffiti artist from the Mada Paint crew, Doudou Style is known for a colourful universe blending graffiti, trompe-l'œil and mural painting. Founder of Urban Studio, Martinique's first urban art gallery, she exhibits locally and internationally. At ARTMADA #1 she ran workshops and led the mural tours.",
+  "instagram": "doudoustyleart",
+  "site": ""
+ },
+ {
+  "slug": "rman",
+  "nom": "Rman",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   2
+  ],
+  "collectif": "Mada Paint",
+  "bio": "Cofondateur du collectif Mada Paint dans les années 1990, Rman est l'un des précurseurs du graffiti en Martinique. Son travail s'inscrit dans la culture graffiti et hip-hop, avec une forte identité caribéenne.",
+  "bio_en": "Co-founder of the Mada Paint crew in the 1990s, Rman is one of the pioneers of graffiti in Martinique. His work is rooted in graffiti and hip-hop culture, with a strong Caribbean identity.",
+  "instagram": "rman.oner",
+  "site": ""
+ },
+ {
+  "slug": "james",
+  "nom": "James",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   2
+  ],
+  "collectif": "Mada Paint",
+  "bio": "Cofondateur du collectif Mada Paint avec Rman dans les années 1990, James est un graffeur impliqué dans des œuvres murales emblématiques de l'île, notamment à Dillon.",
+  "bio_en": "Co-founder of the Mada Paint crew with Rman in the 1990s, James is a graffiti writer involved in some of the island's landmark murals, notably in Dillon.",
+  "instagram": "james_oner_art",
+  "site": ""
+ },
+ {
+  "slug": "onine",
+  "nom": "Onine",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   2
+  ],
+  "collectif": "Mada Paint",
+  "bio": "Membre du collectif Mada Paint, Onine participe régulièrement à des fresques collectives qui intègrent la culture locale et les enjeux sociaux. Lors d'ARTMADA #1, il a coanimé avec Doudou Style des ateliers d'initiation au graffiti.",
+  "bio_en": "A member of the Mada Paint crew, Onine regularly takes part in collective murals that weave in local culture and social issues. At ARTMADA #1 he co-led graffiti workshops with Doudou Style.",
+  "instagram": "j_0nine",
+  "site": ""
+ },
+ {
+  "slug": "none",
+  "nom": "None",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "La pratique de None prend racine dans le graffiti : il affectionne le lettrage, les personnages et les portraits. Sa démarche contemporaine et urbaine interroge les formes, les codes et l'expression personnelle. Lors d'ARTMADA #1, il a animé les ateliers d'initiation à la bombe.",
+  "bio_en": "None's practice is rooted in graffiti: he favours lettering, characters and portraits. His contemporary, urban approach questions forms, codes and personal expression. At ARTMADA #1 he led the spray-paint workshops.",
+  "instagram": "none_way_art",
+  "site": ""
+ },
+ {
+  "slug": "saveur-grafikk",
+  "nom": "Saveur Grafikk",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "Muraliste et graffeur martiniquais au style graphique et expressif, Saveur Grafikk s'inspire de l'environnement, des formes organiques et de la culture urbaine. Il explore la narration visuelle à travers le graffiti et la peinture murale.",
+  "bio_en": "A Martinican muralist and graffiti artist with a graphic, expressive style, Saveur Grafikk draws on the environment, organic shapes and urban culture. He explores visual storytelling through graffiti and mural painting.",
+  "instagram": "saveurgraffik",
+  "site": ""
+ },
+ {
+  "slug": "roxane-shade",
+  "nom": "Roxane Shade",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "Muraliste martiniquaise formée au Campus caribéen des arts, Roxane Shade travaille la figure humaine, le mouvement et l'émotion à grande échelle. Ses fresques invitent à une lecture sensible et introspective de l'espace urbain.",
+  "bio_en": "A Martinican muralist trained at the Campus Caribéen des Arts, Roxane Shade works with the human figure, movement and emotion on a large scale. Her murals invite a sensitive, introspective reading of urban space.",
+  "instagram": "shade.roxanne",
+  "site": ""
+ },
+ {
+  "slug": "jaddict",
+  "nom": "Jaddict",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "Plasticienne et designer textile martiniquaise, Jaddict mêle art, design et textile. Son travail coloré aborde l'identité, l'émancipation et l'acceptation de soi, résumé par son slogan « Be yourself, you are magic ». Elle mène aussi des projets participatifs et des ateliers.",
+  "bio_en": "A Martinican visual artist and textile designer, Jaddict blends art, design and textiles. Her colourful work deals with identity, emancipation and self-acceptance, summed up by her motto \"Be yourself, you are magic\". She also runs participatory projects and workshops.",
+  "instagram": "jaddict",
+  "site": ""
+ },
+ {
+  "slug": "zeben",
+  "nom": "Zében",
+  "origine": "Martinique",
+  "origine_en": "Martinique",
+  "region": "martinique",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "Artiste de l'édition #2 d'ARTMADA, à Fort-de-France.",
+  "bio_en": "Artist of ARTMADA edition #2, in Fort-de-France.",
+  "instagram": "",
+  "site": ""
+ },
+ {
+  "slug": "curtis-hylton",
+  "nom": "Curtis Hylton",
+  "origine": "Royaume-Uni (Angleterre)",
+  "origine_en": "United Kingdom (England)",
+  "region": "international",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "Muraliste et street artiste anglais, Curtis Hylton met en scène la nature et la faune dans de grandes compositions murales. Ses fresques, inspirées d'espèces naturelles et d'une forte sensibilité graphique, dialoguent avec l'architecture et l'espace public, notamment en Europe.",
+  "bio_en": "An English muralist and street artist, Curtis Hylton brings nature and wildlife to life in large mural compositions. Inspired by natural species and driven by a strong graphic sense, his murals engage with architecture and public space, particularly in Europe.",
+  "instagram": "curtis_hylton",
+  "site": "curtis-hylton.com"
+ },
+ {
+  "slug": "wuna",
+  "nom": "Wuna",
+  "origine": "France (installée à Montréal)",
+  "origine_en": "France (based in Montreal)",
+  "region": "international",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "Graffeuse française active depuis 2001 et installée à Montréal depuis 2012, Wuna combine lettrage, personnages et culture hip-hop dans des fresques vivantes et colorées. Son travail puise dans le funk, le breakdance et l'énergie collective du graffiti ; elle codirige des crews et collabore à des projets muraux internationaux.",
+  "bio_en": "A French graffiti artist active since 2001 and based in Montreal since 2012, Wuna combines lettering, characters and hip-hop culture in lively, colourful murals. Her work draws on funk, breakdance and the collective energy of graffiti; she co-leads crews and works on international mural projects.",
+  "instagram": "wuna_graffiti",
+  "site": ""
+ },
+ {
+  "slug": "rayza",
+  "nom": "Rayza",
+  "origine": "Haïti",
+  "origine_en": "Haiti",
+  "region": "caraibe",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "Créateur haïtien issu de la culture graffiti, Rayza développe une pratique visuelle engagée, ancrée dans l'expression urbaine et porteuse de références sociales et identitaires. Il intervient dans des projets de fresques et des collaborations artistiques dans la Caraïbe.",
+  "bio_en": "A Haitian creator from graffiti culture, Rayza has a committed visual practice rooted in urban expression and carrying social and identity references. He works on mural projects and artistic collaborations across the Caribbean.",
+  "instagram": "ray_za_ent",
+  "site": ""
+ },
+ {
+  "slug": "pacman",
+  "nom": "Al Pacman",
+  "origine": "Guadeloupe",
+  "origine_en": "Guadeloupe",
+  "region": "caraibe",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "Graffeur autodidacte, Al Pacman est une figure influente du graffiti antillais depuis les années 1990. Ses fresques monumentales sont visibles dans plusieurs îles de la Caraïbe et à l'international. Il organise aussi des projets collectifs pour embellir l'espace public.",
+  "bio_en": "A self-taught graffiti writer, Al Pacman has been an influential figure of Caribbean graffiti since the 1990s. His monumental murals can be seen on several Caribbean islands and abroad. He also organises collective projects to beautify public spaces.",
+  "instagram": "alpacman",
+  "site": ""
+ },
+ {
+  "slug": "yelow",
+  "nom": "Yelow",
+  "origine": "Guadeloupe",
+  "origine_en": "Guadeloupe",
+  "region": "caraibe",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "Muraliste guadeloupéen, Yelow se consacre au portrait, notamment féminin, avec une dimension émotionnelle et expressive. Il associe souvent des éléments naturalistes et floraux liés aux identités culturelles.",
+  "bio_en": "A Guadeloupean muralist, Yelow focuses on portraits, especially of women, with an emotional, expressive edge. He often weaves in naturalistic and floral elements tied to cultural identities.",
+  "instagram": "cedric_yelow",
+  "site": ""
+ },
+ {
+  "slug": "veneno",
+  "nom": "Veneno",
+  "origine": "France (Nantes)",
+  "origine_en": "France (Nantes)",
+  "region": "international",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "Artiste urbaine originaire de Nantes, Veneno construit un univers graphique puissant mêlant graffiti et gravure, en forts contrastes noir et blanc. Personnages cagoulés et animaux humanisés y explorent la dualité entre douceur et violence.",
+  "bio_en": "An urban artist from Nantes, Veneno builds a powerful graphic universe that blends graffiti and printmaking in stark black and white. Hooded figures and humanised animals explore the duality of gentleness and violence.",
+  "instagram": "venenografico",
+  "site": ""
+ },
+ {
+  "slug": "temponok",
+  "nom": "Tempo Nok",
+  "origine": "France (Hexagone)",
+  "origine_en": "France (mainland)",
+  "region": "international",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "Artiste autodidacte issu du graffiti, Tempo Nok (Temponok) explore depuis une quinzaine d'années la bulle de savon et sa transparence. D'abord à la bombe, puis à l'acrylique, à l'huile et à la résine, il travaille sur le temps, l'éphémère et la mélancolie. Il a peint notamment au Grenoble Street Art Fest et au Chilliwack Mural Festival (Canada).",
+  "bio_en": "A self-taught artist who came out of graffiti, Tempo Nok (Temponok) has explored the soap bubble and its transparency for some fifteen years. Starting with spray paint, then acrylic, oil and resin, he works on time, the ephemeral and melancholy. He has painted at the Grenoble Street Art Fest and the Chilliwack Mural Festival (Canada), among others.",
+  "instagram": "tempo_nok",
+  "site": "temponok.com"
+ },
+ {
+  "slug": "box-vincent",
+  "nom": "Box Vincent",
+  "origine": "La Réunion",
+  "origine_en": "Réunion Island",
+  "region": "international",
+  "editions": [
+   2
+  ],
+  "collectif": "",
+  "bio": "Graffeur réunionnais, Box Vincent s'inscrit dans la tradition du graffiti de lettrage et de l'expression visuelle libre. Il collabore avec d'autres artistes sur des projets muraux et collectifs.",
+  "bio_en": "A graffiti writer from Réunion Island, Box Vincent works in the tradition of lettering-based graffiti and free visual expression. He collaborates with other artists on mural and collective projects.",
+  "instagram": "boxvincent",
+  "site": ""
+ },
+ {
+  "slug": "rdom",
+  "nom": "Rdom",
+  "origine": "France (Montpellier)",
+  "origine_en": "France (Montpellier)",
+  "region": "international",
+  "editions": [
+   2
+  ],
+  "collectif": "Les Bonjour",
+  "bio": "Artiste autodidacte, Rdom a commencé à peindre à Montpellier, au sein du collectif Les Bonjour. Venu à ARTMADA #2 comme bénévole, il s'est vu confier un mur : sa fresque marque son retour à la peinture après cinq ans d'arrêt.",
+  "bio_en": "Self-taught, Rdom started painting in Montpellier with the collective Les Bonjour. He came to ARTMADA #2 as a volunteer and was given a wall: his mural marks his return to painting after five years away.",
+  "instagram": "",
+  "site": ""
+ }
+]
