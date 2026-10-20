@@ -26,7 +26,9 @@ PARTENAIRES = [
 ]
 
 AFTERMOVIE_ID = "156J3jTFjBwcTbKLKKREeGRhYG16AjRGk"   # « 🎥 After Movie !!.mp4 », Drive ARTMADA, JoBlackProd 2026
-AFTERMOVIE_EMBED = f"https://drive.google.com/file/d/{AFTERMOVIE_ID}/preview"
+AFTERMOVIE_YT = "UAhXATqQ1Ys"   # YouTube, chaîne ARTMADA Street Festival (ex NPL MADA PAINT), publiée le 19/10/2026
+AFTERMOVIE_EMBED = f"https://www.youtube-nocookie.com/embed/{AFTERMOVIE_YT}?autoplay=1&rel=0"
+AFTERMOVIE_URL = f"https://www.youtube.com/watch?v={AFTERMOVIE_YT}"
 
 def aftermovie_ld(lang):
     return {"@type": "VideoObject", "@id": SITE_URL + "#aftermovie-2",
@@ -34,7 +36,7 @@ def aftermovie_ld(lang):
             "description": t(lang, "Le film de la deuxième édition d'ARTMADA Street Festival à Fort-de-France (Martinique) : fresques, jam, block party. Réalisation : JoBlackProd.",
                              "The film of the second ARTMADA Street Festival in Fort-de-France, Martinique: murals, jam, block party. Directed by JoBlackProd."),
             "thumbnailUrl": SITE_URL + "assets/img/aftermovie-miniature.jpg", "uploadDate": "2026-04-18",
-            "embedUrl": AFTERMOVIE_EMBED, "inLanguage": "fr",
+            "embedUrl": f"https://www.youtube.com/embed/{AFTERMOVIE_YT}", "url": AFTERMOVIE_URL, "duration": "PT2M55S", "inLanguage": "fr",
             "creator": {"@type": "Organization", "name": "JoBlackProd"},
             "publisher": {"@id": ORGA["@id"]}}
 
@@ -90,7 +92,7 @@ def accueil(lang):
       <span class="surtitre">{T(p, "Vidéo : JoBlackProd", "Video: JoBlackProd")}</span><b>{T(p, "Lancer l'after movie · ARTMADA #2", "Play the after movie · ARTMADA #2")}</b>
     </button>
   </div>
-  <p class="petit gris" style="margin-top:10px">{T(p, "La vidéo se charge depuis Google Drive quand tu cliques.", "The video loads from Google Drive when you click.")}</p>
+  <p class="petit gris" style="margin-top:10px">{T(p, "La vidéo se charge depuis YouTube quand tu cliques.", "The video loads from YouTube when you click.")} <a href="{AFTERMOVIE_URL}" rel="noopener">{T(p, "La voir sur YouTube", "Watch on YouTube")}</a></p>
 </section>
 
 <section class="cadre section theme">
@@ -446,7 +448,7 @@ def legales(lang):
 <h2>Qui est responsable</h2>
 <p>L'association <b>NPL MADA PAINT</b> (SIREN 897 410 858), Résidence Aigue Marine, bâtiment 2, appartement 29, rue de la Dorsale, 97200 Fort-de-France, Martinique. Pour toute question sur tes données : <b>{MAIL}</b>.</p>
 <h2>Sur ce site</h2>
-<ul><li>Pas de compte, pas de formulaire, pas de cookie, pas de publicité, pas de mesure d'audience.</li><li>Les polices d'écriture et les images sont chargées depuis le site lui-même.</li><li>Sur la page « Carte », le fond de carte vient d'OpenStreetMap et l'outil de carte de cdnjs (Cloudflare) : ces services reçoivent ton adresse IP pour afficher la carte. Les liens « Y aller à pied » t'emmènent sur Google Maps, et le parcours guidé sur Creapolis ; ces services ont leurs propres règles.</li><li>L'hébergeur (GitHub) enregistre l'adresse IP des visiteurs dans ses journaux techniques, pour la sécurité du service. L'association n'y a pas accès.</li><li>Les liens vers Instagram, YouTube ou Bizouk t'emmènent sur ces services, qui ont leurs propres règles.</li><li>L'after movie de la page d'accueil est hébergé sur Google Drive : rien n'est chargé depuis Google tant que tu ne cliques pas sur la vidéo.</li></ul>
+<ul><li>Pas de compte, pas de formulaire, pas de cookie, pas de publicité, pas de mesure d'audience.</li><li>Les polices d'écriture et les images sont chargées depuis le site lui-même.</li><li>Sur la page « Carte », le fond de carte vient d'OpenStreetMap et l'outil de carte de cdnjs (Cloudflare) : ces services reçoivent ton adresse IP pour afficher la carte. Les liens « Y aller à pied » t'emmènent sur Google Maps, et le parcours guidé sur Creapolis ; ces services ont leurs propres règles.</li><li>L'hébergeur (GitHub) enregistre l'adresse IP des visiteurs dans ses journaux techniques, pour la sécurité du service. L'association n'y a pas accès.</li><li>Les liens vers Instagram, YouTube ou Bizouk t'emmènent sur ces services, qui ont leurs propres règles.</li><li>L'after movie de la page d'accueil est hébergé sur YouTube (mode « confidentialité renforcée ») : rien n'est chargé depuis YouTube tant que tu ne cliques pas sur la vidéo.</li></ul>
 <h2>Quand tu nous écris</h2>
 <p>Si tu nous écris (bénévolat, partenariat, visite, presse), on garde ton nom, ton adresse mail, ton téléphone et ce que tu nous dis, uniquement pour te répondre et organiser le festival. On les garde au plus 3 ans après notre dernier échange.</p>
 <h2>Dans l'appli ARTMADA</h2>
@@ -467,7 +469,7 @@ def legales(lang):
 <h2>Who is responsible</h2>
 <p><b>NPL MADA PAINT</b> (SIREN 897 410 858), Résidence Aigue Marine, bâtiment 2, appartement 29, rue de la Dorsale, 97200 Fort-de-France, Martinique. For any question about your data: <b>{MAIL}</b>.</p>
 <h2>On this website</h2>
-<ul><li>No account, no form, no cookies, no advertising, no audience tracking.</li><li>Fonts and images are served from the site itself.</li><li>On the “Map” page, map tiles come from OpenStreetMap and the map library from cdnjs (Cloudflare): these services receive your IP address to display the map. “Walk there” links take you to Google Maps, and the guided tour to Creapolis; these services have their own rules.</li><li>The host (GitHub) records visitors' IP addresses in its technical logs for security. The association has no access to them.</li><li>Links to Instagram, YouTube or Bizouk take you to those services, which have their own rules.</li><li>The after movie on the home page is hosted on Google Drive: nothing loads from Google until you click the video.</li></ul>
+<ul><li>No account, no form, no cookies, no advertising, no audience tracking.</li><li>Fonts and images are served from the site itself.</li><li>On the “Map” page, map tiles come from OpenStreetMap and the map library from cdnjs (Cloudflare): these services receive your IP address to display the map. “Walk there” links take you to Google Maps, and the guided tour to Creapolis; these services have their own rules.</li><li>The host (GitHub) records visitors' IP addresses in its technical logs for security. The association has no access to them.</li><li>Links to Instagram, YouTube or Bizouk take you to those services, which have their own rules.</li><li>The after movie on the home page is hosted on YouTube (privacy-enhanced mode): nothing loads from YouTube until you click the video.</li></ul>
 <h2>When you write to us</h2>
 <p>If you write to us (volunteering, partnership, tour, press), we keep your name, email address, phone number and what you tell us, only to reply and organise the festival. We keep it for up to 3 years after our last exchange.</p>
 <h2>In the ARTMADA app</h2>
