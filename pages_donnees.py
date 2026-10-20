@@ -463,6 +463,7 @@ def archives(p):
       <div class="chiffres">{chiffres}</div>
       <div><p class="surtitre" style="margin-bottom:8px">{T(p, 'Temps forts', 'Highlights')}</p><ul style="padding-left:20px;display:flex;flex-direction:column;gap:4px">{forts}</ul></div>
       <div><p class="surtitre" style="margin-bottom:8px">{T(p, 'Les artistes', 'The artists')}</p><p>{noms}</p></div>
+      <a class="lien-fleche" style="align-self:flex-start" href="{p.u('temps-forts-' + ANNEE[x['num']] + '.html')}">{T(p, 'Revivre les temps forts ' + ANNEE[x['num']] + ' en vidéo', 'Relive the ' + ANNEE[x['num']] + ' highlights on video')}</a>
     </div>
   </div>
   <div class="g3" style="margin-top:32px">{"".join(vignette(p, f) for f in fs)}</div>
@@ -487,6 +488,151 @@ def archives(p):
   </div>
 </section>'''
     ecrire(p, document(p, T(p, "Archives", "Archive"), T(p, "Les éditions passées d'ARTMADA Street Festival : 2024 et 2026, chiffres, artistes, vidéos.", "Past editions of ARTMADA Street Festival: 2024 and 2026, figures, artists, videos."), corps, actif="archives.html"))
+
+# ============================================================ TEMPS FORTS
+
+TEMPS_FORTS = charger("temps_forts.json", {})
+
+def _moment_html(p, x, m, credit_video):
+    L = p.lang
+    lieu = f'<p class="gris">{e(m["lieu"])}</p>' if m.get("lieu") else ""
+    photo = ""
+    if m.get("photo"):
+        cr = T(p, "Photo : Shaman", "Photo: Shaman") if x["num"] == 2 else "Photo © ARTMADA / NPL MADA PAINT"
+        photo = (f'<figure style="margin:0"><img src="{p.a(m["photo"])}" alt="{e(champ(m, "photo_alt", L))}" width="1600" height="900" '
+                 f'style="width:100%;aspect-ratio:16/9;object-fit:cover"><figcaption class="petit gris" style="margin-top:8px">{cr}</figcaption></figure>')
+    vids = ""
+    if m.get("videos"):
+        lis = "".join(
+            f'<li><a href="{v["url"]}" rel="noopener">{e(champ(v, "titre", L))}</a>'
+            f'<span class="meta">{T(p, "Vidéo", "Video")} : {e(credit_video)} · {e(v["vues"])} {T(p, "vues", "views")}</span></li>'
+            for v in m["videos"])
+        vids = (f'<div><p class="surtitre" style="margin-bottom:8px">{T(p, "Voir la vidéo sur Instagram", "Watch on Instagram")}</p>'
+                f'<ul class="lignes">{lis}</ul></div>')
+    lien = (f'<a class="lien-fleche" style="align-self:flex-start" href="{p.u(m["page"])}">{e(champ(m, "page_titre", L))}</a>'
+            if m.get("page") else "")
+    return (f'<article class="cadre" style="padding-bottom:clamp(48px,6vw,80px)" id="{m["id"]}">\n'
+            f'  <div class="texte-5-7 trait-haut">\n'
+            f'    <div style="display:flex;flex-direction:column;gap:12px">\n'
+            f'      <span class="etiquette">{e(champ(m, "quand", L))}</span>\n'
+            f'      <h2 class="titre-moyen">{e(champ(m, "titre", L))}</h2>\n'
+            f'      {lieu}\n'
+            f'    </div>\n'
+            f'    <div style="display:flex;flex-direction:column;gap:20px">\n'
+            f'      <p style="font-size:19px">{e(champ(m, "texte", L))}</p>\n'
+            f'      {photo}{vids}{lien}\n'
+            f'    </div>\n'
+            f'  </div>\n'
+            f'</article>')
+
+def _evenement_ld(p, x):
+    L = p.lang
+    def lieu(nom):
+        return {"@type": "Place", "name": nom,
+                "address": {"@type": "PostalAddress", "addressLocality": "Fort-de-France", "addressRegion": "Martinique", "addressCountry": "FR"}}
+    subs = []
+    for m in x["moments"]:
+        if m.get("sans_date"):
+            continue
+        ev = {"@type": "Event", "name": champ(m, "titre", L), "startDate": m["date"], "description": champ(m, "texte", L),
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "location": lieu(m.get("lieu") or "Fort-de-France"), "organizer": {"@id": ORGA["@id"]}}
+        if m.get("fin"):
+            ev["endDate"] = m["fin"]
+        subs.append(ev)
+    photo = next((m["photo"] for m in x["moments"] if m.get("photo")), "img/partage.jpg")
+    return {"@type": ["Festival", "VisualArtsEvent"], "@id": SITE_URL + f"temps-forts-{x['annee']}.html#artmada-{x['num']}",
+            "name": f"ARTMADA Street Festival #{x['num']}", "startDate": x["debut"], "endDate": x["fin"],
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "description": champ(x, "intro", L), "image": SITE_URL + "assets/" + photo,
+            "location": lieu("Fort-de-France"), "organizer": {"@id": ORGA["@id"]}, "isAccessibleForFree": True,
+            "url": SITE_URL + ("" if L == "fr" else "en/") + f"temps-forts-{x['annee']}.html", "subEvent": subs}
+
+def _bloc_aftermovie(p):
+    from pages_contenu import AFTERMOVIE_EMBED, AFTERMOVIE_URL
+    return (f'<section class="cadre" style="padding-bottom:clamp(48px,6vw,80px)" aria-labelledby="titre-am">\n'
+            f'  <div class="entete-section" style="margin-bottom:20px">\n'
+            f'    <h2 class="titre-section" id="titre-am">{T(p, "L’after movie", "The after movie")}</h2>\n'
+            f'    <p>{T(p, "Le film de l’édition 2026, réalisé par JoBlackProd.", "The film of the 2026 edition, by JoBlackProd.")}</p>\n'
+            f'  </div>\n'
+            f'  <div class="video" data-video="{AFTERMOVIE_EMBED}">\n'
+            f'    <button type="button" class="video-lien video-facade" data-titre="{T(p, "After movie d’ARTMADA #2", "ARTMADA #2 after movie")}">\n'
+            f'      <img src="{p.a("img/f/a2-curtis.jpg")}" alt="" width="1600" height="900"><span class="lecture" aria-hidden="true"></span>\n'
+            f'      <span class="surtitre">{T(p, "Vidéo : JoBlackProd", "Video: JoBlackProd")}</span><b>{T(p, "Lancer l’after movie · ARTMADA #2", "Play the after movie · ARTMADA #2")}</b>\n'
+            f'    </button>\n'
+            f'  </div>\n'
+            f'  <p class="petit gris" style="margin-top:10px">{T(p, "La vidéo se charge depuis YouTube quand tu cliques.", "The video loads from YouTube when you click.")} '
+            f'<a href="{AFTERMOVIE_URL}" rel="noopener">{T(p, "La voir sur YouTube", "Watch on YouTube")}</a></p>\n'
+            f'</section>')
+
+def temps_forts(p, cle):
+    from pages_contenu import aftermovie_ld
+    L = p.lang
+    x = TEMPS_FORTS[cle]
+    autre = TEMPS_FORTS["e1" if cle == "e2" else "e2"]
+    titre = T(p, f"Temps forts {x['annee']}", f"{x['annee']} highlights")
+    fil = [("archives.html", T(p, "Archives", "Archive")), (None, titre)]
+    corps = bloc_tete(p, fil, e(titre), e(champ(x, "intro", L)), f"ARTMADA #{x['num']} · {champ(x, 'dates', L)}")
+    sommaire = " · ".join(f'<a href="#{m["id"]}">{e(champ(m, "titre", L))}</a>' for m in x["moments"])
+    corps += (f'<section class="cadre" style="padding-bottom:clamp(32px,4vw,56px)"><p>'
+              f'{T(p, "Sur cette page", "On this page")} : {sommaire}</p></section>')
+    ld = [fil_ld(p, fil), _evenement_ld(p, x)]
+    if cle == "e2":
+        corps += _bloc_aftermovie(p)
+        ld.append(aftermovie_ld(L))
+    corps += "".join(_moment_html(p, x, m, x["credit_video"]) for m in x["moments"])
+    if x.get("jours"):
+        lis = "".join(f'<li><a href="{j["url"]}" rel="noopener">{T(p, "Jour", "Day")} {j["jour"]} · {e(champ(j, "titre", L))}</a>'
+                      f'<span class="meta">{e(champ(j, "date", L))} · {T(p, "Vidéo", "Video")} : {e(x["credit_video"])} · {e(j["vues"])} {T(p, "vues", "views")}</span></li>'
+                      for j in x["jours"])
+        corps += (f'<section class="cadre" style="padding-bottom:clamp(48px,6vw,80px)" id="jour-par-jour">\n'
+                  f'  <div class="texte-5-7 trait-haut">\n'
+                  f'    <div style="display:flex;flex-direction:column;gap:12px"><h2 class="titre-moyen">{T(p, "Le festival jour par jour", "The festival day by day")}</h2>\n'
+                  f'      <p class="gris">{T(p, "Chaque soir, une vidéo racontait la journée sur Instagram.", "Every evening, a video told the story of the day on Instagram.")}</p></div>\n'
+                  f'    <ul class="lignes">{lis}</ul>\n'
+                  f'  </div>\n'
+                  f'</section>')
+    if x.get("aussi"):
+        items = "".join(f"<li>{e(T(p, a, b))}</li>" for a, b in x["aussi"])
+        corps += (f'<section class="cadre" style="padding-bottom:clamp(48px,6vw,80px)">\n'
+                  f'  <div class="texte-5-7 trait-haut"><h2 class="titre-moyen">{T(p, "Et aussi", "Also")}</h2>\n'
+                  f'    <ul style="padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:18px">{items}</ul></div>\n'
+                  f'</section>')
+    if x.get("bilan"):
+        b = x["bilan"]
+        fin = ""
+        if x.get("fin_video"):
+            v = x["fin_video"]
+            fin = (f'<p><a href="{v["url"]}" rel="noopener">{e(champ(v, "titre", L))}</a> '
+                   f'<span class="doux">· {T(p, "Vidéo", "Video")} : {e(x["credit_video"])} · {e(v["vues"])} {T(p, "vues", "views")}</span></p>')
+        corps += (f'<section class="nuit">\n'
+                  f'  <div class="cadre section texte-5-7">\n'
+                  f'    <h2 class="titre-section">{e(champ(b, "titre", L))}</h2>\n'
+                  f'    <div class="prose"><p style="font-size:19px">{e(champ(b, "texte", L))}</p>'
+                  f'<p class="doux petit">{T(p, "Source", "Source")} : {e(champ(b, "source", L))}</p>{fin}</div>\n'
+                  f'  </div>\n'
+                  f'</section>')
+    autre_titre = T(p, f"Temps forts {autre['annee']}", f"{autre['annee']} highlights")
+    corps += (f'<section class="cadre section">\n'
+              f'  <div class="boutons">\n'
+              f'    <a class="bouton" href="{p.u("temps-forts-" + autre["annee"] + ".html")}">{autre_titre}</a>\n'
+              f'    <a class="bouton bouton-contour" href="{p.u("archives.html")}">{T(p, "Toutes les archives", "Full archive")}</a>\n'
+              f'    <a class="bouton bouton-contour" href="{p.u("fresques/index.html")}">{T(p, "Voir les fresques", "See the murals")}</a>\n'
+              f'  </div>\n'
+              f'</section>')
+    noms_fr = ", ".join(m["titre"][0].lower() + m["titre"][1:] for m in x["moments"][:4])
+    noms_en = ", ".join(m["titre_en"][0].lower() + m["titre_en"][1:] for m in x["moments"][:4])
+    desc = T(p, f"Les temps forts d'ARTMADA #{x['num']} ({x['annee']}), festival de street art de Fort-de-France, en vidéo : {noms_fr}…",
+             f"ARTMADA #{x['num']} ({x['annee']}) highlights, Fort-de-France's street art festival, on video: {noms_en}…")
+    if len(desc) > 158:
+        desc = desc[:155].rsplit(" ", 1)[0].rstrip(",") + "…"
+    titre_page = T(p, f"Temps forts {x['annee']} · ARTMADA #{x['num']}, street art à Fort-de-France",
+                   f"{x['annee']} highlights · ARTMADA #{x['num']}, street art in Fort-de-France")
+    photo = next((m["photo"] for m in x["moments"] if m.get("photo")), None)
+    ecrire(p, document(p, "", desc, corps, actif="archives.html", image=photo, titre_complet=titre_page, ld=ld))
+
 
 # ============================================================ PRESSE
 
@@ -541,4 +687,6 @@ def toutes(lang):
         fresque_page(P(lang, f"fresques/{f['slug']}.html"), f, i)
     carte(P(lang, "carte.html"))
     archives(P(lang, "archives.html"))
+    temps_forts(P(lang, "temps-forts-2026.html"), "e2")
+    temps_forts(P(lang, "temps-forts-2024.html"), "e1")
     presse(P(lang, "presse.html"))

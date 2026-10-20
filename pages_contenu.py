@@ -93,6 +93,7 @@ def accueil(lang):
     </button>
   </div>
   <p class="petit gris" style="margin-top:10px">{T(p, "La vidéo se charge depuis YouTube quand tu cliques.", "The video loads from YouTube when you click.")} <a href="{AFTERMOVIE_URL}" rel="noopener">{T(p, "La voir sur YouTube", "Watch on YouTube")}</a></p>
+  <p style="margin-top:14px">{T(p, "Revivre les éditions", "Relive the editions")} : <a class="lien-fleche" href="{p.u('temps-forts-2026.html')}">{T(p, "Temps forts 2026", "2026 highlights")}</a> · <a class="lien-fleche" href="{p.u('temps-forts-2024.html')}">{T(p, "Temps forts 2024", "2024 highlights")}</a></p>
 </section>
 
 <section class="cadre section theme">

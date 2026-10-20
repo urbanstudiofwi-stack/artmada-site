@@ -1,0 +1,409 @@
+{
+ "e2": {
+  "num": 2,
+  "annee": "2026",
+  "debut": "2026-02-01",
+  "fin": "2026-02-11",
+  "dates": "20 janv. → 11 févr. 2026",
+  "dates_en": "20 Jan → 11 Feb 2026",
+  "credit_video": "J.King",
+  "intro": "Onze jours de fresques dans les quartiers de Fort-de-France, précédés d'une jam en janvier. Voici les moments qui ont fait ARTMADA #2, avec les vidéos tournées par J.King pendant le festival.",
+  "intro_en": "Eleven days of murals across Fort-de-France's neighbourhoods, after a jam in January. Here are the moments that made ARTMADA #2, with the videos shot by J.King during the festival.",
+  "bilan": {
+   "titre": "Le festival en ligne",
+   "titre_en": "The festival online",
+   "texte": "Sur les 60 jours autour du festival (25 déc. 2025 → 22 févr. 2026), le compte Instagram d'ARTMADA a fait 930 269 vues, dont 65,6 % auprès de personnes qui ne suivaient pas encore le compte. Le compte est passé à 5 046 abonnés.",
+   "texte_en": "Over the 60 days around the festival (25 Dec 2025 → 22 Feb 2026), ARTMADA's Instagram account had 930,269 views, 65.6% of them from people who didn't follow the account yet. The account grew to 5,046 followers.",
+   "source": "Bilan communication ARTMADA 2026",
+   "source_en": "ARTMADA 2026 communication report"
+  },
+  "moments": [
+   {
+    "id": "jam",
+    "date": "2026-01-20",
+    "fin": "2026-01-22",
+    "quand": "20 → 22 janv. 2026",
+    "quand_en": "20 → 22 Jan 2026",
+    "titre": "La Jam",
+    "titre_en": "The Jam",
+    "lieu": "Parking de la SOAME, Pointe Simon, Fort-de-France",
+    "texte": "Avant le festival, les artistes martiniquais peignent ensemble un grand mur, ouvert au public. Trois jours de peinture, de rencontres et d'énergie : un avant-goût du festival.",
+    "texte_en": "Before the festival, the Martinican artists paint one big wall together, open to the public. Three days of painting, meetings and energy: a taste of the festival.",
+    "page": "fresques/mur-de-la-jam.html",
+    "page_titre": "Voir le Mur de la Jam",
+    "page_titre_en": "See the Jam Wall",
+    "videos": [
+     {
+      "titre": "« C'est quoi une jam ? »",
+      "titre_en": "“What is a jam?”",
+      "url": "https://www.instagram.com/reel/DTl1FgMjaWc/",
+      "vues": "21 033"
+     },
+     {
+      "titre": "La Jam, un avant-goût du festival",
+      "titre_en": "The Jam, a taste of the festival",
+      "url": "https://www.instagram.com/reel/DT1mwqWDVwl/",
+      "vues": "8 710"
+     },
+     {
+      "titre": "Clap de fin pour la Jam",
+      "titre_en": "That's a wrap for the Jam",
+      "url": "https://www.instagram.com/reel/DT3Ah4gAfNx/",
+      "vues": "6 489"
+     }
+    ]
+   },
+   {
+    "id": "inauguration",
+    "date": "2026-02-02",
+    "quand": "2 févr. 2026 · 18h–23h",
+    "quand_en": "2 Feb 2026 · 6–11pm",
+    "titre": "La soirée d'ouverture",
+    "titre_en": "Opening night",
+    "lieu": "La Terrasse FWI, Fort-de-France",
+    "texte": "Le jour où les artistes attaquent leurs murs, le festival est lancé en soirée : DJ set, show de break dance, partenaires et presse. Les mêmes jours, quatre bus RTM prennent les couleurs d'ARTMADA.",
+    "texte_en": "On the day the artists start on their walls, the festival is launched in the evening: DJ set, breakdance show, partners and press. Around the same days, four RTM buses get ARTMADA colours.",
+    "videos": [
+     {
+      "titre": "Soirée d'inauguration",
+      "titre_en": "Opening night",
+      "url": "https://www.instagram.com/reel/DUUIVTRDcG-/",
+      "vues": "6 031"
+     }
+    ]
+   },
+   {
+    "id": "vernissage",
+    "date": "2026-02-05",
+    "quand": "5 févr. 2026 · 18h–22h",
+    "quand_en": "5 Feb 2026 · 6–10pm",
+    "titre": "Le vernissage au Bocal",
+    "titre_en": "The exhibition opening at Le Bocal",
+    "lieu": "Le Bocal, rue Garnier Pagès, Fort-de-France",
+    "texte": "Vernissage de l'exposition « ArtMada 2 » et talk graffiti, avec de la musique et du live painting.",
+    "texte_en": "Opening of the « ArtMada 2 » exhibition and a graffiti talk, with music and live painting.",
+    "videos": [
+     {
+      "titre": "On se voit au vernissage",
+      "titre_en": "See you at the opening",
+      "url": "https://www.instagram.com/reel/DUV09dhgcDt/",
+      "vues": "8 935"
+     },
+     {
+      "titre": "Un soir de vernissage",
+      "titre_en": "An opening night",
+      "url": "https://www.instagram.com/reel/DUesYgfDZIG/",
+      "vues": "5 344"
+     }
+    ]
+   },
+   {
+    "id": "open-mic",
+    "date": "2026-02-06",
+    "quand": "6 févr. 2026 · 18h–23h",
+    "quand_en": "6 Feb 2026 · 6–11pm",
+    "titre": "L'Open Mic",
+    "titre_en": "The Open Mic",
+    "lieu": "Le 33, rue Perrinon, Fort-de-France",
+    "texte": "Une scène ouverte hip-hop : les talents de l'île prennent le micro, après une première édition qui avait marqué en 2024.",
+    "texte_en": "A hip-hop open stage: the island's talents take the mic, after a first edition that left its mark in 2024.",
+    "videos": [
+     {
+      "titre": "Ton premier Open Mic ARTMADA",
+      "titre_en": "Your first ARTMADA Open Mic",
+      "url": "https://www.instagram.com/reel/DUZUI4oDblO/",
+      "vues": "12 568"
+     },
+     {
+      "titre": "L'Open Mic, c'était le feu",
+      "titre_en": "The Open Mic was on fire",
+      "url": "https://www.instagram.com/reel/DUgdf2SAd5v/",
+      "vues": "7 771"
+     }
+    ]
+   },
+   {
+    "id": "bayou",
+    "date": "2026-02-10",
+    "quand": "10 févr. 2026 · 18h–minuit",
+    "quand_en": "10 Feb 2026 · 6pm–midnight",
+    "titre": "La soirée au Bayou",
+    "titre_en": "The night at Le Bayou",
+    "lieu": "Le Bayou, Fort-de-France",
+    "texte": "La veille de la clôture, la soirée de pré-clôture au Bayou, en musique avec Makandja.",
+    "texte_en": "The night before the closing, the pre-closing party at Le Bayou, with music by Makandja.",
+    "videos": [
+     {
+      "titre": "Le Bayou × ARTMADA",
+      "titre_en": "Le Bayou × ARTMADA",
+      "url": "https://www.instagram.com/reel/DUodJt2j4Ev/",
+      "vues": "4 870"
+     }
+    ]
+   },
+   {
+    "id": "block-party",
+    "date": "2026-02-11",
+    "quand": "11 févr. 2026 · 16h–minuit",
+    "quand_en": "11 Feb 2026 · 4pm–midnight",
+    "titre": "La Block Party de clôture",
+    "titre_en": "The closing Block Party",
+    "lieu": "Parking du TOM, rue Victor Sévère, Fort-de-France",
+    "texte": "On bloque la rue et on met du son : ateliers street art et break dance l'après-midi, puis la fête jusqu'à minuit avec Papa Tank et Soundjata, au pied des fresques du TOM. 1 500 personnes sont venues.",
+    "texte_en": "We block the street and turn the sound up: street art and breakdance workshops in the afternoon, then the party until midnight with Papa Tank and Soundjata, at the foot of the TOM murals. 1,500 people came.",
+    "photo": "img/f/a2-yelow.jpg",
+    "photo_alt": "La fresque de Yelow sur le parking du TOM, lieu de la block party",
+    "photo_alt_en": "Yelow's mural at the TOM car park, where the block party took place",
+    "page": "fresques/yelow-tom.html",
+    "page_titre": "Les fresques du TOM",
+    "page_titre_en": "The TOM murals",
+    "videos": [
+     {
+      "titre": "L'annonce de la Block Party",
+      "titre_en": "The Block Party announcement",
+      "url": "https://www.instagram.com/reel/DUhXvDiDWQr/",
+      "vues": "50 040"
+     },
+     {
+      "titre": "La Vibe ARTMADA, c'est ça",
+      "titre_en": "This is the ARTMADA vibe",
+      "url": "https://www.instagram.com/reel/DUzDUL6DccY/",
+      "vues": "7 622"
+     }
+    ]
+   }
+  ],
+  "aussi": [
+   [
+    "Fresque participative de la cité Clarac avec les habitants et le lycée Victor Anicet",
+    "Participatory mural at Cité Clarac with residents and Victor Anicet high school"
+   ],
+   [
+    "Ateliers street art, break dance et peinture le 7 février (Écomusée de Martinique, centre culturel Antoine Tangamen, TOM)",
+    "Street art, breakdance and painting workshops on 7 February (Écomusée de Martinique, Antoine Tangamen cultural centre, TOM)"
+   ],
+   [
+    "Tours des fresques en voiturette les 9 et 11 février",
+    "Mural tours by electric cart on 9 and 11 February"
+   ]
+  ],
+  "fin_video": {
+   "titre": "Un mois après : les émotions de l'édition 2",
+   "titre_en": "One month on: the emotions of edition 2",
+   "url": "https://www.instagram.com/reel/DVzSansCo0T/",
+   "vues": "6 269"
+  }
+ },
+ "e1": {
+  "num": 1,
+  "annee": "2024",
+  "debut": "2024-12-05",
+  "fin": "2024-12-15",
+  "dates": "5 → 15 déc. 2024",
+  "dates_en": "5 → 15 Dec 2024",
+  "credit_video": "Coralie Cambervel",
+  "intro": "La première édition : dix jours de festival dans trois communes, 14 fresques, une exposition, un débat et un open mic. Chaque soir, une vidéo racontait la journée.",
+  "intro_en": "The first edition: ten days across three towns, 14 murals, an exhibition, a debate and an open mic. Every evening, a video told the story of the day.",
+  "moments": [
+   {
+    "id": "lancement",
+    "date": "2024-12-05",
+    "quand": "Début du festival",
+    "quand_en": "Start of the festival",
+    "titre": "Le lancement",
+    "titre_en": "The launch",
+    "lieu": "Théâtre municipal Aimé Césaire, Fort-de-France",
+    "texte": "Soirée de lancement de la première édition, puis les artistes de Martinique, de Guadeloupe, du Togo et d'Afrique du Sud attaquent leurs murs.",
+    "texte_en": "Launch night of the first edition, then the artists from Martinique, Guadeloupe, Togo and South Africa start on their walls.",
+    "photo": "img/f/a1-xan-breeze.jpg",
+    "photo_alt": "Fresque de Xän et Breeze Yoko sur l'ancien cinéma Olympia, ARTMADA #1",
+    "photo_alt_en": "Mural by Xän and Breeze Yoko on the former Olympia cinema, ARTMADA #1",
+    "page": "fresques/xan-breeze-yoko-olympia.html",
+    "page_titre": "Voir la fresque de l'Olympia",
+    "page_titre_en": "See the Olympia mural",
+    "videos": [],
+    "sans_date": true
+   },
+   {
+    "id": "debat",
+    "date": "2024-12-06",
+    "quand": "Pendant le festival",
+    "quand_en": "During the festival",
+    "titre": "Le débat au TOM",
+    "titre_en": "The debate at the TOM",
+    "lieu": "TOM, rue Victor Sévère, Fort-de-France",
+    "texte": "Un débat ouvert à tous : « Faire de la Martinique un haut lieu du street art caribéen ».",
+    "texte_en": "A debate open to everyone: “Making Martinique a hub of Caribbean street art”.",
+    "sans_date": true,
+    "videos": []
+   },
+   {
+    "id": "expo",
+    "date": "2024-12-12",
+    "quand": "Décembre 2024",
+    "quand_en": "December 2024",
+    "titre": "L'exposition aux Archives territoriales",
+    "titre_en": "The exhibition at the Territorial Archives",
+    "lieu": "Archives territoriales de Martinique",
+    "texte": "L'exposition ARTMADA #1 montre le travail des artistes du festival.",
+    "texte_en": "The ARTMADA #1 exhibition shows the work of the festival's artists.",
+    "sans_date": true,
+    "videos": []
+   },
+   {
+    "id": "open-mic-2024",
+    "date": "2024-12-11",
+    "quand": "Décembre 2024",
+    "quand_en": "December 2024",
+    "titre": "L'Open Mic hip-hop",
+    "titre_en": "The hip-hop Open Mic",
+    "lieu": "La Station culturelle",
+    "texte": "La Station culturelle accueille un Open Mic spécial hip-hop : la première scène ouverte du festival.",
+    "texte_en": "La Station culturelle hosts a hip-hop Open Mic: the festival's first open stage.",
+    "sans_date": true,
+    "videos": [
+     {
+      "titre": "Soirée Open Mic",
+      "titre_en": "Open Mic night",
+      "url": "https://www.instagram.com/reel/DDdzSM0sO8N/",
+      "vues": "3 755"
+     }
+    ]
+   },
+   {
+    "id": "cascade",
+    "date": "2024-12-13",
+    "quand": "13 déc. 2024 (vendredi soir)",
+    "quand_en": "13 Dec 2024 (Friday night)",
+    "titre": "Cascade Citron et la fresque des escaliers",
+    "titre_en": "Cascade Citron and the stairs mural",
+    "lieu": "Cascade, Trénelle-Citron, Fort-de-France",
+    "texte": "Un vendredi soir d'ateliers participatifs à Cascade Citron. Dans ce quartier, la fresque des escaliers Cascade a été peinte avec des collégiens et des lycéens.",
+    "texte_en": "A Friday evening of participatory workshops at Cascade Citron. In this neighbourhood, the Cascade stairs mural was painted with secondary and high school students.",
+    "page": "fresques/aurelie-argyre-cascade.html",
+    "page_titre": "Voir la fresque des escaliers Cascade",
+    "page_titre_en": "See the Cascade stairs mural",
+    "videos": [
+     {
+      "titre": "On est partis se poser à Cascade Citron",
+      "titre_en": "An evening at Cascade Citron",
+      "url": "https://www.instagram.com/reel/DDjte-5RUPr/",
+      "vues": "2 758"
+     }
+    ]
+   },
+   {
+    "id": "fin-2024",
+    "date": "2024-12-15",
+    "quand": "15 déc. 2024",
+    "quand_en": "15 Dec 2024",
+    "titre": "La jam de Floréal et la fin du festival",
+    "titre_en": "The Floréal jam and the end of the festival",
+    "lieu": "Ancienne école Les Roses, Floréal, Fort-de-France",
+    "texte": "Une jam à l'ancienne école Les Roses, et le premier tour des fresques en voiturette avec Doudou Style. Puis la première édition se termine.",
+    "texte_en": "A jam at the former Les Roses school, and the first mural tour by electric cart with Doudou Style. Then the first edition comes to an end.",
+    "sans_date": true,
+    "videos": [
+     {
+      "titre": "La 1re édition est finie : merci",
+      "titre_en": "The 1st edition is over: thank you",
+      "url": "https://www.instagram.com/reel/DDpJT6gxsER/",
+      "vues": "3 024"
+     }
+    ]
+   }
+  ],
+  "jours": [
+   {
+    "jour": 1,
+    "date": "5 déc.",
+    "date_en": "5 Dec",
+    "titre": "ARTMADA envahit Fort-de-France",
+    "titre_en": "ARTMADA takes over Fort-de-France",
+    "url": "https://www.instagram.com/reel/DDPD3dZR0at/",
+    "vues": "6 075"
+   },
+   {
+    "jour": 2,
+    "date": "6 déc.",
+    "date_en": "6 Dec",
+    "titre": "Les murs commencent à s'animer",
+    "titre_en": "The walls come to life",
+    "url": "https://www.instagram.com/reel/DDR9k0VOQjD/",
+    "vues": "4 568"
+   },
+   {
+    "jour": 3,
+    "date": "7 déc.",
+    "date_en": "7 Dec",
+    "titre": "Direction Les Trois-Îlets",
+    "titre_en": "Off to Les Trois-Îlets",
+    "url": "https://www.instagram.com/reel/DDUR7TVtyL9/",
+    "vues": "2 985"
+   },
+   {
+    "jour": 4,
+    "date": "8 déc.",
+    "date_en": "8 Dec",
+    "titre": "Dimanche dans le Nord Caraïbe",
+    "titre_en": "Sunday in the North Caribbean",
+    "url": "https://www.instagram.com/reel/DDXAgWIudmC/",
+    "vues": "2 205"
+   },
+   {
+    "jour": 5,
+    "date": "9 déc.",
+    "date_en": "9 Dec",
+    "titre": "On prend un peu de hauteur",
+    "titre_en": "A view from above",
+    "url": "https://www.instagram.com/reel/DDZYEPjA3y5/",
+    "vues": "5 089"
+   },
+   {
+    "jour": 6,
+    "date": "10 déc.",
+    "date_en": "10 Dec",
+    "titre": "Des artistes toujours aussi chauds",
+    "titre_en": "Artists still going strong",
+    "url": "https://www.instagram.com/reel/DDcDxMQRCYu/",
+    "vues": "3 779"
+   },
+   {
+    "jour": 7,
+    "date": "11 déc.",
+    "date_en": "11 Dec",
+    "titre": "L'expo et les murs",
+    "titre_en": "The exhibition and the walls",
+    "url": "https://www.instagram.com/reel/DDedsbaRPwt/",
+    "vues": "3 313"
+   },
+   {
+    "jour": 8,
+    "date": "12 déc.",
+    "date_en": "12 Dec",
+    "titre": "La chaleur et le soleil sont là",
+    "titre_en": "Heat and sunshine",
+    "url": "https://www.instagram.com/reel/DDhJwyxx0Ml/",
+    "vues": "7 466"
+   },
+   {
+    "jour": 9,
+    "date": "13 déc.",
+    "date_en": "13 Dec",
+    "titre": "C'est bientôt la fin",
+    "titre_en": "Almost the end",
+    "url": "https://www.instagram.com/reel/DDj0da4Rgb4/",
+    "vues": "5 816"
+   },
+   {
+    "jour": 10,
+    "date": "14 déc.",
+    "date_en": "14 Dec",
+    "titre": "Ça sent la fin du festival",
+    "titre_en": "The festival is wrapping up",
+    "url": "https://www.instagram.com/reel/DDmQlg5RDZp/",
+    "vues": "8 037"
+   }
+  ]
+ }
+}

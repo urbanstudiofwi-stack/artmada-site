@@ -73,7 +73,8 @@ MENU_DROITE = [
 
 MENU_COMPLET = [
     ("Le festival", "The festival", [("festival.html", "Édition #3", "Edition #3"), ("programme.html", "Programme", "Programme"),
-                                      ("artistes/index.html", "Artistes", "Artists"), ("archives.html", "Archives", "Archive")]),
+                                      ("artistes/index.html", "Artistes", "Artists"), ("temps-forts-2026.html", "Temps forts 2026", "2026 highlights"),
+                                      ("temps-forts-2024.html", "Temps forts 2024", "2024 highlights"), ("archives.html", "Archives", "Archive")]),
     ("Les fresques", "The murals", [("fresques/index.html", "Toutes les fresques", "All murals"), ("carte.html", "La carte", "The map"),
                                     ("visites.html", "Visites & ateliers", "Tours & workshops")]),
     ("Participer", "Get involved", [("benevoles.html", "Devenir bénévole", "Volunteer"), ("partenaires.html", "Partenaires", "Partners"),
