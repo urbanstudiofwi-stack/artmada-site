@@ -163,7 +163,8 @@ def bloc_lieux(p, titre_h="h2"):
 
 def fond_mur(p, fichier):
     """Fresque en noir et blanc, foncée, derrière le gros titre d'une bande sombre."""
-    return f'<div class="fond-mur" aria-hidden="true"><img src="{p.a("img/fonds/" + fichier)}" alt="" width="1600" height="700" loading="lazy" decoding="async"></div>'
+    petit = fichier.replace(".webp", "-1200.webp")
+    return f'<div class="fond-mur" aria-hidden="true"><img src="{p.a("img/fonds/" + fichier)}" srcset="{p.a("img/fonds/" + petit)} 1200w, {p.a("img/fonds/" + fichier)} 2400w" sizes="100vw" alt="" width="2400" height="1050" loading="lazy" decoding="async"></div>'
 
 def accueil(lang):
     p = P(lang, "index.html")
