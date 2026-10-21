@@ -1,0 +1,238 @@
+/* ARTMADA — l'appli du street art.
+   Concept : le béton de la ville, les photos des fresques en héroïnes, une seule couleur d'action (orange).
+   Charte : Digital Garden/05_ENTITES/artmada/IDENTITE_VISUELLE_ARTMADA.md — appli volontairement en thème sombre unique. */
+@font-face{font-family:"Anton";src:url(fonts/anton-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"DM Sans";src:url(fonts/dm-sans-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"DM Sans";src:url(fonts/dm-sans-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"DM Sans";src:url(fonts/dm-sans-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+
+:root{
+  --nuit:#232427;        /* béton nuit : fond */
+  --beton:#34363B;       /* cartes posées sur le fond */
+  --beton-clair:#44474D; /* boutons secondaires */
+  --joint:#55585F;       /* traits */
+  --pale:#B9BCC2;        /* texte secondaire */
+  --chaux:#F6F4EF;       /* texte courant */
+  --barre:#1A1B1E;       /* barre du bas */
+  --orange:#EB782F;      /* action */
+  --encre:#1A1208;       /* texte sur orange / jaune */
+  --jaune:#FCD40D;
+  --magenta:#E3138B;
+  --turquoise:#22C4C4;   /* turquoise ARTMADA éclairci pour rester lisible en petit */
+  --rouge:#E5273B;
+  --e2:var(--orange);    /* édition #2 (2026) */
+  --e1:var(--jaune);     /* édition #1 (2024) */
+  --titre:"Anton",Impact,"Arial Narrow",sans-serif;
+  --texte:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --barre-h:64px;
+  --bas:env(safe-area-inset-bottom,0px);
+  --haut:env(safe-area-inset-top,0px);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:linear-gradient(rgba(35,36,39,.86),rgba(35,36,39,.86)),url(media/beton.webp) center/600px;background-color:var(--nuit);color:var(--chaux);font-family:var(--texte);font-size:16px;line-height:1.5;-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--jaune);outline-offset:2px}
+h1,h2,h3{font-family:var(--titre);font-weight:400;text-transform:uppercase;line-height:1;margin:0;letter-spacing:.01em;text-wrap:balance}
+p{margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- squelette ---------- */
+.appli{height:100%;display:flex;flex-direction:column}
+#vue{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;outline:none;
+  padding-bottom:calc(var(--barre-h) + var(--bas) + 24px)}
+.page{display:flex;flex-direction:column;gap:22px;
+  padding:calc(var(--haut) + 20px) max(18px,env(safe-area-inset-right,0px)) 0 max(18px,env(safe-area-inset-left,0px));
+  max-width:620px;margin:0 auto;width:100%}
+.chargement{height:100%;display:grid;place-items:center;opacity:.6}
+
+.onglets{position:fixed;left:0;right:0;bottom:0;z-index:1000;display:grid;grid-template-columns:repeat(4,1fr);
+  background:var(--barre);border-top:1px solid #3A3C42;
+  padding:0 env(safe-area-inset-right,0px) var(--bas) env(safe-area-inset-left,0px)}
+.onglets a{height:var(--barre-h);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  text-decoration:none;font-size:11.5px;font-weight:500;color:var(--pale)}
+.onglets svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.onglets a[aria-current="page"]{color:var(--orange)}
+
+/* ---------- éléments communs ---------- */
+.surtitre{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pale)}
+.surtitre.e2{color:var(--e2)} .surtitre.e1{color:var(--e1)}
+.gris{color:var(--pale)}
+.petit{font-size:13.5px}
+.bouton{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border-radius:14px;border:0;
+  background:var(--orange);color:var(--encre);font-weight:700;font-size:15px;text-decoration:none;cursor:pointer}
+.bouton.second{background:var(--beton-clair);color:var(--chaux)}
+.bouton.contour{background:transparent;border:1px solid var(--joint);color:var(--chaux)}
+.bouton svg,.ico svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bloc{background:var(--beton);border-radius:18px}
+.puce{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:999px}
+.puce.e2{background:var(--e2);color:var(--encre)} .puce.e1{background:var(--e1);color:var(--encre)}
+.puce.direct{background:var(--magenta);color:#fff}
+.puce.disparue{background:var(--rouge);color:#fff}
+.puce.tampon{background:var(--turquoise);color:#04211E}
+.titre-section{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.titre-section h2{font-size:26px}
+.titre-section a{font-size:14px;font-weight:700;color:var(--orange);text-decoration:none;white-space:nowrap}
+
+/* ---------- accueil ---------- */
+.entete{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.entete img{width:150px;height:auto}
+.entete .lieu{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--pale);margin-top:2px}
+.rond{width:44px;height:44px;border-radius:50%;background:var(--beton-clair);display:grid;place-items:center;color:var(--chaux);text-decoration:none;border:0;cursor:pointer;flex-shrink:0}
+.rond svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+.une{position:relative;display:block;border-radius:22px;overflow:hidden;aspect-ratio:4/3.3;max-width:100%;text-decoration:none;color:var(--chaux);background:var(--beton)}
+.une img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.une::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,36,39,0) 35%,rgba(26,27,30,.94) 100%)}
+.une .haut{position:absolute;left:14px;top:14px;z-index:1;display:flex;gap:8px}
+.une .bas{position:absolute;left:16px;right:16px;bottom:16px;z-index:1;display:flex;flex-direction:column;gap:6px}
+.une h1{font-size:clamp(30px,8.4vw,44px)}
+.une .dates{font-size:15px;font-weight:500;color:#E6E4DE}
+.compte{font-family:var(--titre);font-size:15px;letter-spacing:.04em}
+
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tuile{background:var(--beton);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--chaux);min-height:118px}
+.tuile svg{width:28px;height:28px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:auto}
+.tuile b{font-size:16px;line-height:1.25}
+.tuile span{font-size:13px;color:var(--pale)}
+.tuile .chiffre{font-size:36px;color:var(--chaux);line-height:1}
+.chiffre{font-family:var(--titre);font-size:30px;line-height:1;color:var(--chaux)}
+
+.ligne-carte{display:flex;gap:14px;align-items:center;background:var(--beton);border-radius:18px;padding:10px;text-decoration:none;color:var(--chaux)}
+.ligne-carte img,.ligne-carte .vide{width:84px;height:84px;border-radius:12px;object-fit:cover;flex-shrink:0;background:var(--beton-clair)}
+.ligne-carte .txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.ligne-carte b{font-size:16px;line-height:1.25}
+.ligne-carte .txt span{font-size:13.5px;color:var(--pale)}
+.ligne-carte .fleche{width:20px;height:20px;fill:none;stroke:var(--pale);stroke-width:2;flex-shrink:0}
+.prix{color:var(--jaune);font-weight:700}
+
+.troisieme{border:1px dashed var(--joint);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.troisieme h2{font-size:22px}
+
+/* ---------- carte ---------- */
+.page-carte{position:fixed;inset:0;bottom:calc(var(--barre-h) + var(--bas));display:flex;flex-direction:column}
+#carte{position:absolute;inset:0;background:#1d1e21}
+.carte-haut{position:absolute;z-index:500;left:0;right:0;top:0;
+  padding:calc(var(--haut) + 12px) max(14px,env(safe-area-inset-right,0px)) 10px max(14px,env(safe-area-inset-left,0px));
+  display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,rgba(26,27,30,.92) 55%,rgba(26,27,30,0));pointer-events:none}
+.carte-haut > *{pointer-events:auto}
+.recherche{display:flex;align-items:center;gap:10px;background:var(--chaux);color:var(--nuit);border-radius:14px;padding:0 14px;height:48px}
+.recherche svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;flex-shrink:0}
+.recherche input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:16px;color:var(--nuit);outline:none}
+.puces{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.puces::-webkit-scrollbar{display:none}
+.filtre{flex-shrink:0;min-height:40px;padding:0 14px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;
+  background:var(--nuit);color:var(--chaux);border:1px solid #5A5D64}
+.filtre[aria-pressed="true"]{background:var(--orange);color:var(--encre);border-color:var(--orange)}
+.carte-actions{position:absolute;z-index:500;right:max(14px,env(safe-area-inset-right,0px));bottom:14px;display:flex;flex-direction:column;gap:10px;transition:bottom .2s}
+.carte-actions.haut{bottom:136px}
+.flottant{width:50px;height:50px;border-radius:50%;border:0;background:var(--chaux);color:var(--nuit);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.45);cursor:pointer}
+.flottant svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fiche-flottante{position:absolute;z-index:600;left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));bottom:12px;
+  border:1px solid #4A4D54;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.fiche-flottante .nom{font-family:var(--titre);font-size:22px;line-height:1.05;text-transform:uppercase}
+
+.pin{display:block;width:46px;height:46px;border-radius:50%;border:3px solid var(--e2);overflow:hidden;background:var(--beton);box-shadow:0 5px 14px rgba(0,0,0,.55);transition:transform .15s}
+.pin img{width:100%;height:100%;object-fit:cover}
+.pin.e1{border-color:var(--e1)}
+.pin.tamponne{box-shadow:0 0 0 3px var(--turquoise),0 5px 14px rgba(0,0,0,.55)}
+.pin.choisi{transform:scale(1.25)}
+.pin .num{display:grid;place-items:center;width:100%;height:100%;font-family:var(--titre);font-size:18px;color:var(--chaux)}
+.pin-etape{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--orange);color:var(--encre);font-family:var(--titre);font-size:16px;border:3px solid var(--nuit);box-shadow:0 4px 12px rgba(0,0,0,.5)}
+.moi{width:18px;height:18px;border-radius:50%;background:var(--turquoise);border:3px solid var(--chaux);box-shadow:0 0 0 8px rgba(34,196,196,.25)}
+.leaflet-container{font-family:var(--texte);background:#1d1e21}
+.leaflet-control-attribution{background:rgba(26,27,30,.75)!important;color:var(--pale)!important;font-size:10px}
+.leaflet-control-attribution a{color:var(--pale)!important}
+
+.bascule{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--beton);border-radius:14px;padding:4px;width:max-content}
+.bascule button{min-height:38px;padding:0 16px;border-radius:10px;border:0;background:transparent;color:var(--pale);font-weight:700;font-size:14px;cursor:pointer}
+.bascule button[aria-pressed="true"]{background:var(--chaux);color:var(--nuit)}
+
+.liste-fresques{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.vignette{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--chaux);min-width:0}
+.vignette .ph{position:relative;aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--beton)}
+.vignette .ph img{width:100%;height:100%;object-fit:cover}
+.vignette .ph .puce{position:absolute;left:8px;top:8px;font-size:11px;padding:3px 8px}
+.vignette .ph .ok{position:absolute;right:8px;top:8px;width:26px;height:26px;border-radius:50%;background:var(--turquoise);display:grid;place-items:center}
+.vignette .ph .ok svg{width:16px;height:16px;fill:none;stroke:#04211E;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.vignette b{font-size:14.5px;line-height:1.25;overflow-wrap:anywhere}
+.vignette span{font-size:12.5px;color:var(--pale)}
+.sans-photo{width:100%;height:100%;display:grid;place-items:center;padding:12px;text-align:center;font-family:var(--titre);font-size:20px;text-transform:uppercase;color:var(--pale);background:repeating-linear-gradient(135deg,var(--beton) 0 12px,#3A3C41 12px 24px)}
+
+/* ---------- fiche fresque ---------- */
+.fiche-photo{position:relative;margin:0 calc(-1 * max(18px,env(safe-area-inset-right,0px))) 0 calc(-1 * max(18px,env(safe-area-inset-left,0px)));
+  margin-top:calc(-1 * (var(--haut) + 20px));aspect-ratio:4/3.4;max-height:62vh;background:var(--beton);overflow:hidden}
+.fiche-photo img{width:100%;height:100%;object-fit:cover}
+.fiche-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,27,30,.55) 0%,rgba(26,27,30,0) 28%,rgba(26,27,30,0) 62%,var(--nuit) 100%)}
+.fiche-photo .boutons{position:absolute;z-index:2;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));top:calc(var(--haut) + 14px);display:flex;justify-content:space-between}
+.fiche-photo .rond{background:rgba(26,27,30,.72);backdrop-filter:blur(6px)}
+.fiche-photo .credit{position:absolute;z-index:2;right:max(16px,env(safe-area-inset-right,0px));bottom:48px;font-size:11px;color:rgba(246,244,239,.75)}
+.fiche-tete{margin-top:-44px;position:relative;z-index:2;display:flex;flex-direction:column;gap:6px}
+.fiche-tete h1{font-size:clamp(38px,11vw,54px)}
+.fiche-tete .oeuvre{font-size:18px;font-weight:700}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.trio a,.trio button{min-height:68px;border-radius:14px;border:0;background:var(--beton);color:var(--chaux);font-size:13px;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;text-decoration:none;cursor:pointer;text-align:center;padding:6px}
+.trio svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tamponner{min-height:68px;border-radius:16px;border:0;padding:0 16px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;background:var(--orange);color:var(--encre);width:100%}
+.tamponner.fait{background:var(--turquoise);color:#04211E}
+.tamponner.loin{background:var(--beton-clair);color:var(--chaux)}
+.tamponner svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.tamponner b{display:block;font-size:16px}
+.tamponner span{display:block;font-size:13px;font-weight:500}
+.histoire{display:flex;flex-direction:column;gap:12px}
+.histoire p{font-size:16px;line-height:1.62;color:#E6E4DE;max-width:62ch}
+.lien-texte{background:none;border:0;padding:0;color:var(--orange);font-weight:700;font-size:14px;cursor:pointer;text-align:left;text-decoration:underline;text-underline-offset:3px}
+.artiste{display:flex;flex-direction:column;gap:10px;padding:16px}
+.artiste h3{font-size:24px}
+.artiste p{font-size:15px;line-height:1.55;color:#E6E4DE}
+.infos{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14.5px}
+.infos dt{color:var(--pale)} .infos dd{margin:0}
+
+/* ---------- parcours ---------- */
+.parcours-carte{overflow:hidden;display:flex;flex-direction:column}
+.parcours-carte .mosaique{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:3px;height:150px;overflow:hidden}
+.parcours-carte .mosaique > *{min-height:0}
+.parcours-carte .mosaique img,.parcours-carte .mosaique .sans-photo{width:100%;height:100%;object-fit:cover}
+.parcours-carte .mosaique > :first-child{grid-row:1/3}
+.parcours-carte .corps{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px}
+.parcours-carte h2{font-size:24px}
+.parcours-carte p{font-size:14.5px;color:#E6E4DE}
+.parcours-carte .pied{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:4px}
+.mesures{display:flex;gap:14px;font-size:13.5px;color:var(--pale);font-variant-numeric:tabular-nums}
+.mesures b{color:var(--chaux)}
+.carte-parcours{position:relative;height:300px;border-radius:18px;overflow:hidden;margin:0 calc(-1 * max(18px,env(safe-area-inset-right,0px))) 0 calc(-1 * max(18px,env(safe-area-inset-left,0px)));border-radius:0}
+.etapes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
+.etapes li{display:grid;grid-template-columns:34px 1fr;gap:12px;position:relative;padding-bottom:14px}
+.etapes li::before{content:"";position:absolute;left:16px;top:34px;bottom:0;width:2px;background:var(--joint)}
+.etapes li:last-child::before{display:none}
+.etapes .n{width:34px;height:34px;border-radius:50%;background:var(--orange);color:var(--encre);display:grid;place-items:center;font-family:var(--titre);font-size:16px}
+.etapes .n.ok{background:var(--turquoise);color:#04211E}
+.etapes a{text-decoration:none}
+
+/* ---------- passeport ---------- */
+.passeport-tete{display:flex;flex-direction:column;gap:14px;padding:18px}
+.jauge{height:12px;border-radius:999px;background:var(--nuit);overflow:hidden}
+.jauge i{display:block;height:100%;background:var(--turquoise);border-radius:999px}
+.grille-tampons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.tampon{aspect-ratio:1;border-radius:50%;overflow:hidden;position:relative;display:block;border:2px dashed var(--joint);background:transparent}
+.tampon img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.45)}
+.tampon.ok{border:3px solid var(--turquoise)}
+.tampon.ok img{filter:none}
+.tampon .q{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--titre);font-size:13px;color:var(--pale);text-align:center;padding:8px;line-height:1.1;text-transform:uppercase}
+.tampon.ok .q{display:none}
+.note{font-size:13px;color:var(--pale);line-height:1.5}
+
+.toast{position:fixed;z-index:2000;left:50%;transform:translateX(-50%);bottom:calc(var(--barre-h) + var(--bas) + 16px);
+  background:var(--chaux);color:var(--nuit);font-weight:700;font-size:14.5px;padding:12px 18px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.45);max-width:calc(100% - 32px);text-align:center}
+
+@media (min-width:700px){
+  .liste-fresques{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .carte-parcours{margin:0;border-radius:18px}
+  .fiche-photo{margin-left:0;margin-right:0;border-radius:0 0 22px 22px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
