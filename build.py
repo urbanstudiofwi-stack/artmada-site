@@ -60,31 +60,34 @@ class Page:
 # ------------------------------------------------------------------ gabarit
 
 MENU = [
-    ("festival.html", "Le festival", "The festival"),
+    ("festival.html", "Festival", "Festival"),
     ("programme.html", "Programme", "Programme"),
+    ("carte.html", "Carte", "Map"),
     ("artistes/index.html", "Artistes", "Artists"),
-    ("fresques/index.html", "Fresques & carte", "Murals & map"),
-    ("visites.html", "Visites & ateliers", "Tours & workshops"),
-    ("boutique.html", "Boutique", "Shop"),
-]
-MENU_DROITE = [
-    ("archives.html", "Archives", "Archive"),
-    ("presse.html", "Presse", "Press"),
 ]
 
 MENU_COMPLET = [
     ("Le festival", "The festival", [("festival.html", "Édition #3", "Edition #3"), ("programme.html", "Programme", "Programme"),
                                       ("artistes/index.html", "Artistes", "Artists"), ("temps-forts-2026.html", "Temps forts 2026", "2026 highlights"),
                                       ("temps-forts-2024.html", "Temps forts 2024", "2024 highlights"), ("archives.html", "Archives", "Archive")]),
-    ("Les fresques", "The murals", [("fresques/index.html", "Toutes les fresques", "All murals"), ("carte.html", "La carte", "The map"),
+    ("Les fresques", "The murals", [("carte.html", "La carte", "The map"), ("fresques/index.html", "Toutes les fresques", "All murals"),
                                     ("visites.html", "Visites & ateliers", "Tours & workshops")]),
-    ("Participer", "Get involved", [("benevoles.html", "Devenir bénévole", "Volunteer"), ("partenaires.html", "Partenaires", "Partners"),
-                                    ("boutique.html", "Boutique", "Shop"),
+    ("Participer", "Get involved", [("boutique.html", "Shop", "Shop"), ("benevoles.html", "Devenir bénévole", "Volunteer"), ("partenaires.html", "Partenaires", "Partners"),
                                     ("https://www.bizouk.com/events/details/atelier-graffiti-a-lurban-studio-avec-do/131478", "Réserver l'atelier", "Book the workshop")]),
     ("Infos", "Info", [("presse.html", "Presse", "Press"), ("infos.html", "Infos pratiques", "Practical info"), ("infos.html#contact", "Contact", "Contact")]),
 ]
 
-def entete(p, actif):
+ICONES = {
+    "calendrier": '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
+    "lieu": '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-7.2 7-12.5A7 7 0 0 0 5 9.5C5 14.8 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
+    "sac": '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>',
+    "fleche": '<svg width="20" height="12" viewBox="0 0 20 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M0 6h18M13 1l5 5-5 5"/></svg>',
+    "instagram": '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
+    "facebook": '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.6 1.6-1.6h1.7V3.4a22 22 0 0 0-2.5-.1c-2.5 0-4.2 1.5-4.2 4.3v2.3H7.4V13h2.7v8h3.4z"/></svg>',
+    "youtube": '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3L10 15z"/></svg>',
+}
+
+def entete(p, actif, sur_video=False):
     L = p.lang
     def lien(c, fr, en):
         cur = ' aria-current="page"' if actif == c else ""
@@ -101,15 +104,17 @@ def entete(p, actif):
         colonnes += f'<div class="gm-col"><p class="gm-titre">{t(L, titre_fr, titre_en)}</p><ul>{lis}</ul></div>'
     langue = t(L, "EN", "FR")
     langue_titre = t(L, "English version", "Version française")
+    shop_cur = ' aria-current="page"' if actif == "boutique.html" else ""
+    cls = "entete sur-video" if sur_video else "entete"
     return f'''<a class="evitement" href="#contenu">{t(L, "Aller au contenu", "Skip to content")}</a>
-<header class="entete">
+<header class="{cls}">
   <div class="entete-in">
-    <nav class="nav" aria-label="{t(L, 'Menu principal', 'Main menu')}">{nav}</nav>
     <a class="entete-logo" href="{p.u('index.html')}" aria-label="{t(L, 'ARTMADA Street Festival, accueil', 'ARTMADA Street Festival, home')}"><img src="{p.a('img/da/logo-400.webp')}" alt="ARTMADA Street Festival" width="400" height="132"></a>
+    <nav class="nav" aria-label="{t(L, 'Menu principal', 'Main menu')}">{nav}</nav>
     <div class="entete-droite">
       <a class="langue" href="{p.autre_langue()}" hreflang="{t(L, 'en', 'fr')}" lang="{t(L, 'en', 'fr')}" title="{langue_titre}">{langue}</a>
-      <a class="bouton bouton-orange bouton-petit masque-petit" href="{p.u('benevoles.html')}">{t(L, 'Devenir bénévole', 'Volunteer')}</a>
-      <button class="menu-bouton" id="menu-bouton" type="button" aria-expanded="false" aria-controls="grand-menu"><span class="burger" aria-hidden="true"></span>Menu</button>
+      <a class="bouton-shop" href="{p.u('boutique.html')}"{shop_cur}>Shop {ICONES['fleche']}</a>
+      <button class="menu-bouton" id="menu-bouton" type="button" aria-expanded="false" aria-controls="grand-menu" aria-label="{t(L, 'Ouvrir le menu', 'Open menu')}"><span class="burger" aria-hidden="true"></span></button>
     </div>
   </div>
 </header>
@@ -124,9 +129,17 @@ def entete(p, actif):
   <nav class="gm-corps" aria-label="{t(L, 'Plan du site', 'Site map')}">{colonnes}</nav>
   <div class="gm-bas">
     <span class="gm-dates">{t(L, 'Édition #3 · 25 janv. → 4 févr. 2027 · Fort-de-France', 'Edition #3 · 25 Jan → 4 Feb 2027 · Fort-de-France')}</span>
-    <span><a href="https://www.instagram.com/artmadastreetfestival972/" rel="noopener">Instagram</a> · <a href="mailto:contact@artmadastreetfestival.com">contact@artmadastreetfestival.com</a></span>
+    <button type="button" class="gm-installer" data-installer>{t(L, "📲 Mettre ARTMADA sur l'écran d'accueil", "📲 Add ARTMADA to your home screen")}</button>
+    <p class="gm-installer-aide" data-installer-aide hidden>{t(L, "Sur iPhone : touche le bouton Partager de Safari, puis « Sur l'écran d'accueil ». Sur Android : menu ⋮ de Chrome, puis « Ajouter à l'écran d'accueil ».", "On iPhone: tap Safari's Share button, then “Add to Home Screen”. On Android: Chrome menu ⋮, then “Add to Home screen”.")}</p>
   </div>
 </div>'''
+
+def barre_mobile(p, actif):
+    L = p.lang
+    def b(c, ico, fr, en, cls=""):
+        cur = ' aria-current="page"' if actif == c else ""
+        return f'<a class="{cls}" href="{p.u(c)}"{cur}>{ICONES[ico]}<span>{t(L, fr, en)}</span></a>'
+    return f'''<nav class="barre-mobile" aria-label="{t(L, 'Accès rapide', 'Quick access')}">{b('programme.html', 'calendrier', 'Programme', 'Programme')}{b('carte.html', 'lieu', 'Carte', 'Map')}{b('boutique.html', 'sac', 'Shop', 'Shop', 'barre-shop')}</nav>'''
 
 def pied(p):
     L = p.lang
@@ -134,26 +147,37 @@ def pied(p):
         return f'<li><a href="{p.u(c)}">{t(L, fr, en)}</a></li>'
     return f'''<footer class="pied">
   <div class="pied-in">
-    <div style="display:flex;flex-direction:column;gap:14px">
+    <div class="pied-marque">
       <span class="pied-logo"><img src="{p.a('img/da/logo-400.webp')}" alt="ARTMADA" width="400" height="132" loading="lazy"><img src="{p.a('img/da/street-festival.webp')}" alt="Street Festival" width="1000" height="199" loading="lazy" class="pied-script"></span>
-      <p class="petit" style="max-width:340px">{t(L, "Le festival de street art de Fort-de-France, Martinique. Organisé par l'association NPL MADA PAINT, avec la Ville de Fort-de-France.", "The street art festival of Fort-de-France, Martinique. Organised by the NPL MADA PAINT association, with the City of Fort-de-France.")}</p>
+      <p>{t(L, "Le festival de street art de Fort-de-France, Martinique. Organisé par l'association NPL MADA PAINT, avec la Ville de Fort-de-France.", "The street art festival of Fort-de-France, Martinique. Organised by the NPL MADA PAINT association, with the City of Fort-de-France.")}</p>
+      <div class="pied-reseaux">
+        <a href="https://www.instagram.com/artmadastreetfestival972/" rel="noopener" aria-label="Instagram">{ICONES['instagram']}</a>
+        <a href="https://www.facebook.com/artmadastreetfestival" rel="noopener" aria-label="Facebook">{ICONES['facebook']}</a>
+        <a href="https://www.youtube.com/channel/UCjXDQ---HEdjzB3rwDdRp8Q" rel="noopener" aria-label="YouTube">{ICONES['youtube']}</a>
+      </div>
     </div>
     <div><h2>{t(L, 'Le festival', 'The festival')}</h2><ul>
-      {li('festival.html', 'Édition #3', 'Edition #3')}{li('programme.html', 'Programme', 'Programme')}{li('artistes/index.html', 'Artistes', 'Artists')}{li('fresques/index.html', 'Fresques & carte', 'Murals & map')}{li('archives.html', 'Archives', 'Archive')}
+      {li('festival.html', 'Édition #3', 'Edition #3')}{li('programme.html', 'Programme', 'Programme')}{li('artistes/index.html', 'Artistes', 'Artists')}{li('archives.html', 'Archives', 'Archive')}{li('presse.html', 'Presse', 'Press')}
+    </ul></div>
+    <div><h2>{t(L, 'Visiter', 'Visit')}</h2><ul>
+      {li('carte.html', 'La carte', 'The map')}{li('fresques/index.html', 'Les fresques', 'The murals')}{li('visites.html', 'Visites & ateliers', 'Tours & workshops')}{li('infos.html', 'Infos pratiques', 'Practical info')}
     </ul></div>
     <div><h2>{t(L, 'Participer', 'Get involved')}</h2><ul>
-      {li('visites.html', 'Visites & ateliers', 'Tours & workshops')}{li('benevoles.html', 'Bénévoles', 'Volunteer')}{li('boutique.html', 'Boutique', 'Shop')}{li('partenaires.html', 'Partenaires', 'Partners')}{li('presse.html', 'Presse', 'Press')}{li('infos.html', 'Infos pratiques', 'Practical info')}
+      {li('boutique.html', 'Shop', 'Shop')}{li('benevoles.html', 'Bénévoles', 'Volunteer')}{li('partenaires.html', 'Partenaires', 'Partners')}<li><a href="mailto:contact@artmadastreetfestival.com">Contact</a></li>
     </ul></div>
-    <div><h2>Contact</h2><ul>
-      <li><a href="mailto:contact@artmadastreetfestival.com">contact@<wbr>artmadastreetfestival.com</a></li>
-      <li><a href="https://www.instagram.com/artmadastreetfestival972/" rel="noopener">Instagram</a></li>
-      <li><a href="https://www.facebook.com/artmadastreetfestival" rel="noopener">Facebook</a></li>
-      <li><a href="https://www.youtube.com/channel/UCjXDQ---HEdjzB3rwDdRp8Q" rel="noopener">YouTube</a></li>
-    </ul></div>
+    <div class="pied-news">
+      <h2>{t(L, 'Restons en contact', 'Stay connected')}</h2>
+      <p>{t(L, "Le programme, les artistes, les nouveaux murs : reçois toutes les infos du festival.", "Programme, artists, new walls: get all the festival news.")}</p>
+      <form class="news" data-news data-mail="contact@artmadastreetfestival.com" data-sujet="{t(L, 'Inscription à la newsletter ARTMADA', 'ARTMADA newsletter sign-up')}" data-corps="{t(L, 'Bonjour, je veux recevoir les infos du festival ARTMADA à cette adresse :', 'Hello, I would like to receive ARTMADA festival news at this address:')}">
+        <label for="news-mail-{L}">{t(L, 'Ton adresse mail', 'Your email address')}</label>
+        <div class="news-ligne"><input id="news-mail-{L}" type="email" name="email" required autocomplete="email" placeholder="{t(L, 'ton@mail.com', 'you@mail.com')}"><button type="submit" aria-label="{t(L, "S'inscrire", 'Sign up')}">{ICONES['fleche']}</button></div>
+        <p class="petit">{t(L, "En t'inscrivant, tu acceptes de recevoir les mails du festival. Tu peux te désinscrire à tout moment.", "By signing up, you agree to receive emails from the festival. You can unsubscribe at any time.")} <a href="{p.u('confidentialite.html')}">{t(L, 'Confidentialité', 'Privacy')}</a></p>
+      </form>
+    </div>
   </div>
   <div class="pied-bas">
     <span>© 2027 NPL MADA PAINT · {t(L, 'Association loi 1901', 'Non-profit association')} · Fort-de-France, Martinique</span>
-    <span><a href="{p.u('mentions-legales.html')}">{t(L, 'Mentions légales', 'Legal notice')}</a> · <a href="{p.u('confidentialite.html')}">{t(L, 'Confidentialité', 'Privacy')}</a></span>
+    <span class="pied-legal"><a href="{p.u('mentions-legales.html')}">{t(L, 'Mentions légales', 'Legal notice')}</a><a href="{p.u('cgu.html')}">{t(L, 'CGU', 'Terms of use')}</a><a href="{p.u('cgv.html')}">{t(L, 'Conditions de vente', 'Terms of sale')}</a><a href="{p.u('confidentialite.html')}">{t(L, 'Confidentialité', 'Privacy')}</a><a href="{p.u('accessibilite.html')}">{t(L, 'Accessibilité', 'Accessibility')}</a></span>
   </div>
 </footer>'''
 
@@ -208,7 +232,7 @@ def bloc_ld(objets):
     txt = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return f'<script type="application/ld+json">{txt}</script>\n'
 
-def document(p, titre, description, corps, actif=None, image=None, titre_complet=None, ld=None, noindex=False):
+def document(p, titre, description, corps, actif=None, image=None, titre_complet=None, ld=None, noindex=False, sur_video=False):
     L = p.lang
     if not titre_complet:
         titre_complet = f"{titre} · ARTMADA Street Festival" if titre else t(L, "ARTMADA · Festival de street art de Fort-de-France, Martinique", "ARTMADA · Street art festival in Fort-de-France, Martinique")
@@ -239,18 +263,25 @@ def document(p, titre, description, corps, actif=None, image=None, titre_complet
 <meta property="og:type" content="website">
 <meta property="og:locale" content="{t(L, 'fr_FR', 'en_GB')}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#232427">
-<link rel="icon" type="image/png" href="{p.a('favicon.png')}">
+<meta name="theme-color" content="#1D1E21">
+<link rel="icon" type="image/png" sizes="64x64" href="{p.a('favicon.png')}">
+<link rel="icon" type="image/png" sizes="32x32" href="{p.a('favicon-32.png')}">
 <link rel="apple-touch-icon" href="{p.a('apple-touch-icon.png')}">
+<link rel="manifest" href="{p.racine}manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ARTMADA">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preload" href="{p.a('fonts/anton-latin-400-normal.woff2')}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{p.a('css/style.css')}">
 {bloc_ld(objets)}</head>
-<body>
-{entete(p, actif)}
+<body class="{'page-video' if sur_video else 'page'}">
+{entete(p, actif, sur_video)}
 <main id="contenu">
 {corps}
 </main>
 {pied(p)}
+{barre_mobile(p, actif)}
 <script src="{p.a('js/main.js')}" defer></script>
 </body>
 </html>
@@ -334,6 +365,16 @@ def construire():
         Image.open(jpg).save(jpg.with_suffix(".webp"), "WEBP", quality=78, method=6)
     (DIST / "CNAME").write_text("artmadastreetfestival.com\n")
     (DIST / ".nojekyll").write_text("")
+    # appli « écran d'accueil » (téléphone)
+    manifeste = {"name": "ARTMADA Street Festival", "short_name": "ARTMADA", "lang": "fr",
+                 "description": "Programme, carte des fresques et shop du festival de street art de Fort-de-France.",
+                 "start_url": "/?source=ecran-accueil", "scope": "/", "display": "standalone",
+                 "background_color": "#1D1E21", "theme_color": "#1D1E21",
+                 "icons": [{"src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png"},
+                           {"src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png"},
+                           {"src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}],
+                 "shortcuts": [{"name": "Programme", "url": "/programme.html"}, {"name": "Carte", "url": "/carte.html"}, {"name": "Shop", "url": "/boutique.html"}]}
+    (DIST / "manifest.webmanifest").write_text(json.dumps(manifeste, ensure_ascii=False, indent=1), "utf-8")
     for lang in ("fr", "en"):
         PC.toutes_les_pages(lang)
     (DIST / "404.html").write_text(optimiser_images(PC.page_404()), "utf-8")

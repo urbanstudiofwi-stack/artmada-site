@@ -68,18 +68,72 @@
   });
 })();
 
-// V2 : les éléments apparaissent quand on arrive dessus en défilant
+// Apparition au défilement : blocs (.rv) et gros titres mot par mot (.anim-titre)
 (function () {
-  var els = document.querySelectorAll(".rv");
-  if (!els.length) return;
   if (!("IntersectionObserver" in window)) return;   // vieux navigateur : tout reste visible
   document.documentElement.classList.add("js");
+  document.querySelectorAll(".anim-titre").forEach(function (h) {
+    if (h.querySelector(".mot-anim")) return;
+    var mots = h.textContent.trim().split(/\s+/);
+    h.setAttribute("aria-label", h.textContent.trim());
+    h.innerHTML = mots.map(function (m, i) {
+      return '<span class="mot-anim" aria-hidden="true" style="transition-delay:' + (i * 0.09) + 's">' + m.replace(/[<>&]/g, "") + "</span>";
+    }).join(" ");
+  });
   var obs = new IntersectionObserver(function (entrees) {
     entrees.forEach(function (en) {
       if (en.isIntersecting) { en.target.classList.add("vu"); obs.unobserve(en.target); }
     });
   }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
-  els.forEach(function (el) { obs.observe(el); });
+  document.querySelectorAll(".rv, .anim-titre").forEach(function (el) { obs.observe(el); });
+})();
+
+// Vidéo d'accueil (after movie en noir et blanc) : chargée seulement si utile
+(function () {
+  var v = document.querySelector(".v3-video");
+  if (!v) return;
+  var bouton = document.querySelector("[data-video-pause]");
+  var calme = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var eco = navigator.connection && (navigator.connection.saveData || /2g/.test(navigator.connection.effectiveType || ""));
+  if (calme || eco) { if (bouton) bouton.hidden = true; return; }   // on garde l'image fixe
+  v.src = window.innerWidth < 700 ? v.getAttribute("data-src-petit") : v.getAttribute("data-src");
+  v.muted = true;
+  var p = v.play(); if (p && p.catch) p.catch(function () {});
+  if (bouton) bouton.addEventListener("click", function () {
+    if (v.paused) { v.play(); bouton.setAttribute("aria-pressed", "false"); }
+    else { v.pause(); bouton.setAttribute("aria-pressed", "true"); }
+  });
+})();
+
+// Newsletter : en attendant un outil d'envoi, l'inscription part par mail
+(function () {
+  document.querySelectorAll("[data-news]").forEach(function (f) {
+    f.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var mail = f.querySelector("input[type=email]").value.trim();
+      if (!mail) return;
+      window.location.href = "mailto:" + f.getAttribute("data-mail") + "?subject=" + encodeURIComponent(f.getAttribute("data-sujet")) + "&body=" + encodeURIComponent(f.getAttribute("data-corps") + " " + mail);
+      if (!f.querySelector(".news-merci")) {
+        var m = document.createElement("p"); m.className = "news-merci";
+        m.textContent = document.documentElement.lang === "en" ? "Your mail app opens: just press send." : "Ta messagerie s'ouvre : il ne reste qu'à envoyer.";
+        f.appendChild(m);
+      }
+    });
+  });
+})();
+
+// « Mettre ARTMADA sur l'écran d'accueil »
+(function () {
+  var invite = null;
+  var bouton = document.querySelector("[data-installer]");
+  var aide = document.querySelector("[data-installer-aide]");
+  if (!bouton) return;
+  if (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) { bouton.hidden = true; return; }
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); invite = e; });
+  bouton.addEventListener("click", function () {
+    if (invite) { invite.prompt(); invite = null; }
+    else if (aide) { aide.hidden = false; }
+  });
 })();
 
 // Boutique : le t-shirt qui tourne (Il tourne / Face / Dos) et le choix de la taille

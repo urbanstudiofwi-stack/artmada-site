@@ -75,6 +75,13 @@
  ],
  "articles": [
   {
+   "titre": "« Au pied du mur » (Tout en doc), suivi d'un échange avec Doudou Style, collectif Mada Paint",
+   "media": "Martinique la 1ère (TV) · France Télévisions",
+   "date": "sept. 2026",
+   "url": "https://www.francetvpro.fr/contenu-de-presse/78261101",
+   "tri": "2026-09-16"
+  },
+  {
    "titre": "Fresque de Tempo Nok à Fort-de-France pour ARTMADA",
    "media": "Street Art Utopia",
    "date": "mars 2026",
@@ -139,17 +146,17 @@
   },
   {
    "titre": "Reportage ARTMADA Street Festival 2026",
-   "media": "RCI Martinique (radio/web)",
+   "media": "VIA ATV (TV)",
    "date": "févr. 2026",
    "url": "",
    "tri": "2026-02"
   },
   {
-   "titre": "Reportage ARTMADA Street Festival 2026",
-   "media": "VIA ATV (TV)",
-   "date": "févr. 2026",
-   "url": "",
-   "tri": "2026-02"
+   "titre": "[VIDÉO] La « Jam ArtMada », un avant-goût du festival de street art à Fort-de-France",
+   "media": "RCI Martinique (radio/web)",
+   "date": "janv. 2026",
+   "url": "https://rci.fm/martinique/infos/Culture/VIDEO-La-Jam-ArtMada-un-avant-gout-du-festival-de-street-art-Fort-de-France",
+   "tri": "2026-01-30"
   },
   {
    "titre": "Festival ArtMada Street 2026",
@@ -178,6 +185,13 @@
    "date": "janv. 2026",
    "url": "https://www.france.tv/la1ere/martinique/tout-en-doc/8083851-au-pied-du-mur.html",
    "tri": "2026-01-20"
+  },
+  {
+   "titre": "Derniers jours pour la 1ère édition de l'« Artmada Street Festival » en Martinique",
+   "media": "RCI Martinique",
+   "date": "déc. 2024",
+   "url": "https://rci.fm/martinique/infos/Culture/Derniers-jours-pour-la-1ere-edition-de-l-Artmada-Street-Festival-en-Martinique",
+   "tri": "2024-12-13"
   },
   {
    "titre": "ARTMADA, le street art festival qui embellit les murs de trois communes de la Martinique",
@@ -226,13 +240,6 @@
    "media": "Madinin'Art",
    "date": "2024",
    "url": "https://www.madinin-art.net/artmada-appel-a-artiste/",
-   "tri": "2024"
-  },
-  {
-   "titre": "ARTMADA (article)",
-   "media": "RCI",
-   "date": "2024",
-   "url": "https://rci.fm/node/5302922",
    "tri": "2024"
   },
   {

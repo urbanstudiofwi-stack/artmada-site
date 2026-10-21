@@ -1,7 +1,7 @@
 """Pages construites à partir des données : artistes, fresques, carte, archives, presse."""
 from build import *  # noqa: F401,F403
 from urllib.parse import quote
-from pages_contenu import P, T, MAIL, INSTA
+from pages_contenu import P, T, MAIL, INSTA, bloc_lieux
 
 CREAPOLIS = "https://www.creapolis.io/tracks/festival-artmada"
 REGIONS = {"martinique": ("Martinique", "Martinique"), "caraibe": ("Caraïbe", "Caribbean"), "international": ("International", "International")}
@@ -376,12 +376,13 @@ def carte(p):
     donnees = _json.dumps(points, ensure_ascii=False).replace("</", "<\\/")
     corps = f'''
 {bloc_tete(p, [(None, T(p, 'Carte', 'Map'))], T(p, 'La carte des fresques', 'Mural map'), T(p, "Toutes les fresques sur la carte, et trois parcours à pied à suivre avec Google Maps. Clique sur un point pour voir la fresque.", "Every mural on the map, and three walking routes to follow with Google Maps. Tap a point to see the mural."), T(p, 'Parcours libre', 'Self-guided'))}
+{bloc_lieux(p)}
 <section class="cadre" style="padding-bottom:clamp(40px,5vw,64px)">
   <div class="filtres" id="filtre-edition" role="group" aria-label="{T(p, 'Choisir une édition', 'Choose an edition')}">
     <button type="button" data-m="tout" aria-pressed="true">{T(p, 'Les deux éditions', 'Both editions')}</button><button type="button" data-m="e2" aria-pressed="false">#2 · 2026</button><button type="button" data-m="e1" aria-pressed="false">#1 · 2024</button>
   </div>
   <div class="carte-cadre"><div id="carte" style="position:absolute;inset:0"></div></div>
-  <p class="petit" style="margin-top:10px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#EB782F;vertical-align:-1px"></span> ARTMADA #2 · 2026 &nbsp; <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#141414;vertical-align:-1px"></span> ARTMADA #1 · 2024</p>
+  <p class="petit" style="margin-top:10px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#FCD40D;border:2px solid #1D1E21;box-sizing:border-box;vertical-align:-1px"></span> ARTMADA #2 · 2026 &nbsp; <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#141414;vertical-align:-1px"></span> ARTMADA #1 · 2024</p>
   <p class="petit gris" style="margin-top:10px">{T(p, "Fond de carte © les contributeurs OpenStreetMap.", "Map data © OpenStreetMap contributors.")}</p>
 </section>
 <section class="cadre" style="padding-bottom:clamp(56px,7vw,96px)">
@@ -412,8 +413,8 @@ def carte(p):
   L.tileLayer("https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png", {{ maxZoom: 19, attribution: "© OpenStreetMap" }}).addTo(carte);
   var groupe = [], marqueurs = [];
   pts.forEach(function (q) {{
-    var couleur = q.e === 2 ? "#EB782F" : "#141414";
-    var m = L.circleMarker([q.lat, q.lng], {{ radius: 9, color: "#fff", weight: 2, fillColor: couleur, fillOpacity: 1 }}).addTo(carte);
+    var couleur = q.e === 2 ? "#FCD40D" : "#1D1E21";
+    var m = L.circleMarker([q.lat, q.lng], {{ radius: 9, color: q.e === 2 ? "#1D1E21" : "#fff", weight: 2, fillColor: couleur, fillOpacity: 1 }}).addTo(carte);
     var html = (q.i ? '<img src="' + q.i + '" alt="" style="width:220px;height:124px;object-fit:cover;display:block;margin-bottom:8px">' : "") +
       "<b>" + q.n + "</b>" + (q.t ? "<br><i>" + q.t + "</i>" : "") + "<br>ARTMADA #" + q.e +
       '<br><a href="' + q.u + '">{T(p, "Voir la fresque", "See the mural")}</a> · <a href="' + q.m + '" target="_blank" rel="noopener">{T(p, "Y aller à pied", "Walk there")}</a>';
@@ -664,7 +665,7 @@ def presse(p):
     <div style="display:flex;flex-direction:column;gap:16px"><span class="etiquette">{T(p, 'Contact presse', 'Press contact')}</span><h2 class="titre-section">{T(p, 'Une interview, des photos ?', 'Interview or photos?')}</h2></div>
     <div style="display:flex;flex-direction:column;gap:18px">
       <p style="font-size:19px">{T(p, "Interviews d'artistes, accès aux murs pendant le festival, photos HD, dossier de presse : écris-nous, on répond vite.", "Artist interviews, access to the walls during the festival, HD photos, press kit: write to us, we reply quickly.")}</p>
-      <a class="bouton bouton-orange" style="align-self:flex-start" href="mailto:{MAIL}?subject={T(p, 'Presse%20ARTMADA', 'ARTMADA%20press')}">{MAIL}</a>
+      <a class="bouton bouton-jaune-v" style="align-self:flex-start" href="mailto:{MAIL}?subject={T(p, 'Presse%20ARTMADA', 'ARTMADA%20press')}">{MAIL}</a>
       <ul class="lignes" style="border-top-color:var(--nuit-trait)">{ress}</ul>
     </div>
   </div>
