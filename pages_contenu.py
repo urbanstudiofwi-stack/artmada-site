@@ -253,7 +253,7 @@ def accueil(lang):
     </div>
     <div class="video v3-lecteur rv" data-video="{AFTERMOVIE_EMBED}">
       <button type="button" class="video-lien video-facade" data-titre="{t(L, "After movie d'ARTMADA #2", "ARTMADA #2 after movie")}">
-        <img src="{a('img/aftermovie-miniature-site.jpg')}" alt="" width="1280" height="720" loading="lazy"><span class="lecture" aria-hidden="true"></span>
+        <img src="{a('img/aftermovie-miniature-site.jpg')}" alt="" width="1708" height="961" loading="lazy"><span class="lecture" aria-hidden="true"></span>
         <b>{t(L, "Lancer l'after movie", "Play the after movie")}</b>
       </button>
     </div>
