@@ -161,6 +161,10 @@ def bloc_lieux(p, titre_h="h2"):
   </div>
 </section>'''
 
+def fond_mur(p, fichier):
+    """Fresque en noir et blanc, foncée, derrière le gros titre d'une bande sombre."""
+    return f'<div class="fond-mur" aria-hidden="true"><img src="{p.a("img/fonds/" + fichier)}" alt="" width="1600" height="700" loading="lazy" decoding="async"></div>'
+
 def accueil(lang):
     p = P(lang, "index.html")
     a = p.a
@@ -204,7 +208,8 @@ def accueil(lang):
   </div>
 </section>
 
-<section class="v3-section v3-nuit" id="programme" aria-labelledby="titre-programme">
+<section class="v3-section v3-nuit a-fond" id="programme" aria-labelledby="titre-programme">
+  {fond_mur(p, "xan-breeze.webp")}
   <div class="cadre">
     <div class="v3-entete">
       <h2 class="v3-titre anim-titre" id="titre-programme">{t(L, 'Programme', 'Programme')}</h2>
@@ -226,7 +231,8 @@ def accueil(lang):
 
 {bloc_lieux(p)}
 
-<section class="v3-section v3-nuit" aria-labelledby="titre-murs">
+<section class="v3-section v3-nuit a-fond" aria-labelledby="titre-murs">
+  {fond_mur(p, "clarac-colibri.webp")}
   <div class="cadre">
     <div class="v3-entete">
       <h2 class="v3-titre anim-titre" id="titre-murs">{t(L, 'Les murs restent', 'The walls stay')}</h2>
@@ -237,7 +243,8 @@ def accueil(lang):
   </div>
 </section>
 
-<section class="v3-section v3-nuit v3-film" aria-labelledby="titre-aftermovie">
+<section class="v3-section v3-nuit v3-film a-fond" aria-labelledby="titre-aftermovie">
+  {fond_mur(p, "doudou-style.webp")}
   <div class="cadre">
     <div class="v3-entete">
       <h2 class="v3-titre anim-titre" id="titre-aftermovie">{t(L, "L'after movie", "The after movie")}</h2>
@@ -245,7 +252,7 @@ def accueil(lang):
     </div>
     <div class="video v3-lecteur rv" data-video="{AFTERMOVIE_EMBED}">
       <button type="button" class="video-lien video-facade" data-titre="{t(L, "After movie d'ARTMADA #2", "ARTMADA #2 after movie")}">
-        <img src="{a('img/aftermovie-fond.jpg')}" alt="" width="1280" height="720" loading="lazy"><span class="lecture" aria-hidden="true"></span>
+        <img src="{a('img/aftermovie-miniature-site.jpg')}" alt="" width="1280" height="720" loading="lazy"><span class="lecture" aria-hidden="true"></span>
         <b>{t(L, "Lancer l'after movie", "Play the after movie")}</b>
       </button>
     </div>
