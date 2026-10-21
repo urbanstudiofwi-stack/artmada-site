@@ -65,6 +65,7 @@ MENU = [
     ("artistes/index.html", "Artistes", "Artists"),
     ("fresques/index.html", "Fresques & carte", "Murals & map"),
     ("visites.html", "Visites & ateliers", "Tours & workshops"),
+    ("boutique.html", "Boutique", "Shop"),
 ]
 MENU_DROITE = [
     ("archives.html", "Archives", "Archive"),
@@ -78,6 +79,7 @@ MENU_COMPLET = [
     ("Les fresques", "The murals", [("fresques/index.html", "Toutes les fresques", "All murals"), ("carte.html", "La carte", "The map"),
                                     ("visites.html", "Visites & ateliers", "Tours & workshops")]),
     ("Participer", "Get involved", [("benevoles.html", "Devenir bénévole", "Volunteer"), ("partenaires.html", "Partenaires", "Partners"),
+                                    ("boutique.html", "Boutique", "Shop"),
                                     ("https://www.bizouk.com/events/details/atelier-graffiti-a-lurban-studio-avec-do/131478", "Réserver l'atelier", "Book the workshop")]),
     ("Infos", "Info", [("presse.html", "Presse", "Press"), ("infos.html", "Infos pratiques", "Practical info"), ("infos.html#contact", "Contact", "Contact")]),
 ]
@@ -103,17 +105,17 @@ def entete(p, actif):
 <header class="entete">
   <div class="entete-in">
     <nav class="nav" aria-label="{t(L, 'Menu principal', 'Main menu')}">{nav}</nav>
-    <a class="entete-logo" href="{p.u('index.html')}" aria-label="{t(L, 'ARTMADA Street Festival, accueil', 'ARTMADA Street Festival, home')}"><img src="{p.a('img/logo-noir.png')}" alt="ARTMADA Street Festival" width="1400" height="675"></a>
+    <a class="entete-logo" href="{p.u('index.html')}" aria-label="{t(L, 'ARTMADA Street Festival, accueil', 'ARTMADA Street Festival, home')}"><img src="{p.a('img/da/logo-400.webp')}" alt="ARTMADA Street Festival" width="400" height="132"></a>
     <div class="entete-droite">
       <a class="langue" href="{p.autre_langue()}" hreflang="{t(L, 'en', 'fr')}" lang="{t(L, 'en', 'fr')}" title="{langue_titre}">{langue}</a>
-      <a class="bouton bouton-petit masque-petit" href="{p.u('benevoles.html')}">{t(L, 'Devenir bénévole', 'Volunteer')}</a>
+      <a class="bouton bouton-orange bouton-petit masque-petit" href="{p.u('benevoles.html')}">{t(L, 'Devenir bénévole', 'Volunteer')}</a>
       <button class="menu-bouton" id="menu-bouton" type="button" aria-expanded="false" aria-controls="grand-menu"><span class="burger" aria-hidden="true"></span>Menu</button>
     </div>
   </div>
 </header>
 <div class="grand-menu" id="grand-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="gm-haut">
-    <a href="{p.u('index.html')}" class="gm-logo"><img src="{p.a('img/logo-blanc.png')}" alt="ARTMADA Street Festival" width="1400" height="675"></a>
+    <a href="{p.u('index.html')}" class="gm-logo"><img src="{p.a('img/da/logo-400.webp')}" alt="ARTMADA Street Festival" width="400" height="132"></a>
     <div style="display:flex;gap:12px;align-items:center">
       <a class="langue langue-claire" href="{p.autre_langue()}" hreflang="{t(L, 'en', 'fr')}" lang="{t(L, 'en', 'fr')}" title="{langue_titre}">{langue}</a>
       <button class="gm-fermer" id="menu-fermer" type="button"><span aria-hidden="true">✕</span> {t(L, 'Fermer', 'Close')}</button>
@@ -133,14 +135,14 @@ def pied(p):
     return f'''<footer class="pied">
   <div class="pied-in">
     <div style="display:flex;flex-direction:column;gap:14px">
-      <img src="{p.a('img/logo-noir.png')}" alt="ARTMADA Street Festival" width="1400" height="675" loading="lazy">
+      <span class="pied-logo"><img src="{p.a('img/da/logo-400.webp')}" alt="ARTMADA" width="400" height="132" loading="lazy"><img src="{p.a('img/da/street-festival.webp')}" alt="Street Festival" width="1000" height="199" loading="lazy" class="pied-script"></span>
       <p class="petit" style="max-width:340px">{t(L, "Le festival de street art de Fort-de-France, Martinique. Organisé par l'association NPL MADA PAINT, avec la Ville de Fort-de-France.", "The street art festival of Fort-de-France, Martinique. Organised by the NPL MADA PAINT association, with the City of Fort-de-France.")}</p>
     </div>
     <div><h2>{t(L, 'Le festival', 'The festival')}</h2><ul>
       {li('festival.html', 'Édition #3', 'Edition #3')}{li('programme.html', 'Programme', 'Programme')}{li('artistes/index.html', 'Artistes', 'Artists')}{li('fresques/index.html', 'Fresques & carte', 'Murals & map')}{li('archives.html', 'Archives', 'Archive')}
     </ul></div>
     <div><h2>{t(L, 'Participer', 'Get involved')}</h2><ul>
-      {li('visites.html', 'Visites & ateliers', 'Tours & workshops')}{li('benevoles.html', 'Bénévoles', 'Volunteer')}{li('partenaires.html', 'Partenaires', 'Partners')}{li('presse.html', 'Presse', 'Press')}{li('infos.html', 'Infos pratiques', 'Practical info')}
+      {li('visites.html', 'Visites & ateliers', 'Tours & workshops')}{li('benevoles.html', 'Bénévoles', 'Volunteer')}{li('boutique.html', 'Boutique', 'Shop')}{li('partenaires.html', 'Partenaires', 'Partners')}{li('presse.html', 'Presse', 'Press')}{li('infos.html', 'Infos pratiques', 'Practical info')}
     </ul></div>
     <div><h2>Contact</h2><ul>
       <li><a href="mailto:contact@artmadastreetfestival.com">contact@<wbr>artmadastreetfestival.com</a></li>
@@ -237,7 +239,7 @@ def document(p, titre, description, corps, actif=None, image=None, titre_complet
 <meta property="og:type" content="website">
 <meta property="og:locale" content="{t(L, 'fr_FR', 'en_GB')}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F4F2EE">
+<meta name="theme-color" content="#232427">
 <link rel="icon" type="image/png" href="{p.a('favicon.png')}">
 <link rel="apple-touch-icon" href="{p.a('apple-touch-icon.png')}">
 <link rel="preload" href="{p.a('fonts/anton-latin-400-normal.woff2')}" as="font" type="font/woff2" crossorigin>

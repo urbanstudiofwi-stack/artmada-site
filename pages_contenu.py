@@ -48,117 +48,228 @@ def T(p, fr, en):
 
 # ============================================================ ACCUEIL
 
+def tshirt_3d(p, grand=False, controles=False):
+    """Le t-shirt officiel qui tourne sur lui-même (face, puis dos)."""
+    cls = "ts-scene ts-grand" if grand else "ts-scene"
+    boutons = ""
+    if controles:
+        boutons = f'''<div class="ts-boutons" role="group" aria-label="{T(p, 'Voir le t-shirt', 'View the T-shirt')}">
+  <button type="button" data-ts-vue="tourne" aria-pressed="true">{T(p, 'Il tourne', 'Spin')}</button>
+  <button type="button" data-ts-vue="face" aria-pressed="false">{T(p, 'Face', 'Front')}</button>
+  <button type="button" data-ts-vue="dos" aria-pressed="false">{T(p, 'Dos', 'Back')}</button>
+</div>'''
+    return f'''<div class="{cls}" data-ts data-vue="tourne">
+  <div class="ts-carte">
+    <img class="ts-face" src="{p.a('img/da/tshirt-face.webp')}" alt="{T(p, "T-shirt officiel ARTMADA, face : logo et main tenant une bombe de peinture", "Official ARTMADA T-shirt, front: logo and hand holding a spray can")}" width="785" height="900" loading="lazy" decoding="async">
+    <img class="ts-dos" src="{p.a('img/da/tshirt-dos.webp')}" alt="{T(p, "T-shirt officiel ARTMADA, dos : petit logo et tag Lyannaj Karayib", "Official ARTMADA T-shirt, back: small logo and Lyannaj Karayib tag")}" width="784" height="900" loading="lazy" decoding="async">
+  </div>
+  <span class="ts-ombre" aria-hidden="true"></span>
+</div>{boutons}'''
+
 def accueil(lang):
     p = P(lang, "index.html")
-    une = [f for f in FRESQUES if f.get("une")][:5] or FRESQUES[:5]
-    nb = len(FRESQUES)
-    from pages_donnees import vignette
-    deux = "".join(vignette(p, f) for f in une[:2])
-    trois = "".join(vignette(p, f) for f in une[2:5])
+    une = [f for f in FRESQUES if f.get("une")][:6]
+    if len(une) < 6:
+        une += [f for f in FRESQUES if f not in une and f.get("photo")][:6 - len(une)]
+    affiches = ""
+    for f in une:
+        affiches += f'''<a class="da-affiche rv" href="{p.u('fresques/' + f['slug'] + '.html')}"><span class="da-scotch" aria-hidden="true"></span>{img_fresque(p, f)}<span class="da-affiche-nom">{e(nom_artistes(f))} · {e(f.get('lieu') or 'Fort-de-France')}</span></a>'''
+    noms_part = "".join(f"<span>{e(n)}</span>" for n, _, _ in PARTENAIRES)
+    a = p.a
     corps = f'''
-<section class="ouverture" aria-label="{T(p, 'Fresque de Doudou Style, ARTMADA #2', 'Mural by Doudou Style, ARTMADA #2')}">
-  <img src="{p.a('img/hd/a2-doudou.jpg')}" alt="{T(p, 'Fresque de Doudou Style, ARTMADA #2, rue Victor Sévère, Fort-de-France', 'Mural by Doudou Style, ARTMADA #2, rue Victor Sévère, Fort-de-France')}" width="2400" height="1350" fetchpriority="high" style="object-position:50% 40%">
-  <span class="legende">Doudou Style · ARTMADA #2 · 2026 · {T(p, "Photo", "Photo")} Shaman</span>
-</section>
-
-<section class="bande-infos trait-bas">
-  <div class="cadre section-serre texte-5-7">
-    <div style="display:flex;flex-direction:column;gap:16px">
-      <span class="etiquette">{T(p, 'Édition #3', 'Edition #3')}</span>
-      <p class="dates-grandes">{T(p, '25 janv. → 4 févr. 2027', '25 Jan → 4 Feb 2027')}</p>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:22px">
-      <dl class="trois-infos">
-        <div><dt>{T(p, 'Thème', 'Theme')}</dt><dd>An Lot Chimen · {T(p, 'Un autre chemin', 'Another way')}</dd></div>
-        <div><dt>{T(p, 'Où', 'Where')}</dt><dd>{T(p, 'Fort-de-France : Langellier, Mongérald, Tocade, centre-ville', 'Fort-de-France: Langellier, Mongérald, Tocade, city centre')}</dd></div>
-        <div><dt>{T(p, 'Pour qui', 'For whom')}</dt><dd>{T(p, 'Tout le monde. Fresques en direct, ateliers, soirées, block party', 'Everyone. Live murals, workshops, parties, block party')}</dd></div>
-      </dl>
-      <div class="boutons">
-        <a class="bouton" href="{p.u('programme.html')}">{T(p, 'Le programme', 'Programme')}</a>
-        <a class="bouton bouton-contour" href="{p.u('fresques/index.html')}">{T(p, 'Voir les fresques', 'See the murals')}</a>
+<section class="da-hero da-beton" aria-labelledby="titre-accueil">
+  <img class="da-splash" src="{a('img/da/splash.webp')}" srcset="{a('img/da/splash-640.webp')} 640w, {a('img/da/splash.webp')} 1000w" sizes="(max-width: 640px) 130vw, 68vw" alt="" width="1000" height="1099" fetchpriority="high" decoding="async">
+  <img class="da-grillage" src="{a('img/da/grillage.webp')}" alt="" width="420" height="618" decoding="async">
+  <div class="cadre da-hero-in">
+    <div class="da-hero-texte">
+      <h1 id="titre-accueil" class="da-h1"><img class="da-logo" src="{a('img/da/logo-halo.webp')}" srcset="{a('img/da/logo-halo-800.webp')} 800w, {a('img/da/logo-halo.webp')} 1600w" sizes="(max-width: 900px) 92vw, 820px" alt="ARTMADA" width="1600" height="529" decoding="async"><span class="sr"> Street Festival #3 · Fort-de-France, Martinique</span></h1>
+      <img class="da-script" src="{a('img/da/street-festival.webp')}" alt="" width="1000" height="199" decoding="async">
+      <div class="da-badges">
+        <span class="da-edition">{T(p, 'Édition #3', 'Edition #3')}</span>
+        <span class="da-lieu">Fort-de-France · Martinique</span>
+      </div>
+      <div class="da-cartouche">
+        <img src="{a('img/da/spray-cartouche.webp')}" alt="" width="620" height="622" decoding="async">
+        <p>{T(p, 'du 25 janv.<br>au 4 févr.', '25 Jan<br>to 4 Feb')}<br><b>2027</b></p>
+      </div>
+      <div class="boutons da-boutons">
+        <a class="bouton bouton-orange" href="{p.u('programme.html')}">{T(p, 'Le programme', 'Programme')}</a>
+        <a class="bouton bouton-clair" href="{p.u('fresques/index.html')}">{T(p, 'Voir les murs', 'See the walls')}</a>
       </div>
     </div>
+    <div class="da-bombe-boite"><img class="da-bombe" src="{a('img/da/bombe-mains.webp')}" srcset="{a('img/da/bombe-mains-600.webp')} 600w, {a('img/da/bombe-mains.webp')} 1100w" sizes="(max-width: 640px) 50vw, 520px" alt="" width="1100" height="1131" decoding="async"></div>
+  </div>
+</section>
+<div class="da-coulure" aria-hidden="true"><img src="{a('img/da/coulure.webp')}" srcset="{a('img/da/coulure-900.webp')} 900w, {a('img/da/coulure.webp')} 1800w" sizes="100vw" alt="" width="1800" height="539" decoding="async"></div>
+
+<section class="da-beton-sombre da-theme">
+  <div class="cadre" style="display:flex;flex-direction:column;gap:22px">
+    <span class="surtitre da-jaune">{T(p, "Le thème de l'édition #3", 'The theme of edition #3')}</span>
+    <h2 class="da-geant rv">An Lot Chimen</h2>
+    <svg class="da-chemin rv" viewBox="0 0 1300 110" aria-hidden="true"><defs><mask id="masque-chemin"><path class="da-trace" d="M10 80 C 220 20, 420 100, 640 50 S 1000 20, 1220 60" fill="none" stroke="#fff" stroke-width="14" pathLength="1"/></mask></defs><path d="M10 80 C 220 20, 420 100, 640 50 S 1000 20, 1220 60" fill="none" stroke="#F6F4EF" stroke-width="6" stroke-dasharray="20 14" stroke-linecap="round" mask="url(#masque-chemin)"/><path class="da-fleche" d="M1196 30 L1252 62 L1194 92" fill="none" stroke="#FCD40D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <p class="da-citation rv">{T(p, "« À l'heure d'un certain fatalisme social, guerrier, climatique et numérique, un autre chemin est-il possible ? »", "“In a time of social, military, climate and digital fatalism, is another way possible?”")}</p>
+    <p class="petit da-doux">{T(p, "Texte de Xän pour le collectif Mada Paint · Un autre chemin · Another way", "Text by Xän for the Mada Paint collective · Un autre chemin · Another way")} · <a href="{p.u('festival.html')}">{T(p, 'Lire le texte du thème', 'Read the theme')}</a></p>
   </div>
 </section>
 
-<section class="cadre" style="padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(40px,5vw,72px)" aria-labelledby="titre-aftermovie">
-  <div class="entete-section" style="margin-bottom:20px">
-    <h2 class="titre-section" id="titre-aftermovie">{T(p, "L'after movie", "The after movie")}</h2>
-    <p>{T(p, "ARTMADA #2, du 1er au 11 février 2026 : les fresques, la jam et la block party à Fort-de-France.", "ARTMADA #2, 1–11 February 2026: the murals, the jam and the block party in Fort-de-France.")}</p>
-  </div>
-  <div class="video" data-video="{AFTERMOVIE_EMBED}">
-    <button type="button" class="video-lien video-facade" data-titre="{T(p, "After movie d'ARTMADA #2", "ARTMADA #2 after movie")}">
-      <img src="{p.a('img/f/a2-curtis.jpg')}" alt="" width="1600" height="900"><span class="lecture" aria-hidden="true"></span>
-      <span class="surtitre">{T(p, "Vidéo : JoBlackProd", "Video: JoBlackProd")}</span><b>{T(p, "Lancer l'after movie · ARTMADA #2", "Play the after movie · ARTMADA #2")}</b>
-    </button>
-  </div>
-  <p class="petit gris" style="margin-top:10px">{T(p, "La vidéo se charge depuis YouTube quand tu cliques.", "The video loads from YouTube when you click.")} <a href="{AFTERMOVIE_URL}" rel="noopener">{T(p, "La voir sur YouTube", "Watch on YouTube")}</a></p>
-  <p style="margin-top:14px">{T(p, "Revivre les éditions", "Relive the editions")} : <a class="lien-fleche" href="{p.u('temps-forts-2026.html')}">{T(p, "Temps forts 2026", "2026 highlights")}</a> · <a class="lien-fleche" href="{p.u('temps-forts-2024.html')}">{T(p, "Temps forts 2024", "2024 highlights")}</a></p>
-</section>
-
-<section class="cadre section theme">
-  <h1 style="font-size:clamp(60px,11vw,168px);line-height:.9">An lot chimen</h1>
-  <p class="citation">{T(p, "« À l'heure d'un certain fatalisme social, guerrier, climatique et numérique, un autre chemin est-il possible ? »", "“In a time of social, military, climate and digital fatalism, is another way possible?”")}</p>
-  <p class="petit gris">{T(p, "Le thème de l'édition #3, écrit par Xän pour le collectif Mada Paint", "The theme of edition #3, written by Xän for the Mada Paint collective")}</p>
-  <a class="lien-fleche" href="{p.u('festival.html')}">{T(p, 'Lire le texte du thème', 'Read the theme')}</a>
-</section>
-
-<section class="cadre" style="padding-bottom:clamp(64px,8vw,120px)">
-  <div class="texte-5-7 trait-haut">
-    <h2 class="titre-moyen">{T(p, "Un festival de street art, c'est quoi&nbsp;?", "What is a street art festival?")}</h2>
-    <div style="display:flex;flex-direction:column;gap:18px">
-      <p style="font-size:20px;line-height:1.55">{T(p, "Des fresques peintes en direct sur les murs des quartiers, des ateliers, des shows de break dance, des soirées avec DJ et une block party. Chaque édition, des artistes de Martinique, de la Caraïbe et d'ailleurs transforment Fort-de-France, avec les habitants.", "Murals painted live on neighbourhood walls, workshops, breakdance shows, DJ nights and a block party. Every edition, artists from Martinique, the Caribbean and beyond transform Fort-de-France, together with the people who live there.")}</p>
-      <div class="chiffres" style="padding-top:10px">
-        <div><b>40</b><span>{T(p, 'fresques', 'murals')}</span></div>
-        <div><b>2 650 m²</b><span>{T(p, 'de murs peints', 'of painted walls')}</span></div>
-        <div><b>95</b><span>{T(p, 'bénévoles', 'volunteers')}</span></div>
-      </div>
-      <p class="petit gris">{T(p, 'Éditions #1 (2024) et #2 (2026) réunies.', 'Editions #1 (2024) and #2 (2026) combined.')}</p>
+<section class="da-beton da-section" aria-labelledby="titre-prog">
+  <div class="cadre">
+    <h2 class="da-titre rv" id="titre-prog">{T(p, 'Pendant 11 jours', 'For 11 days')}</h2>
+    <div class="da-tuiles">
+      <a class="da-tuile da-orange rv" href="{p.u('programme.html')}"><span>{T(p, 'Dans les quartiers', 'In the neighbourhoods')}</span><b>{T(p, 'Fresques en direct', 'Live murals')}</b></a>
+      <a class="da-tuile da-jaune-fond rv" href="{p.u('visites.html')}"><span>{T(p, 'Pour tous les âges', 'For all ages')}</span><b>{T(p, 'Ateliers', 'Workshops')}</b></a>
+      <a class="da-tuile da-turquoise rv" href="{p.u('programme.html')}"><span>{T(p, 'Avec DJ', 'With DJs')}</span><b>{T(p, 'Soirées', 'Parties')}</b></a>
+      <a class="da-tuile da-magenta rv" href="{p.u('programme.html')}"><span>{T(p, 'Pour finir en beauté', 'The grand finale')}</span><b>Block party</b></a>
     </div>
   </div>
 </section>
 
-<section style="padding:0 clamp(12px,1.5vw,20px) clamp(64px,8vw,120px)">
-  <div class="cadre entete-section" style="padding-left:clamp(8px,1.5vw,20px);padding-right:clamp(8px,1.5vw,20px)">
-    <h2 class="titre-section">{T(p, 'Les fresques', 'The murals')}</h2>
-    <p>{T(p, "Elles restent sur les murs. On peut aller les voir toute l'année, à pied, gratuitement.", "They stay on the walls. You can see them all year round, on foot, for free.")}</p>
+<section class="da-beton da-section" aria-labelledby="titre-aftermovie">
+  <div class="cadre">
+    <div class="entete-section">
+      <h2 class="da-titre rv" id="titre-aftermovie">{T(p, "L'after movie", "The after movie")}</h2>
+      <p class="da-doux">{T(p, "ARTMADA #2, du 1er au 11 février 2026 : les fresques, la jam et la block party à Fort-de-France.", "ARTMADA #2, 1–11 February 2026: the murals, the jam and the block party in Fort-de-France.")}</p>
+    </div>
+    <div class="video da-video rv" data-video="{AFTERMOVIE_EMBED}">
+      <button type="button" class="video-lien video-facade" data-titre="{T(p, "After movie d'ARTMADA #2", "ARTMADA #2 after movie")}">
+        <img src="{a('img/f/a2-curtis.jpg')}" alt="" width="1600" height="900"><span class="lecture" aria-hidden="true"></span>
+        <span class="surtitre">{T(p, "Vidéo : JoBlackProd", "Video: JoBlackProd")}</span><b>{T(p, "Lancer l'after movie · ARTMADA #2", "Play the after movie · ARTMADA #2")}</b>
+      </button>
+    </div>
+    <p class="petit da-doux" style="margin-top:10px">{T(p, "La vidéo se charge depuis YouTube quand tu cliques.", "The video loads from YouTube when you click.")} <a href="{AFTERMOVIE_URL}" rel="noopener">{T(p, "La voir sur YouTube", "Watch on YouTube")}</a> · <a href="{p.u('temps-forts-2026.html')}">{T(p, "Temps forts 2026", "2026 highlights")}</a> · <a href="{p.u('temps-forts-2024.html')}">{T(p, "Temps forts 2024", "2024 highlights")}</a></p>
   </div>
-  <div class="g2" style="margin-bottom:20px;max-width:1400px;margin-left:auto;margin-right:auto">{deux}</div>
-  <div class="g3" style="max-width:1400px;margin:0 auto">{trois}</div>
-  <div class="cadre boutons" style="margin-top:32px;padding-left:clamp(8px,1.5vw,20px)">
-    <a class="bouton bouton-contour" href="{p.u('fresques/index.html')}">{T(p, 'Voir toutes les fresques', 'See all the murals')}</a>
-    <a class="bouton bouton-contour" href="{p.u('carte.html')}">{T(p, 'Ouvrir la carte', 'Open the map')}</a>
+</section>
+
+<section class="da-beton da-section" aria-labelledby="titre-murs">
+  <div class="cadre">
+    <div class="entete-section">
+      <h2 class="da-titre rv" id="titre-murs">{T(p, 'Les murs restent', 'The walls stay')}</h2>
+      <p class="da-doux">{T(p, "On peut aller voir les fresques toute l'année, à pied, gratuitement.", "You can see the murals all year round, on foot, for free.")} <a href="{p.u('carte.html')}">{T(p, 'Ouvrir la carte', 'Open the map')}</a></p>
+    </div>
+    <div class="da-affiches">{affiches}</div>
+    <div class="boutons" style="margin-top:44px"><a class="bouton bouton-orange" href="{p.u('fresques/index.html')}">{T(p, 'Toutes les fresques', 'All the murals')}</a><a class="bouton bouton-clair" href="{p.u('carte.html')}">{T(p, 'La carte', 'The map')}</a></div>
+  </div>
+</section>
+
+<section class="da-beton-sombre da-section">
+  <div class="cadre">
+    <div class="da-chiffres">
+      <div class="rv"><b class="da-orange-texte">40</b><span>{T(p, 'fresques', 'murals')}</span></div>
+      <div class="rv"><b class="da-jaune">2 650 m²</b><span>{T(p, 'de murs peints', 'of painted walls')}</span></div>
+      <div class="rv"><b class="da-turquoise-texte">95</b><span>{T(p, 'bénévoles', 'volunteers')}</span></div>
+    </div>
+    <p class="petit da-doux" style="margin-top:18px">{T(p, 'Au total depuis la création du festival (éditions #1 en 2024 et #2 en 2026).', 'In total since the festival began (editions #1 in 2024 and #2 in 2026).')}</p>
   </div>
 </section>
 
 {bloc_visites(p)}
 
-<section class="cadre section">
-  <div class="g2" style="gap:clamp(32px,5vw,80px);align-items:center">
-    <img src="{p.a('img/hd/a2-rayza.jpg')}" alt="{T(p, 'Fresque de Rayza, ARTMADA #2', 'Mural by Rayza, ARTMADA #2')}" width="2400" height="1350" style="aspect-ratio:5/4;object-fit:cover;width:100%">
-    <div style="display:flex;flex-direction:column;gap:20px">
-      <span class="etiquette">{T(p, 'Bénévoles', 'Volunteers')}</span>
-      <h2 style="font-size:clamp(40px,5vw,72px);line-height:.98">{T(p, 'Le festival se fait ensemble', 'We make it together')}</h2>
-      <p style="font-size:19px">{T(p, "75 bénévoles ont fait vivre ARTMADA #2. Conduire les artistes, accueillir le public, photographier, aider sur les murs : même quelques heures comptent.", "75 volunteers brought ARTMADA #2 to life. Driving artists, welcoming visitors, taking photos, helping on the walls: even a few hours make a difference.")}</p>
-      <a class="bouton" href="{p.u('benevoles.html')}">{T(p, 'Je deviens bénévole', 'Become a volunteer')}</a>
+<section class="da-beton da-section" aria-labelledby="titre-boutique">
+  <div class="cadre da-boutique-teaser">
+    <div class="da-ts-boite">
+      <img class="da-ts-splash" src="{a('img/da/splash-640.webp')}" alt="" width="640" height="703" loading="lazy" decoding="async">
+      {tshirt_3d(p)}
+    </div>
+    <div class="rv" style="display:flex;flex-direction:column;gap:18px;align-items:flex-start">
+      <span class="da-sticker">{T(p, 'Boutique', 'Shop')}</span>
+      <h2 class="da-titre" id="titre-boutique">{T(p, 'Porte le festival', 'Wear the festival')}</h2>
+      <p class="da-doux" style="font-size:19px;max-width:520px">{T(p, "Le t-shirt officiel à 30 € et la casquette à 20 €. À récupérer à l'Urban Studio, Village de la Poterie, Les Trois-Îlets. Chaque achat aide le festival à peindre de nouveaux murs.", "The official T-shirt (€30) and cap (€20). Pick them up at Urban Studio, Village de la Poterie, Les Trois-Îlets. Every purchase helps the festival paint new walls.")}</p>
+      <a class="bouton bouton-orange" href="{p.u('boutique.html')}">{T(p, 'Voir la boutique', 'Visit the shop')}</a>
     </div>
   </div>
 </section>
 
-<section class="cadre" style="padding-bottom:clamp(64px,8vw,120px)">
-  <div class="texte-5-7 trait-haut">
-    <h2 class="titre-moyen">{T(p, 'Nos partenaires', 'Our partners')}</h2>
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <p style="font-size:19px">{T(p, "Sans eux, le festival n'aurait pas pu exister.", "Without them, the festival could not exist.")}</p>
-      <p style="color:var(--gris-fonce);line-height:1.9">{" · ".join(n for n, _, _ in PARTENAIRES)}</p>
-      <a class="lien-fleche" href="{p.u('partenaires.html')}" style="align-self:flex-start">{T(p, 'Devenir partenaire', 'Become a partner')}</a>
+<section class="da-benevoles">
+  <img src="{a('img/da/spray-cartouche.webp')}" alt="" width="620" height="622" loading="lazy" decoding="async">
+  <div class="cadre" style="position:relative;display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap">
+    <h2 class="da-titre rv">{T(p, 'Le festival<br>se fait ensemble', 'We make it<br>together')}</h2>
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:420px">
+      <p style="font-size:18px">{T(p, "75 bénévoles ont fait vivre ARTMADA #2. Conduire les artistes, accueillir le public, aider sur les murs : même quelques heures comptent.", "75 volunteers brought ARTMADA #2 to life. Driving artists, welcoming visitors, helping on the walls: even a few hours make a difference.")}</p>
+      <a class="bouton bouton-nuit" href="{p.u('benevoles.html')}">{T(p, 'Je deviens bénévole', 'Become a volunteer')}</a>
     </div>
   </div>
+</section>
+
+<section class="da-beton-sombre da-partenaires" aria-label="{T(p, 'Nos partenaires', 'Our partners')}">
+  <p class="cadre surtitre da-jaune">{T(p, "Sans eux, le festival n'aurait pas pu exister", "Without them, the festival could not exist")} · <a href="{p.u('partenaires.html')}">{T(p, 'Devenir partenaire', 'Become a partner')}</a></p>
+  <div class="da-defile-boite"><div class="da-defile">{noms_part}{noms_part.replace('<span>', '<span aria-hidden="true">')}</div></div>
 </section>
 '''
     ecrire(p, document(p, "", T(p, "ARTMADA Street Festival, le festival de street art de Fort-de-France (Martinique). Édition #3 « An Lot Chimen » du 25 janvier au 4 février 2027 : fresques, ateliers, visites, block party.", "ARTMADA Street Festival, the street art festival of Fort-de-France, Martinique. Edition #3 “An Lot Chimen”, 25 January to 4 February 2027: murals, workshops, tours, block party."), corps, actif="index.html", image="img/hd/a2-doudou.jpg",
                        ld=[{"@type": "WebSite", "@id": SITE_URL + "#site", "name": "ARTMADA Street Festival", "url": SITE_URL, "inLanguage": ["fr", "en"], "publisher": {"@id": ORGA["@id"]}},
                            festival_ld(p.lang), aftermovie_ld(p.lang)]))
+
+# ============================================================ BOUTIQUE
+
+URBAN_STUDIO = "Urban Studio, Village de la Poterie, Les Trois-Îlets"
+
+def boutique(lang):
+    p = P(lang, "boutique.html")
+    a = p.a
+    sujet = T(p, "Réservation t-shirt ARTMADA", "ARTMADA T-shirt reservation")
+    corps_mail = T(p, "Bonjour, je voudrais réserver le t-shirt officiel ARTMADA (30 €) en taille M. Je viendrai le chercher à l'Urban Studio.",
+                   "Hello, I would like to reserve the official ARTMADA T-shirt (€30) in size M. I will pick it up at Urban Studio.")
+    from urllib.parse import quote
+    mailto = f"mailto:{MAIL}?subject={quote(sujet)}&body={quote(corps_mail)}"
+    tailles = "".join(f'<button type="button" class="ts-taille" data-taille="{n}" aria-pressed="{"true" if n == "M" else "false"}">{n}</button>' for n in ["S", "M", "L", "XL", "XXL"])
+    corps = f'''
+<div class="da-beton">
+<div class="da-coulure-haut" aria-hidden="true"><img src="{a('img/da/coulure.webp')}" srcset="{a('img/da/coulure-900.webp')} 900w, {a('img/da/coulure.webp')} 1800w" sizes="100vw" alt="" width="1800" height="539" decoding="async"></div>
+<section class="cadre da-boutique-tete">
+  <nav class="fil" aria-label="{T(p, 'Fil d’Ariane', 'Breadcrumb')}"><a href="{p.u('index.html')}">{T(p, 'Accueil', 'Home')}</a> / {T(p, 'Boutique', 'Shop')}</nav>
+  <h1 class="da-geant">{T(p, 'La boutique', 'The shop')}</h1>
+  <p class="da-doux" style="font-size:20px;max-width:640px">{T(p, "Le merch officiel d'ARTMADA Street Festival. Chaque achat aide le festival à peindre de nouveaux murs.", "Official ARTMADA Street Festival merch. Every purchase helps the festival paint new walls.")}</p>
+</section>
+
+<section class="cadre da-produit" aria-labelledby="titre-tshirt" data-produit data-mail="{MAIL}" data-sujet="{e(sujet)}" data-corps="{e(corps_mail)}">
+  <div class="da-produit-visuel">
+    <span class="da-edition da-produit-badge">{T(p, 'Édition officielle', 'Official edition')}</span>
+    {tshirt_3d(p, grand=True, controles=True)}
+  </div>
+  <div class="da-produit-infos">
+    <span class="surtitre da-jaune">{T(p, 'T-shirt', 'T-shirt')}</span>
+    <h2 class="da-titre" id="titre-tshirt">{T(p, 'T-shirt officiel ARTMADA', 'Official ARTMADA T-shirt')}</h2>
+    <p class="da-doux" style="font-size:17px">{T(p, "T-shirt blanc. Au recto, le logo ARTMADA et la main qui tient la bombe. Au dos, le tag « Lyannaj Karayib ».", "White T-shirt. On the front, the ARTMADA logo and the hand holding the spray can. On the back, the “Lyannaj Karayib” tag.")}</p>
+    <p class="da-prix">30 €</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <p style="font-weight:700">{T(p, 'Taille', 'Size')} : <span data-taille-choisie>M</span> <span class="da-doux" style="font-weight:400">· {T(p, 'toutes les tailles du S au XXL sont disponibles', 'all sizes from S to XXL are available')}</span></p>
+      <div class="ts-tailles" role="group" aria-label="{T(p, 'Choisir la taille', 'Choose a size')}">{tailles}</div>
+    </div>
+    <a class="bouton bouton-orange da-reserver" href="{e(mailto)}" data-reserver>{T(p, 'Je le réserve', 'Reserve it')}</a>
+    <p class="da-lieu-retrait"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5c-3.3 0-6 2.6-6 5.9 0 4.4 6 11.1 6 11.1s6-6.7 6-11.1c0-3.3-2.7-5.9-6-5.9z" fill="none" stroke="#FCD40D" stroke-width="2"/><circle cx="10" cy="7.5" r="2.2" fill="#FCD40D"/></svg><span>{T(p, f"À récupérer à l'{URBAN_STUDIO}.", f"Pick it up at {URBAN_STUDIO}.")}</span></p>
+  </div>
+</section>
+
+<section class="cadre da-section" aria-labelledby="titre-tout">
+  <h2 class="da-titre rv" id="titre-tout" style="margin-bottom:28px">{T(p, 'Toute la boutique', 'Everything')}</h2>
+  <div class="da-cartes">
+    <a class="da-carte rv" href="#titre-tshirt">
+      <span class="da-carte-photo"><img src="{a('img/da/tshirt-face.webp')}" alt="{T(p, 'T-shirt officiel ARTMADA', 'Official ARTMADA T-shirt')}" width="785" height="900" loading="lazy" decoding="async"></span>
+      <span class="da-carte-bas"><b>{T(p, 'T-shirt officiel', 'Official T-shirt')}</b><span class="da-jaune">30 €</span></span>
+    </a>
+    <div class="da-carte rv">
+      <span class="da-carte-photo da-carte-attente"><img src="{a('img/da/spray-cartouche.webp')}" alt="" width="620" height="622" loading="lazy" decoding="async"><span>{T(p, 'Casquette', 'Cap')}<small>{T(p, 'photo à venir', 'photo coming soon')}</small></span></span>
+      <span class="da-carte-bas"><b>{T(p, 'Casquette ARTMADA', 'ARTMADA cap')}</b><span class="da-jaune">20 €</span></span>
+    </div>
+  </div>
+  <p class="da-doux" style="margin-top:28px">{T(p, f"Pour la casquette ou une autre question : écris-nous à", f"For the cap or any other question, email us at")} <a href="mailto:{MAIL}">{MAIL}</a>.</p>
+</section>
+</div>
+'''
+    produits = [
+        {"@type": "Product", "name": t(lang, "T-shirt officiel ARTMADA Street Festival", "Official ARTMADA Street Festival T-shirt"),
+         "image": [SITE_URL + "assets/img/da/tshirt-face.webp", SITE_URL + "assets/img/da/tshirt-dos.webp"],
+         "description": t(lang, "T-shirt blanc, logo ARTMADA et main tenant une bombe au recto, tag Lyannaj Karayib au dos. Tailles S à XXL.", "White T-shirt, ARTMADA logo and hand holding a spray can on the front, Lyannaj Karayib tag on the back. Sizes S to XXL."),
+         "brand": {"@type": "Brand", "name": "ARTMADA Street Festival"},
+         "offers": {"@type": "Offer", "price": "30", "priceCurrency": "EUR", "availability": "https://schema.org/InStoreOnly", "url": SITE_URL + ("" if lang == "fr" else "en/") + "boutique.html"}},
+        {"@type": "Product", "name": t(lang, "Casquette ARTMADA Street Festival", "ARTMADA Street Festival cap"),
+         "brand": {"@type": "Brand", "name": "ARTMADA Street Festival"},
+         "offers": {"@type": "Offer", "price": "20", "priceCurrency": "EUR", "availability": "https://schema.org/InStoreOnly", "url": SITE_URL + ("" if lang == "fr" else "en/") + "boutique.html"}},
+    ]
+    ecrire(p, document(p, T(p, "Boutique : t-shirt et casquette", "Shop: T-shirt and cap"),
+                       T(p, "Le t-shirt officiel ARTMADA Street Festival (30 €, du S au XXL) et la casquette (20 €), à récupérer à l'Urban Studio aux Trois-Îlets, Martinique.", "The official ARTMADA Street Festival T-shirt (€30, S to XXL) and cap (€20), to pick up at Urban Studio in Les Trois-Îlets, Martinique."),
+                       corps, actif="boutique.html", image="img/da/tshirt-face.webp",
+                       ld=produits + [fil_ld(p, [(None, T(p, "Boutique", "Shop"))])]))
 
 def bloc_visites(p):
     return f'''
@@ -500,6 +611,7 @@ def page_404():
 
 def toutes_les_pages(lang):
     accueil(lang)
+    boutique(lang)
     festival(lang)
     programme(lang)
     visites(lang)

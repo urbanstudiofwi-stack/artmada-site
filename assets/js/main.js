@@ -67,3 +67,46 @@
     });
   });
 })();
+
+// V2 : les éléments apparaissent quand on arrive dessus en défilant
+(function () {
+  var els = document.querySelectorAll(".rv");
+  if (!els.length) return;
+  if (!("IntersectionObserver" in window)) return;   // vieux navigateur : tout reste visible
+  document.documentElement.classList.add("js");
+  var obs = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add("vu"); obs.unobserve(en.target); }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+  els.forEach(function (el) { obs.observe(el); });
+})();
+
+// Boutique : le t-shirt qui tourne (Il tourne / Face / Dos) et le choix de la taille
+(function () {
+  document.querySelectorAll("[data-ts-vue]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var groupe = b.parentNode;
+      var scene = groupe.previousElementSibling;
+      if (!scene || !scene.hasAttribute("data-ts")) return;
+      scene.setAttribute("data-vue", b.getAttribute("data-ts-vue"));
+      groupe.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+    });
+  });
+  document.querySelectorAll("[data-produit]").forEach(function (prod) {
+    var lien = prod.querySelector("[data-reserver]");
+    var affiche = prod.querySelector("[data-taille-choisie]");
+    var corps = prod.getAttribute("data-corps") || "";
+    prod.querySelectorAll(".ts-taille").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var t = b.getAttribute("data-taille");
+        prod.querySelectorAll(".ts-taille").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        if (affiche) affiche.textContent = t;
+        if (lien) {
+          var texte = corps.replace(/(taille|size) M\b/, "$1 " + t);
+          lien.href = "mailto:" + prod.getAttribute("data-mail") + "?subject=" + encodeURIComponent(prod.getAttribute("data-sujet")) + "&body=" + encodeURIComponent(texte);
+        }
+      });
+    });
+  });
+})();
