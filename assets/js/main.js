@@ -164,3 +164,24 @@
     });
   });
 })();
+
+// Fresques en fond : la photo glisse un peu moins vite que le texte (profondeur)
+(function () {
+  var fonds = document.querySelectorAll(".fond-mur img");
+  if (!fonds.length) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var attente = false;
+  function maj() {
+    attente = false;
+    var h = window.innerHeight;
+    fonds.forEach(function (img) {
+      var r = img.parentNode.getBoundingClientRect();
+      if (r.bottom < -100 || r.top > h + 100) return;
+      var d = (r.top + r.height / 2 - h / 2) / h;   // -1 → 1 environ
+      img.style.transform = "translateY(" + (-8 - d * 8).toFixed(2) + "%)";
+    });
+  }
+  window.addEventListener("scroll", function () { if (!attente) { attente = true; requestAnimationFrame(maj); } }, { passive: true });
+  window.addEventListener("resize", maj);
+  maj();
+})();
