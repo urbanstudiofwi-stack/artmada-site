@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>ARTMADA — l'appli du street art</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Les fresques d'ARTMADA sur une carte, les parcours à pied et ton passeport de fresques. Fort-de-France, Martinique.">
+<meta name="theme-color" content="#1A1B1E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ARTMADA">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="media/apple-touch-icon.png">
+<link rel="icon" href="media/icon-192.png">
+<link rel="preload" href="fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="donnees.json" as="fetch" crossorigin>
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="appli">
+  <main id="vue" tabindex="-1" aria-live="polite">
+    <div class="chargement"><img src="media/logo.webp" alt="ARTMADA" width="200"></div>
+  </main>
+  <nav class="onglets" aria-label="Menu principal">
+    <a href="#accueil" data-onglet="accueil">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Accueil</a>
+    <a href="#carte" data-onglet="carte">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>Carte</a>
+    <a href="#parcours" data-onglet="parcours">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg>Parcours</a>
+    <a href="#passeport" data-onglet="passeport">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 17h6"/></svg>Passeport</a>
+  </nav>
+</div>
+<div id="toast" class="toast" role="status" hidden></div>
+<script src="vendor/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

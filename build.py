@@ -391,6 +391,15 @@ def construire():
     (DIST / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">' + urls + "</urlset>", "utf-8")
     (DIST / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://artmadastreetfestival.com/sitemap.xml\n")
     print(f"{len(PAGES)} pages générées dans {DIST}")
+    # L'appli (version web installable, /appli/) : mêmes données que le site.
+    # Si elle échoue, le site est publié quand même.
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("appli_construire", ICI / "appli" / "construire.py")
+        mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+        mod.construire(DIST)
+    except Exception as x:
+        print("⚠️ Appli non construite :", x)
 
 if __name__ == "__main__":
     construire()
