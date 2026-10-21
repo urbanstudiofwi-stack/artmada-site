@@ -348,7 +348,7 @@ body.page-video .entete.defile{background:rgba(20,20,22,.96)}
 
 /* Ouverture vidéo */
 .v3-hero{position:relative;height:100svh;min-height:640px;max-height:1100px;overflow:hidden;background:var(--nuit);color:#fff}
-.v3-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08) brightness(.78)}
+.v3-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.06) brightness(.8)}
 .v3-voile{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(20,20,22,.15),rgba(20,20,22,.55) 70%),linear-gradient(180deg,rgba(20,20,22,.2),rgba(20,20,22,.75))}
 .v3-hero-centre{position:absolute;left:0;right:0;top:50%;transform:translateY(-46%);display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 20px;gap:6px}
 .v3-h1{font-size:clamp(46px,7.6vw,108px);line-height:.9;color:var(--jaune);margin-top:8px}
@@ -584,7 +584,7 @@ body.page-video .entete.defile{background:rgba(20,20,22,.96)}
 .a-fond{position:relative;overflow:hidden;isolation:isolate}
 .a-fond>.cadre{position:relative;z-index:1}
 .fond-mur{position:absolute;left:0;right:0;top:0;height:clamp(380px,46vw,640px);z-index:0;pointer-events:none;overflow:hidden}
-.fond-mur img{width:100%;height:118%;object-fit:cover;opacity:.5;will-change:transform}
-.fond-mur::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,22,.45) 0%,rgba(20,20,22,.62) 45%,var(--nuit) 100%),linear-gradient(90deg,rgba(20,20,22,.55),rgba(20,20,22,.1) 60%,rgba(20,20,22,.4))}
+.fond-mur img{width:100%;height:118%;object-fit:cover;opacity:.62;will-change:transform}
+.fond-mur::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,22,.3) 0%,rgba(20,20,22,.5) 50%,var(--nuit) 100%),linear-gradient(90deg,rgba(20,20,22,.5),rgba(20,20,22,0) 60%,rgba(20,20,22,.3))}
 @media (max-width:640px){.fond-mur{height:420px}.fond-mur img{opacity:.42}}
 @media (prefers-reduced-motion:reduce){.fond-mur img{transform:none!important}}
