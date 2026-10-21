@@ -18,23 +18,29 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#232427">
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="theme-color" content="#1D1E21">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ARTMADA">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preload" href="assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://artmadastreetfestival.com/#npl-mada-paint","name":"NPL MADA PAINT","alternateName":"Mada Paint","url":"https://artmadastreetfestival.com/","logo":"https://artmadastreetfestival.com/assets/img/logo-noir.png","email":"contact@artmadastreetfestival.com","address":{"@type":"PostalAddress","addressLocality":"Fort-de-France","addressRegion":"Martinique","addressCountry":"FR"},"sameAs":["https://www.instagram.com/artmadastreetfestival972/","https://www.facebook.com/artmadastreetfestival","https://www.youtube.com/channel/UCjXDQ---HEdjzB3rwDdRp8Q"]}]}</script>
 </head>
-<body>
+<body class="page">
 <a class="evitement" href="#contenu">Aller au contenu</a>
 <header class="entete">
   <div class="entete-in">
-    <nav class="nav" aria-label="Menu principal"><a href="festival.html">Le festival</a><a href="programme.html">Programme</a><a href="artistes/index.html">Artistes</a><a href="fresques/index.html">Fresques & carte</a><a href="visites.html">Visites & ateliers</a><a href="boutique.html">Boutique</a></nav>
     <a class="entete-logo" href="index.html" aria-label="ARTMADA Street Festival, accueil"><img src="assets/img/da/logo-400.webp" alt="ARTMADA Street Festival" width="400" height="132"></a>
+    <nav class="nav" aria-label="Menu principal"><a href="festival.html">Festival</a><a href="programme.html">Programme</a><a href="carte.html">Carte</a><a href="artistes/index.html">Artistes</a></nav>
     <div class="entete-droite">
       <a class="langue" href="en/confidentialite.html" hreflang="en" lang="en" title="English version">EN</a>
-      <a class="bouton bouton-orange bouton-petit masque-petit" href="benevoles.html">Devenir bénévole</a>
-      <button class="menu-bouton" id="menu-bouton" type="button" aria-expanded="false" aria-controls="grand-menu"><span class="burger" aria-hidden="true"></span>Menu</button>
+      <a class="bouton-shop" href="boutique.html">Shop <svg width="20" height="12" viewBox="0 0 20 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M0 6h18M13 1l5 5-5 5"/></svg></a>
+      <button class="menu-bouton" id="menu-bouton" type="button" aria-expanded="false" aria-controls="grand-menu" aria-label="Ouvrir le menu"><span class="burger" aria-hidden="true"></span></button>
     </div>
   </div>
 </header>
@@ -46,10 +52,11 @@
       <button class="gm-fermer" id="menu-fermer" type="button"><span aria-hidden="true">✕</span> Fermer</button>
     </div>
   </div>
-  <nav class="gm-corps" aria-label="Plan du site"><div class="gm-col"><p class="gm-titre">Le festival</p><ul><li><a href="festival.html">Édition #3</a></li><li><a href="programme.html">Programme</a></li><li><a href="artistes/index.html">Artistes</a></li><li><a href="temps-forts-2026.html">Temps forts 2026</a></li><li><a href="temps-forts-2024.html">Temps forts 2024</a></li><li><a href="archives.html">Archives</a></li></ul></div><div class="gm-col"><p class="gm-titre">Les fresques</p><ul><li><a href="fresques/index.html">Toutes les fresques</a></li><li><a href="carte.html">La carte</a></li><li><a href="visites.html">Visites & ateliers</a></li></ul></div><div class="gm-col"><p class="gm-titre">Participer</p><ul><li><a href="benevoles.html">Devenir bénévole</a></li><li><a href="partenaires.html">Partenaires</a></li><li><a href="boutique.html">Boutique</a></li><li><a href="https://www.bizouk.com/events/details/atelier-graffiti-a-lurban-studio-avec-do/131478" rel="noopener">Réserver l'atelier</a></li></ul></div><div class="gm-col"><p class="gm-titre">Infos</p><ul><li><a href="presse.html">Presse</a></li><li><a href="infos.html">Infos pratiques</a></li><li><a href="infos.html#contact">Contact</a></li></ul></div></nav>
+  <nav class="gm-corps" aria-label="Plan du site"><div class="gm-col"><p class="gm-titre">Le festival</p><ul><li><a href="festival.html">Édition #3</a></li><li><a href="programme.html">Programme</a></li><li><a href="artistes/index.html">Artistes</a></li><li><a href="temps-forts-2026.html">Temps forts 2026</a></li><li><a href="temps-forts-2024.html">Temps forts 2024</a></li><li><a href="archives.html">Archives</a></li></ul></div><div class="gm-col"><p class="gm-titre">Les fresques</p><ul><li><a href="carte.html">La carte</a></li><li><a href="fresques/index.html">Toutes les fresques</a></li><li><a href="visites.html">Visites & ateliers</a></li></ul></div><div class="gm-col"><p class="gm-titre">Participer</p><ul><li><a href="boutique.html">Shop</a></li><li><a href="benevoles.html">Devenir bénévole</a></li><li><a href="partenaires.html">Partenaires</a></li><li><a href="https://www.bizouk.com/events/details/atelier-graffiti-a-lurban-studio-avec-do/131478" rel="noopener">Réserver l'atelier</a></li></ul></div><div class="gm-col"><p class="gm-titre">Infos</p><ul><li><a href="presse.html">Presse</a></li><li><a href="infos.html">Infos pratiques</a></li><li><a href="infos.html#contact">Contact</a></li></ul></div></nav>
   <div class="gm-bas">
     <span class="gm-dates">Édition #3 · 25 janv. → 4 févr. 2027 · Fort-de-France</span>
-    <span><a href="https://www.instagram.com/artmadastreetfestival972/" rel="noopener">Instagram</a> · <a href="mailto:contact@artmadastreetfestival.com">contact@artmadastreetfestival.com</a></span>
+    <button type="button" class="gm-installer" data-installer>📲 Mettre ARTMADA sur l'écran d'accueil</button>
+    <p class="gm-installer-aide" data-installer-aide hidden>Sur iPhone : touche le bouton Partager de Safari, puis « Sur l'écran d'accueil ». Sur Android : menu ⋮ de Chrome, puis « Ajouter à l'écran d'accueil ».</p>
   </div>
 </div>
 <main id="contenu">
@@ -57,7 +64,7 @@
 <h2>Qui est responsable</h2>
 <p>L'association <b>NPL MADA PAINT</b> (SIREN 897 410 858), Résidence Aigue Marine, bâtiment 2, appartement 29, rue de la Dorsale, 97200 Fort-de-France, Martinique. Pour toute question sur tes données : <b>contact@artmadastreetfestival.com</b>.</p>
 <h2>Sur ce site</h2>
-<ul><li>Pas de compte, pas de formulaire, pas de cookie, pas de publicité, pas de mesure d'audience.</li><li>Les polices d'écriture et les images sont chargées depuis le site lui-même.</li><li>Sur la page « Carte », le fond de carte vient d'OpenStreetMap et l'outil de carte de cdnjs (Cloudflare) : ces services reçoivent ton adresse IP pour afficher la carte. Les liens « Y aller à pied » t'emmènent sur Google Maps, et le parcours guidé sur Creapolis ; ces services ont leurs propres règles.</li><li>L'hébergeur (GitHub) enregistre l'adresse IP des visiteurs dans ses journaux techniques, pour la sécurité du service. L'association n'y a pas accès.</li><li>Les liens vers Instagram, YouTube ou Bizouk t'emmènent sur ces services, qui ont leurs propres règles.</li><li>L'after movie de la page d'accueil est hébergé sur YouTube (mode « confidentialité renforcée ») : rien n'est chargé depuis YouTube tant que tu ne cliques pas sur la vidéo.</li></ul>
+<ul><li>Pas de compte, pas de cookie, pas de publicité, pas de mesure d'audience.</li><li>L'inscription à la newsletter et les réservations du shop ouvrent un mail vers contact@artmadastreetfestival.com depuis ta propre messagerie : rien n'est enregistré par le site.</li><li>La vidéo de la page d'accueil est servie par le site lui-même.</li><li>Les polices d'écriture et les images sont chargées depuis le site lui-même.</li><li>Sur la page « Carte », le fond de carte vient d'OpenStreetMap et l'outil de carte de cdnjs (Cloudflare) : ces services reçoivent ton adresse IP pour afficher la carte. Les liens « Y aller à pied » t'emmènent sur Google Maps, et le parcours guidé sur Creapolis ; ces services ont leurs propres règles.</li><li>L'hébergeur (GitHub) enregistre l'adresse IP des visiteurs dans ses journaux techniques, pour la sécurité du service. L'association n'y a pas accès.</li><li>Les liens vers Instagram, YouTube ou Bizouk t'emmènent sur ces services, qui ont leurs propres règles.</li><li>L'after movie de la page d'accueil est hébergé sur YouTube (mode « confidentialité renforcée ») : rien n'est chargé depuis YouTube tant que tu ne cliques pas sur la vidéo.</li></ul>
 <h2>Quand tu nous écris</h2>
 <p>Si tu nous écris (bénévolat, partenariat, visite, presse), on garde ton nom, ton adresse mail, ton téléphone et ce que tu nous dis, uniquement pour te répondre et organiser le festival. On les garde au plus 3 ans après notre dernier échange.</p>
 <h2>Dans l'appli ARTMADA</h2>
@@ -76,28 +83,40 @@
 </main>
 <footer class="pied">
   <div class="pied-in">
-    <div style="display:flex;flex-direction:column;gap:14px">
+    <div class="pied-marque">
       <span class="pied-logo"><img src="assets/img/da/logo-400.webp" alt="ARTMADA" width="400" height="132" loading="lazy"><img src="assets/img/da/street-festival.webp" alt="Street Festival" width="1000" height="199" loading="lazy" class="pied-script"></span>
-      <p class="petit" style="max-width:340px">Le festival de street art de Fort-de-France, Martinique. Organisé par l'association NPL MADA PAINT, avec la Ville de Fort-de-France.</p>
+      <p>Le festival de street art de Fort-de-France, Martinique. Organisé par l'association NPL MADA PAINT, avec la Ville de Fort-de-France.</p>
+      <div class="pied-reseaux">
+        <a href="https://www.instagram.com/artmadastreetfestival972/" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.facebook.com/artmadastreetfestival" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.6 1.6-1.6h1.7V3.4a22 22 0 0 0-2.5-.1c-2.5 0-4.2 1.5-4.2 4.3v2.3H7.4V13h2.7v8h3.4z"/></svg></a>
+        <a href="https://www.youtube.com/channel/UCjXDQ---HEdjzB3rwDdRp8Q" rel="noopener" aria-label="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3L10 15z"/></svg></a>
+      </div>
     </div>
     <div><h2>Le festival</h2><ul>
-      <li><a href="festival.html">Édition #3</a></li><li><a href="programme.html">Programme</a></li><li><a href="artistes/index.html">Artistes</a></li><li><a href="fresques/index.html">Fresques & carte</a></li><li><a href="archives.html">Archives</a></li>
+      <li><a href="festival.html">Édition #3</a></li><li><a href="programme.html">Programme</a></li><li><a href="artistes/index.html">Artistes</a></li><li><a href="archives.html">Archives</a></li><li><a href="presse.html">Presse</a></li>
+    </ul></div>
+    <div><h2>Visiter</h2><ul>
+      <li><a href="carte.html">La carte</a></li><li><a href="fresques/index.html">Les fresques</a></li><li><a href="visites.html">Visites & ateliers</a></li><li><a href="infos.html">Infos pratiques</a></li>
     </ul></div>
     <div><h2>Participer</h2><ul>
-      <li><a href="visites.html">Visites & ateliers</a></li><li><a href="benevoles.html">Bénévoles</a></li><li><a href="boutique.html">Boutique</a></li><li><a href="partenaires.html">Partenaires</a></li><li><a href="presse.html">Presse</a></li><li><a href="infos.html">Infos pratiques</a></li>
+      <li><a href="boutique.html">Shop</a></li><li><a href="benevoles.html">Bénévoles</a></li><li><a href="partenaires.html">Partenaires</a></li><li><a href="mailto:contact@artmadastreetfestival.com">Contact</a></li>
     </ul></div>
-    <div><h2>Contact</h2><ul>
-      <li><a href="mailto:contact@artmadastreetfestival.com">contact@<wbr>artmadastreetfestival.com</a></li>
-      <li><a href="https://www.instagram.com/artmadastreetfestival972/" rel="noopener">Instagram</a></li>
-      <li><a href="https://www.facebook.com/artmadastreetfestival" rel="noopener">Facebook</a></li>
-      <li><a href="https://www.youtube.com/channel/UCjXDQ---HEdjzB3rwDdRp8Q" rel="noopener">YouTube</a></li>
-    </ul></div>
+    <div class="pied-news">
+      <h2>Restons en contact</h2>
+      <p>Le programme, les artistes, les nouveaux murs : reçois toutes les infos du festival.</p>
+      <form class="news" data-news data-mail="contact@artmadastreetfestival.com" data-sujet="Inscription à la newsletter ARTMADA" data-corps="Bonjour, je veux recevoir les infos du festival ARTMADA à cette adresse :">
+        <label for="news-mail-fr">Ton adresse mail</label>
+        <div class="news-ligne"><input id="news-mail-fr" type="email" name="email" required autocomplete="email" placeholder="ton@mail.com"><button type="submit" aria-label="S'inscrire"><svg width="20" height="12" viewBox="0 0 20 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M0 6h18M13 1l5 5-5 5"/></svg></button></div>
+        <p class="petit">En t'inscrivant, tu acceptes de recevoir les mails du festival. Tu peux te désinscrire à tout moment. <a href="confidentialite.html">Confidentialité</a></p>
+      </form>
+    </div>
   </div>
   <div class="pied-bas">
     <span>© 2027 NPL MADA PAINT · Association loi 1901 · Fort-de-France, Martinique</span>
-    <span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></span>
+    <span class="pied-legal"><a href="mentions-legales.html">Mentions légales</a><a href="cgu.html">CGU</a><a href="cgv.html">Conditions de vente</a><a href="confidentialite.html">Confidentialité</a><a href="accessibilite.html">Accessibilité</a></span>
   </div>
 </footer>
+<nav class="barre-mobile" aria-label="Accès rapide"><a class="" href="programme.html"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Programme</span></a><a class="" href="carte.html"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-7.2 7-12.5A7 7 0 0 0 5 9.5C5 14.8 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Carte</span></a><a class="barre-shop" href="boutique.html"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span>Shop</span></a></nav>
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>

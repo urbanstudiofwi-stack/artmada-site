@@ -1,0 +1,43 @@
+{
+ "name": "ARTMADA Street Festival",
+ "short_name": "ARTMADA",
+ "lang": "fr",
+ "description": "Programme, carte des fresques et shop du festival de street art de Fort-de-France.",
+ "start_url": "/?source=ecran-accueil",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#1D1E21",
+ "theme_color": "#1D1E21",
+ "icons": [
+  {
+   "src": "/assets/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/assets/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/assets/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Programme",
+   "url": "/programme.html"
+  },
+  {
+   "name": "Carte",
+   "url": "/carte.html"
+  },
+  {
+   "name": "Shop",
+   "url": "/boutique.html"
+  }
+ ]
+}
