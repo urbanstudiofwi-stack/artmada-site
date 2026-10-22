@@ -146,6 +146,8 @@ p{margin:0}
 .pin-etape{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--orange);color:var(--encre);font-family:var(--titre);font-size:16px;border:3px solid var(--nuit);box-shadow:0 4px 12px rgba(0,0,0,.5)}
 .moi{width:18px;height:18px;border-radius:50%;background:var(--turquoise);border:3px solid var(--chaux);box-shadow:0 0 0 8px rgba(34,196,196,.25)}
 .leaflet-container{font-family:var(--texte);background:#1d1e21}
+/* Fond OpenStreetMap passé en version sombre (rues bien visibles, couleurs du béton) */
+.leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.95) contrast(.9) saturate(.6)}
 .leaflet-control-attribution{background:rgba(26,27,30,.75)!important;color:var(--pale)!important;font-size:10px}
 .leaflet-control-attribution a{color:var(--pale)!important}
 
