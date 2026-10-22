@@ -11,8 +11,8 @@
   var etat = { filtre: "toutes", recherche: "", mode: "carte", choisie: null };
   var MODE_TEST = /[?&]test\b/.test(location.search);
   var CENTRE = [14.6055, -61.0665];
-  var TUILES = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
-  var ATTRIB = '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/attributions">CARTO</a>';
+  var TUILES = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+  var ATTRIB = '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
   var SITE = "https://artmadastreetfestival.com/";
 
   /* ---------- petits outils ---------- */
@@ -238,7 +238,7 @@
   var calqueMarqueurs = null;
   function dessinerCarte() {
     carteLeaflet = L.map("carte", { zoomControl: false, attributionControl: true }).setView(CENTRE, 15);
-    L.tileLayer(TUILES, { maxZoom: 19, subdomains: "abcd", attribution: ATTRIB, detectRetina: false }).addTo(carteLeaflet);
+    L.tileLayer(TUILES, { maxZoom: 19, attribution: ATTRIB }).addTo(carteLeaflet);
     calqueMarqueurs = L.layerGroup().addTo(carteLeaflet);
     dessinerMarqueurs(true);
     var pos = null;
@@ -459,7 +459,7 @@
       }).join("") + "</ol></div>";
 
     carteLeaflet = L.map("carte", { zoomControl: false, scrollWheelZoom: false }).setView(etapes[0].gps, 15);
-    L.tileLayer(TUILES, { maxZoom: 19, subdomains: "abcd", attribution: ATTRIB }).addTo(carteLeaflet);
+    L.tileLayer(TUILES, { maxZoom: 19, attribution: ATTRIB }).addTo(carteLeaflet);
     L.polyline(etapes.map(function (f) { return f.gps; }), { color: "#EB782F", weight: 4, opacity: .9, dashArray: "2 9", lineCap: "round" }).addTo(carteLeaflet);
     etapes.forEach(function (f, i) {
       L.marker(f.gps, { icon: L.divIcon({ className: "", html: '<span class="pin-etape">' + (i + 1) + "</span>", iconSize: [34, 34], iconAnchor: [17, 17] }), title: f.nom })
@@ -508,5 +508,10 @@
 
   if ("serviceWorker" in navigator && location.protocol === "https:") {
     window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });
+    // Nouvelle version en ligne : on recharge une fois pour l'afficher tout de suite.
+    var dejaRecharge = false;
+    navigator.serviceWorker.addEventListener("controllerchange", function () {
+      if (dejaRecharge) return; dejaRecharge = true; location.reload();
+    });
   }
 })();
