@@ -1,17 +1,24 @@
 # Contrôle automatique du site (vitesse, accessibilité, SEO) avec l'outil de Google.
 # Tourne après chaque mise en ligne et chaque lundi. Échoue si une note passe sous le seuil.
+# « workflow_run » : nécessaire car le push sur main fait par « Publier le site »
+# (robot GitHub) ne déclenche pas les autres workflows.
 name: Contrôle Lighthouse
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: ["Publier le site"]
+    types: [completed]
   schedule:
     - cron: "0 11 * * 1"   # lundi 7h heure de Martinique
   workflow_dispatch:
 jobs:
   lighthouse:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with: { ref: main }
       - name: Attendre la mise en ligne de GitHub Pages
         run: sleep 90
       - uses: treosh/lighthouse-ci-action@v12
