@@ -69,8 +69,21 @@ PARTENAIRES_LOGOS = [
     ("arti", "ARTI Martinique"),
 ]
 
-MEDIAS = ["Martinique la 1ère", "France-Antilles", "RCI", "Madinin'Art", "Street Art Utopia", "Outremers360",
-          "Zitata TV", "Juno7", "HPN Info", "BuzzMag", "Prikay", "RBR Laradio"]
+# Média → article (lien sortant). Sans lien : renvoie vers la page Presse.
+MEDIAS = [
+    ("Martinique la 1ère", "https://la1ere.franceinfo.fr/martinique/le-festival-artmada-street-poursuit-l-embellissement-des-murs-et-des-rues-de-fort-de-france-1671201.html"),
+    ("France-Antilles", "https://www.martinique.franceantilles.fr/regions/centre/artmada-un-street-festival-ouvert-a-tous-1014378.php"),
+    ("RCI", "https://rci.fm/martinique/infos/Culture/VIDEO-La-Jam-ArtMada-un-avant-gout-du-festival-de-street-art-Fort-de-France"),
+    ("Madinin'Art", "https://www.madinin-art.net/festival-artmada-street-2026/"),
+    ("Street Art Utopia", "https://streetartutopia.com/new-street-art/by-τeμρonok-in-fort-de-france-martinique-france-for-artmada/"),
+    ("Outremers360", "https://outremers360.com/bassin-atlantique-appli/martinique-lidentite-caribeenne-et-lafro-descendance-themes-de-la-premiere-edition-de-lartmada-street-festival-de-fort-de-france"),
+    ("Zitata TV", "https://zitata.tv/actualite/jamais-trop-dart-explore-le-dynamisme-du-street-art-martiniquais-avec-madapaint/"),
+    ("Juno7", "https://www.juno7.ht/rayza-artmada-street-martinique-street-art-haiti/"),
+    ("HPN Info", "https://www.hpninfo.com/post/de-port-au-prince-%C3%A0-fort-de-france-rayza-porte-les-couleurs-d-ha%C3%AFti-%C3%A0-artmada"),
+    ("BuzzMag", "https://www.buzzmagmartinique.com/evenement/artmada-street-festival-lyannaj-karayib-fort-de-france/"),
+    ("Prikay", "https://www.prikay.mq/1ere-edition-immanquable-de-l-artmada-street-festival-en-martinique/"),
+    ("RBR Laradio", ""),
+]
 
 PRINTS = [
     ("01", "xan-et-breeze", "Xän & Breeze", 1, "paysage"), ("02", "kaldea", "Kaldéa", 1, "paysage"),
@@ -177,7 +190,10 @@ def accueil(lang):
     vitrine = [pr for pr in produits() if pr["id"] in ("tshirt", "print-08", "tote-artmada", "print-11")]
     vitrine_html = "".join(carte_produit(p, pr) for pr in vitrine)
     logos = "".join(f'<li><img src="{a("img/partenaires/" + f + ".webp")}" alt="{e(n)}" loading="lazy" decoding="async"></li>' for f, n in PARTENAIRES_LOGOS)
-    medias = "".join(f"<li>{e(m)}</li>" for m in MEDIAS)
+    medias = "".join(
+        f'<li><a href="{e(u)}" rel="noopener" target="_blank">{e(m)}</a></li>' if u
+        else f'<li><a href="{p.u("presse.html")}">{e(m)}</a></li>'
+        for m, u in MEDIAS)
     corps = f'''
 <section class="v3-hero" aria-labelledby="titre-accueil">
   <video class="v3-video" muted loop playsinline preload="none" poster="{a('img/aftermovie-fond.jpg')}" data-src="{a('video/aftermovie-boucle.mp4')}" data-src-petit="{a('video/aftermovie-boucle-640.mp4')}" aria-hidden="true"></video>
