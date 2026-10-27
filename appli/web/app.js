@@ -409,7 +409,7 @@
       '<div class="fiche-photo">' + (f.photo ? '<img src="' + photo(f) + '" alt="' + e(altFresque(f)) + ", " + e(lieu) + '">' : '<div class="sans-photo">' + e(f.nom) + "</div>") +
       '<div class="boutons"><button type="button" class="rond" id="retour" aria-label="' + T("Retour", "Back") + '">' + ico("retour") + "</button>" +
       '<button type="button" class="rond" id="partager" aria-label="' + T("Partager", "Share") + '">' + ico("partager") + "</button></div>" +
-      (f.photo && f.credit ? '<span class="credit">' + T("Photo : ", "Photo: ") + e(f.credit) + "</span>" : "") + "</div>" +
+      (f.photo && f.credit ? '<span class="credit">' + (/^Drone/.test(f.credit) ? e(f.credit) : T("Photo : ", "Photo: ") + e(f.credit)) + "</span>" : "") + "</div>" +
 
       '<div class="fiche-tete"><span class="surtitre e' + f.edition + '">' + edition(f) + (f.collectif ? T(" · fresque collective", " · collective mural") : "") + "</span>" +
       "<h1>" + e(f.nom) + "</h1>" +

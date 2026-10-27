@@ -8,7 +8,10 @@ REGIONS = {"martinique": ("Martinique", "Martinique"), "caraibe": ("Caraïbe", "
 ANNEE = {1: "2024", 2: "2026"}
 def credit(p, f):
     if f.get("credit_photo"):
-        return "Photo : " + f["credit_photo"] if p.lang == "fr" else "Photo: " + f["credit_photo"]
+        cp = f["credit_photo"]
+        if cp.startswith("Drone"):  # crédit complet déjà écrit (ex. « Drone : Noisz »)
+            return cp if p.lang == "fr" else cp.replace("Drone :", "Drone:")
+        return "Photo : " + cp if p.lang == "fr" else "Photo: " + cp
     if f["edition"] == 2:
         return T(p, "Photo : Shaman", "Photo: Shaman")
     return "Photo © ARTMADA / NPL MADA PAINT"
@@ -499,7 +502,10 @@ def _moment_html(p, x, m, credit_video):
     lieu = f'<p class="gris">{e(m["lieu"])}</p>' if m.get("lieu") else ""
     photo = ""
     if m.get("photo"):
-        cr = T(p, "Photo : Shaman", "Photo: Shaman") if x["num"] == 2 else "Photo © ARTMADA / NPL MADA PAINT"
+        if m.get("credit_photo"):
+            cr = credit(p, {"credit_photo": m["credit_photo"], "edition": x["num"]})
+        else:
+            cr = T(p, "Photo : Shaman", "Photo: Shaman") if x["num"] == 2 else "Photo © ARTMADA / NPL MADA PAINT"
         photo = (f'<figure style="margin:0"><img src="{p.a(m["photo"])}" alt="{e(champ(m, "photo_alt", L))}" width="1600" height="900" '
                  f'style="width:100%;aspect-ratio:16/9;object-fit:cover"><figcaption class="petit gris" style="margin-top:8px">{cr}</figcaption></figure>')
     vids = ""
