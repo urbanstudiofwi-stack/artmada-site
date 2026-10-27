@@ -90,7 +90,7 @@ PRINTS = [
     ("03", "magiic", "Magiic", 1, "paysage"), ("04", "sitou", "Sitou", 1, "paysage"),
     ("05", "doudou-style", "Doudou Style", 2, "portrait"), ("06", "la-jam", "La Jam", 2, "paysage"),
     ("07", "veneno", "Veneno", 2, "portrait"), ("08", "curtis-hylton", "Curtis Hylton", 2, "paysage"),
-    ("09", "yelow", "Yelow", 2, "paysage"), ("10", "jaddict", "Jaddict", 2, "portrait"),
+    ("09", "yelow", "Yelow", 2, "paysage"),
     ("11", "rayza", "Rayza", 2, "portrait"), ("12", "box-vincent", "Box Vincent", 2, "portrait"),
     ("13", "wuna", "Wuna", 2, "paysage"), ("14", "temponok", "Tempo Nok", 2, "paysage"),
 ]
