@@ -92,7 +92,7 @@ PRINTS = [
     ("07", "veneno", "Veneno", 2, "portrait"), ("08", "curtis-hylton", "Curtis Hylton", 2, "paysage"),
     ("09", "yelow", "Yelow", 2, "paysage"),
     ("11", "rayza", "Rayza", 2, "portrait"), ("12", "box-vincent", "Box Vincent", 2, "portrait"),
-    ("13", "wuna", "Wuna", 2, "paysage"), ("14", "temponok", "Tempo Nok", 2, "paysage"),
+    ("13", "wuna", "Wuna", 2, "paysage"), ("14", "temponok", "Temponok", 2, "paysage"),
 ]
 
 def produits():

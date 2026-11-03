@@ -20,8 +20,8 @@ ANNEE = {1: "2024", 2: "2026"}
 # Mêmes parcours que la page Carte du site (pages_donnees.py : PARCOURS / ETAPES_PARCOURS).
 PARCOURS = [
     ("centre", "Pointe Simon et centre-ville", "Pointe Simon & city centre",
-     "Du front de mer à la rue Moreau de Jonnès : le Mur de la Jam, les bulles de Tempo Nok, Sitou, Roxane Shade, Jaddict…",
-     "From the seafront to rue Moreau de Jonnès: the Jam Wall, Tempo Nok's bubbles, Sitou, Roxane Shade, Jaddict…",
+     "Du front de mer à la rue Moreau de Jonnès : le Mur de la Jam, les bulles de Temponok, Sitou, Roxane Shade, Jaddict…",
+     "From the seafront to rue Moreau de Jonnès: the Jam Wall, Temponok's bubbles, Sitou, Roxane Shade, Jaddict…",
      list(range(1, 11))),
     ("tom", "Rue Victor Sévère et Terres-Sainville", "Rue Victor Sévère & Terres-Sainville",
      "Le cœur du festival 2026 autour du TOM : Yelow, Curtis Hylton, Doudou Style, Oshea, Mounlan, puis Les Fortes de France de Carole B.",
