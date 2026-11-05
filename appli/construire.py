@@ -49,7 +49,7 @@ MISSIONS = [
 
 
 def texte_theme():
-    """Texte « An Lot Chimen » de Xän, repris de la page Festival du site (pages_contenu.py)."""
+    """Texte « An Lot Chimin » de Xän, repris de la page Festival du site (pages_contenu.py)."""
     import re
     src = (RACINE / "pages_contenu.py").read_text("utf-8")
     q = "'" * 3
@@ -168,7 +168,7 @@ def construire(dist):
                 for a in artistes}
 
     donnees = {
-        "festival": {"edition": 3, "theme": "An Lot Chimen", "theme_fr": "Un autre chemin",
+        "festival": {"edition": 3, "theme": "An Lot Chimin", "theme_fr": "Un autre chemin",
                      "debut": "2027-01-25", "fin": "2027-02-04", "ville": "Fort-de-France"},
         "atelier": {"titre": "Atelier street art", "titre_en": "Street art workshop",
                     "quand": "Tous les samedis, 10h → 12h", "quand_en": "Every Saturday, 10am → 12pm",

@@ -215,7 +215,7 @@ def accueil(lang):
   <div class="cadre v3-deux">
     <div>
       <p class="v3-surtitre">{t(L, "Le thème de l'édition #3", 'The theme of edition #3')}</p>
-      <h2 class="v3-geant anim-titre" id="titre-edition">An Lot Chimen</h2>
+      <h2 class="v3-geant anim-titre" id="titre-edition">An Lot Chimin</h2>
     </div>
     <div class="v3-texte">
       <p class="v3-citation">{t(L, "« À l'heure d'un certain fatalisme social, guerrier, climatique et numérique, un autre chemin est-il possible ? »", "“In a time of social, military, climate and digital fatalism, is another way possible?”")}</p>
@@ -312,7 +312,7 @@ def accueil(lang):
   </div>
 </section>
 '''
-    ecrire(p, document(p, "", t(L, "ARTMADA Street Festival, le festival de street art de Fort-de-France (Martinique). Édition #3 « An Lot Chimen » du 25 janvier au 4 février 2027 : programme, lieux, carte des fresques et shop officiel.", "ARTMADA Street Festival, the street art festival of Fort-de-France, Martinique. Edition #3 “An Lot Chimen”, 25 January to 4 February 2027: programme, venues, mural map and official shop."),
+    ecrire(p, document(p, "", t(L, "ARTMADA Street Festival, le festival de street art de Fort-de-France (Martinique). Édition #3 « An Lot Chimin » du 25 janvier au 4 février 2027 : programme, lieux, carte des fresques et shop officiel.", "ARTMADA Street Festival, the street art festival of Fort-de-France, Martinique. Edition #3 “An Lot Chimin”, 25 January to 4 February 2027: programme, venues, mural map and official shop."),
                        corps, actif="index.html", image="img/hd/a2-doudou.jpg", sur_video=True,
                        ld=[{"@type": "WebSite", "@id": SITE_URL + "#site", "name": "ARTMADA Street Festival", "url": SITE_URL, "inLanguage": ["fr", "en"], "publisher": {"@id": ORGA["@id"]}},
                            festival_ld(p.lang), aftermovie_ld(p.lang)]))
@@ -471,7 +471,7 @@ def festival(lang):
     p = P(lang, "festival.html")
     if lang == "fr":
         texte = '''<p>On vient tous (artistes, bénévoles, public) d'endroits différents ; pourtant, nous sommes au même endroit, au même moment, durant le festival : sur un mur, sur une île, dans la Caraïbe, sur la planète… Un point sur un globe, et c'est pourtant ici et maintenant que nos routes se croisent. À la croisée des chemins, des cultures et de nos vies, au carrefour des possibles.</p>
-<p>Mais <i>« O la nou kay ? »</i> Où allons-nous ? Vers quoi ? Dans quelle direction ? Et quel chemin prendre pour y parvenir ? L'itinéraire classique ? Le raccourci ? La déviation ? Le détour ? Le <i>chimen chien</i> ? Le <i>chimen krochi</i> ? Devrons-nous nous frayer un passage pour atteindre notre but ? Plus que la destination, n'est-ce pas le cheminement le plus important ?</p>
+<p>Mais <i>« O la nou kay ? »</i> Où allons-nous ? Vers quoi ? Dans quelle direction ? Et quel chemin prendre pour y parvenir ? L'itinéraire classique ? Le raccourci ? La déviation ? Le détour ? Le <i>chimin chien</i> ? Le <i>chimin krochi</i> ? Devrons-nous nous frayer un passage pour atteindre notre but ? Plus que la destination, n'est-ce pas le cheminement le plus important ?</p>
 <p><b>À l'heure d'un certain fatalisme social, guerrier, climatique et numérique, un autre chemin est-il possible ?</b></p>
 <p>On a choisi un milieu artistique qui n'était pas vraiment un choix de carrière envisageable à l'époque où l'on a commencé la peinture. On a pris un autre chemin que celui que prennent, de façon classique ou académique, ceux qui aiment l'art ou la peinture.</p>
 <p>On a appris le graffiti hors des sentiers battus et balisés, sans la reconnaissance des critiques et des institutions de l'époque. Ce chemin nous a (ra)menés à Clément, où l'on a abordé cette notion devenue le titre de l'exposition <i>Mawonaj Piktural</i> : s'évader, trouver une issue, s'échapper des codes de ce monde hermétique, froid et rigide qu'est l'art contemporain.</p>
@@ -479,7 +479,7 @@ def festival(lang):
 <p><i>Faire de Fort-de-France la plaque tournante de l'art urbain, du street art et du graffiti dans la Caraïbe ?</i></p>'''
     else:
         texte = '''<p>We all come (artists, volunteers, visitors) from different places; and yet, during the festival, we are in the same place at the same time: on a wall, on an island, in the Caribbean, on the planet… A dot on a globe, and yet it is here and now that our paths cross. At the crossroads of paths, cultures and lives, where everything is possible.</p>
-<p>But <i>“O la nou kay?”</i> Where are we going? Towards what? In which direction? And which path should we take to get there? The usual route? The shortcut? The diversion? The detour? The <i>chimen chien</i> (the side path)? The <i>chimen krochi</i> (the crooked path)? Will we have to clear our own way to reach our goal? More than the destination, isn't the journey what matters most?</p>
+<p>But <i>“O la nou kay?”</i> Where are we going? Towards what? In which direction? And which path should we take to get there? The usual route? The shortcut? The diversion? The detour? The <i>chimin chien</i> (the side path)? The <i>chimin krochi</i> (the crooked path)? Will we have to clear our own way to reach our goal? More than the destination, isn't the journey what matters most?</p>
 <p><b>In a time of social, military, climate and digital fatalism, is another way possible?</b></p>
 <p>We chose an artistic world that was not really a career option back when we started painting. We took a different path from the classic, academic one taken by those who love art or painting.</p>
 <p>We learned graffiti off the beaten track, without the recognition of critics or institutions. That path led us (back) to Clément, where we explored the idea that became the title of the exhibition <i>Mawonaj Piktural</i>: to break away, find a way out, escape the codes of the closed, cold and rigid world of contemporary art.</p>
@@ -491,7 +491,7 @@ def festival(lang):
 <section class="cadre" style="padding-bottom:clamp(48px,6vw,80px)">
   <dl class="tableau-infos">
     <div><dt>{T(p, 'Dates', 'Dates')}</dt><dd>{T(p, 'Du lundi 25 janvier au jeudi 4 février 2027', 'Monday 25 January to Thursday 4 February 2027')}</dd></div>
-    <div><dt>{T(p, 'Thème', 'Theme')}</dt><dd>An Lot Chimen · {T(p, 'Un autre chemin', 'Another way')}</dd></div>
+    <div><dt>{T(p, 'Thème', 'Theme')}</dt><dd>An Lot Chimin · {T(p, 'Un autre chemin', 'Another way')}</dd></div>
     <div><dt>{T(p, 'Quartiers', 'Neighbourhoods')}</dt><dd>{T(p, 'Langellier, Mongérald, Tocade et le centre-ville de Fort-de-France', 'Langellier, Mongérald, Tocade and Fort-de-France city centre')}</dd></div>
     <div><dt>{T(p, 'Artistes', 'Artists')}</dt><dd>{T(p, 'Annoncés bientôt', 'Coming soon')}</dd></div>
     <div><dt>{T(p, 'Prix', 'Price')}</dt><dd>{T(p, 'Les fresques se regardent gratuitement, dans la rue', 'The murals are free to see, in the street')}</dd></div>
@@ -502,7 +502,7 @@ def festival(lang):
 <section class="cadre" style="padding-bottom:clamp(64px,8vw,120px)">
   <div class="texte-5-7 trait-haut">
     <div style="display:flex;flex-direction:column;gap:12px">
-      <h2 class="titre-section">An lot chimen</h2>
+      <h2 class="titre-section">An lot chimin</h2>
       <p class="gris">{T(p, 'Un autre chemin · texte de Xän pour le collectif Mada Paint', 'Another way · text by Xän for the Mada Paint collective')}</p>
     </div>
     <div class="prose" style="font-size:18px">{texte}</div>
@@ -519,7 +519,7 @@ def festival(lang):
   </div>
 </section>
 '''
-    ecrire(p, document(p, T(p, 'Le festival · Édition #3', 'The festival · Edition #3'), T(p, "ARTMADA #3 « An Lot Chimen » : dates, thème, quartiers et organisation de la troisième édition du festival de street art de Fort-de-France.", "ARTMADA #3 “An Lot Chimen”: dates, theme, neighbourhoods and organisers of the third edition of Fort-de-France's street art festival."), corps, actif="festival.html", titre_complet=T(p, "ARTMADA #3 · 25 janv. → 4 févr. 2027 | Festival de street art", "ARTMADA #3 · 25 Jan → 4 Feb 2027 | Street art festival"),
+    ecrire(p, document(p, T(p, 'Le festival · Édition #3', 'The festival · Edition #3'), T(p, "ARTMADA #3 « An Lot Chimin » : dates, thème, quartiers et organisation de la troisième édition du festival de street art de Fort-de-France.", "ARTMADA #3 “An Lot Chimin”: dates, theme, neighbourhoods and organisers of the third edition of Fort-de-France's street art festival."), corps, actif="festival.html", titre_complet=T(p, "ARTMADA #3 · 25 janv. → 4 févr. 2027 | Festival de street art", "ARTMADA #3 · 25 Jan → 4 Feb 2027 | Street art festival"),
                        ld=[festival_ld(p.lang), fil_ld(p, [(None, T(p, "Le festival", "The festival"))])]))
 
 # ============================================================ PROGRAMME

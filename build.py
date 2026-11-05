@@ -198,7 +198,7 @@ def festival_ld(lang):
     """L'édition #3 (Festival + événement d'arts visuels)."""
     return {
         "@type": ["Festival", "VisualArtsEvent"], "@id": FESTIVAL_ID,
-        "name": "ARTMADA Street Festival #3 · An Lot Chimen",
+        "name": "ARTMADA Street Festival #3 · An Lot Chimin",
         "description": t(lang, "Troisième édition du festival de street art de Fort-de-France : fresques peintes en direct, ateliers, visites, soirées et block party.",
                          "Third edition of Fort-de-France's street art festival: murals painted live, workshops, tours, parties and a block party."),
         "startDate": "2027-01-25", "endDate": "2027-02-04",
